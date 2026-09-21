@@ -1,0 +1,20 @@
+:root {
+  --nx-pine: #0C4F4A;
+  --nx-pine-deep: #073531;
+  --nx-teal: #16786E;
+  --nx-marigold: #EFA020;
+  --nx-marigold-lo: #FFF3DE;
+  --nx-ink: #14201F;
+  --nx-slate: #5B6B69;
+  --nx-mist: #F3F7F6;
+  --nx-line: #DCE6E4;
+  --nx-white: #FFFFFF;
+
+  --font-display: "Inter Tight", system-ui, sans-serif;
+  --font-body: "Inter", system-ui, sans-serif;
+
+  --nx-radius-control: 4px;
+  --nx-radius-card: 14px;
+  --nx-radius-media: 28px;
+  --nx-shadow-elevated: 0 18px 40px -24px rgba(7, 53, 49, 0.45);
+}

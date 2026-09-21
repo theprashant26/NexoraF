@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url><loc>https://{{PLACEHOLDER: production domain}}/</loc></url>
+  <url><loc>https://{{PLACEHOLDER: production domain}}/about.html</loc></url>
+  <url><loc>https://{{PLACEHOLDER: production domain}}/programmes.html</loc></url>
+  <url><loc>https://{{PLACEHOLDER: production domain}}/admissions.html</loc></url>
+  <url><loc>https://{{PLACEHOLDER: production domain}}/gallery.html</loc></url>
+  <url><loc>https://{{PLACEHOLDER: production domain}}/contact.html</loc></url>
+  <url><loc>https://{{PLACEHOLDER: production domain}}/disclaimer.html</loc></url>
+  <url><loc>https://{{PLACEHOLDER: production domain}}/programme.html?code=MIRTC</loc></url>
+  <url><loc>https://{{PLACEHOLDER: production domain}}/programme.html?code=RIATC</loc></url>
+  <url><loc>https://{{PLACEHOLDER: production domain}}/programme.html?code=AATC</loc></url>
+  <url><loc>https://{{PLACEHOLDER: production domain}}/programme.html?code=HITC</loc></url>
+  <url><loc>https://{{PLACEHOLDER: production domain}}/programme.html?code=TTMC</loc></url>
+  <url><loc>https://{{PLACEHOLDER: production domain}}/programme.html?code=MITC</loc></url>
+  <url><loc>https://{{PLACEHOLDER: production domain}}/programme.html?code=PITC</loc></url>
+  <url><loc>https://{{PLACEHOLDER: production domain}}/programme.html?code=EITC</loc></url>
+  <url><loc>https://{{PLACEHOLDER: production domain}}/programme.html?code=SITC</loc></url>
+  <url><loc>https://{{PLACEHOLDER: production domain}}/programme.html?code=TITC</loc></url>
+  <url><loc>https://{{PLACEHOLDER: production domain}}/programme.html?code=BITC</loc></url>
+  <url><loc>https://{{PLACEHOLDER: production domain}}/programme.html?code=FITC</loc></url>
+  <url><loc>https://{{PLACEHOLDER: production domain}}/programme.html?code=PSDC</loc></url>
+  <url><loc>https://{{PLACEHOLDER: production domain}}/programme.html?code=LITC</loc></url>
+  <url><loc>https://{{PLACEHOLDER: production domain}}/programme.html?code=HIMTC</loc></url>
+  <url><loc>https://{{PLACEHOLDER: production domain}}/programme.html?code=MIMC</loc></url>
+  <url><loc>https://{{PLACEHOLDER: production domain}}/programme.html?code=DITC</loc></url>
+  <url><loc>https://{{PLACEHOLDER: production domain}}/programme.html?code=RIMC</loc></url>
+  <url><loc>https://{{PLACEHOLDER: production domain}}/programme.html?code=ITITC</loc></url>
+  <url><loc>https://{{PLACEHOLDER: production domain}}/programme.html?code=CETC</loc></url>
+  <url><loc>https://{{PLACEHOLDER: production domain}}/programme.html?code=EETC</loc></url>
+</urlset>

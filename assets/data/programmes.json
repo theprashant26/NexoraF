@@ -1,0 +1,233 @@
+[
+  {
+    "id": 1,
+    "number": "01",
+    "division": "Metro & Rail",
+    "code": "MIRTC",
+    "certificate": "Metro Industrial & Rail Technical Certificate",
+    "programme": "Diploma in Metro Rail Management",
+    "group": "Transport & Aviation",
+    "keyAreas": ["Metro Rail Operations", "Station Operations", "Ticketing & Passenger Services", "Metro Rail Safety", "Customer Service", "Basic Rail/Metro Management"],
+    "slug": "metro-rail-management"
+  },
+  {
+    "id": 2,
+    "number": "02",
+    "division": "Railway",
+    "code": "RIATC",
+    "certificate": "Railway Industrial & Training Certificate",
+    "programme": "Diploma in Railway Management",
+    "group": "Transport & Aviation",
+    "keyAreas": ["Railway Operations", "Station Management", "Passenger Handling", "Ticketing & Reservation", "Railway Safety & Procedures", "Basic Railway Administration"],
+    "slug": "railway-management"
+  },
+  {
+    "id": 3,
+    "number": "03",
+    "division": "Aviation",
+    "code": "AATC",
+    "certificate": "Airline & Aviation Training Certificate",
+    "programme": "Diploma in Aviation Management",
+    "group": "Transport & Aviation",
+    "keyAreas": ["Airport Operations", "Airline Ticketing", "Passenger Handling", "Airport Customer Service", "Aviation Administration", "Ground Operations"],
+    "slug": "aviation-management"
+  },
+  {
+    "id": 4,
+    "number": "04",
+    "division": "Hospitality",
+    "code": "HITC",
+    "certificate": "Hotel Industry Training Certificate",
+    "programme": "Diploma in Hotel Management",
+    "group": "Service & Hospitality",
+    "keyAreas": ["Front Office Operations", "Housekeeping", "Food & Beverage Services", "Hospitality Operations", "Guest Relations", "Hotel Administration"],
+    "slug": "hotel-management"
+  },
+  {
+    "id": 5,
+    "number": "05",
+    "division": "Travel & Tourism",
+    "code": "TTMC",
+    "certificate": "Travel & Tourism Management Certificate",
+    "programme": "Diploma in Travel & Tourism Management",
+    "group": "Service & Hospitality",
+    "keyAreas": ["Travel Agency Operations", "Tour Planning", "Ticketing & Reservation", "Tourism Management", "Customer Relationship Management", "Travel Documentation"],
+    "slug": "travel-tourism-management"
+  },
+  {
+    "id": 6,
+    "number": "06",
+    "division": "Medical",
+    "code": "MITC",
+    "certificate": "Medical Industry Training Certificate",
+    "programme": "Diploma in Medical Management",
+    "group": "Health & Sciences",
+    "keyAreas": ["Healthcare Administration", "Hospital Front Office", "Patient Service Management", "Medical Records Basics", "Healthcare Operations", "Hospital Administration"],
+    "slug": "medical-management"
+  },
+  {
+    "id": 7,
+    "number": "07",
+    "division": "Pharmaceutical",
+    "code": "PITC",
+    "certificate": "Pharmaceutical Industry Training Certificate",
+    "programme": "Diploma in Pharmaceutical Management",
+    "group": "Health & Sciences",
+    "keyAreas": ["Pharmaceutical Industry Operations", "Pharmacy Administration", "Inventory Management", "Medical Store Management", "Pharmaceutical Sales & Marketing", "Basic Pharmaceutical Documentation"],
+    "slug": "pharmaceutical-management"
+  },
+  {
+    "id": 8,
+    "number": "08",
+    "division": "Electrical",
+    "code": "EITC",
+    "certificate": "Electrical Industrial Training Certificate",
+    "programme": "Diploma in Electrical Management",
+    "group": "Business & Technical",
+    "keyAreas": ["Electrical Safety", "Basic Electrical Systems", "Maintenance Management", "Electrical Operations", "Workplace Safety", "Technical Documentation"],
+    "slug": "electrical-management"
+  },
+  {
+    "id": 9,
+    "number": "09",
+    "division": "Security",
+    "code": "SITC",
+    "certificate": "Security Industry Training Certificate",
+    "programme": "Diploma in Security Management",
+    "group": "Service & Hospitality",
+    "keyAreas": ["Security Operations", "Access Control", "Security Supervision", "Incident Reporting", "Crowd Management", "Emergency & Safety Procedures"],
+    "slug": "security-management"
+  },
+  {
+    "id": 10,
+    "number": "10",
+    "division": "Education",
+    "code": "TITC",
+    "certificate": "Teaching Industry Training Certificate",
+    "programme": "Diploma in Education & Teaching Management",
+    "group": "Business & Technical",
+    "keyAreas": ["Teaching Fundamentals", "Classroom Management", "Student Support", "Educational Administration", "Communication Skills", "Basic Academic Management"],
+    "slug": "education-teaching-management"
+  },
+  {
+    "id": 11,
+    "number": "11",
+    "division": "Banking",
+    "code": "BITC",
+    "certificate": "Banking Industry Training Certificate",
+    "programme": "Diploma in Banking Management",
+    "group": "Business & Technical",
+    "keyAreas": ["Banking Operations", "Customer Service", "Account & Documentation Basics", "Financial Services", "Banking Administration", "Digital Banking Basics"],
+    "slug": "banking-management"
+  },
+  {
+    "id": 12,
+    "number": "12",
+    "division": "Finance & Accounting",
+    "code": "FITC",
+    "certificate": "Finance & Accounting Industry Training Certificate",
+    "programme": "Diploma in Finance & Accounting Management",
+    "group": "Business & Technical",
+    "keyAreas": ["Accounting Fundamentals", "Bookkeeping", "Financial Documentation", "Billing & Invoicing", "Basic Financial Management", "Office & Accounting Software"],
+    "slug": "finance-accounting-management"
+  },
+  {
+    "id": 13,
+    "number": "13",
+    "division": "Professional Skill Development",
+    "code": "PSDC",
+    "certificate": "Professional Skill Development Certificate",
+    "programme": "Diploma in Professional Skill Development",
+    "group": "Business & Technical",
+    "keyAreas": ["Communication Skills", "Computer Skills", "Workplace Skills", "Interview Preparation", "Professional Behaviour", "Career Development"],
+    "slug": "professional-skill-development"
+  },
+  {
+    "id": 14,
+    "number": "14",
+    "division": "Logistics",
+    "code": "LITC",
+    "certificate": "Logistics Industry Training Certificate",
+    "programme": "Diploma in Logistics Management",
+    "group": "Transport & Aviation",
+    "keyAreas": ["Logistics Operations", "Warehouse Management", "Inventory Control", "Transportation Management", "Supply Chain Basics", "Documentation & Dispatch"],
+    "slug": "logistics-management"
+  },
+  {
+    "id": 15,
+    "number": "15",
+    "division": "Healthcare",
+    "code": "HIMTC",
+    "certificate": "Healthcare Industry Management Training Certificate",
+    "programme": "Diploma in Healthcare Management",
+    "group": "Health & Sciences",
+    "keyAreas": ["Hospital Administration", "Healthcare Operations", "Patient Relationship Management", "Healthcare Documentation", "Hospital Front Office", "Healthcare Facility Management"],
+    "slug": "healthcare-management"
+  },
+  {
+    "id": 16,
+    "number": "16",
+    "division": "Manufacturing",
+    "code": "MIMC",
+    "certificate": "Manufacturing Industry Management Certificate",
+    "programme": "Diploma in Manufacturing Management",
+    "group": "Business & Technical",
+    "keyAreas": ["Production Management", "Manufacturing Operations", "Quality Basics", "Inventory Management", "Workplace Safety", "Production Planning"],
+    "slug": "manufacturing-management"
+  },
+  {
+    "id": 17,
+    "number": "17",
+    "division": "Driver Services",
+    "code": "DITC",
+    "certificate": "Driver Industry Training Certificate",
+    "programme": "Diploma in Driver Management",
+    "group": "Transport & Aviation",
+    "keyAreas": ["Professional Driving Practices", "Road Safety", "Vehicle Safety", "Fleet Operations", "Driver Responsibilities", "Basic Vehicle Maintenance"],
+    "slug": "driver-management"
+  },
+  {
+    "id": 18,
+    "number": "18",
+    "division": "Retail",
+    "code": "RIMC",
+    "certificate": "Retail Industry Management Certificate",
+    "programme": "Diploma in Retail Management",
+    "group": "Service & Hospitality",
+    "keyAreas": ["Retail Operations", "Store Management", "Customer Service", "Sales Management", "Inventory Management", "Retail Administration"],
+    "slug": "retail-management"
+  },
+  {
+    "id": 19,
+    "number": "19",
+    "division": "IT & Technology",
+    "code": "ITITC",
+    "certificate": "IT Industry Technical Certificate",
+    "programme": "Diploma in IT Management",
+    "group": "Business & Technical",
+    "keyAreas": ["IT Fundamentals", "Computer Applications", "IT Support", "Digital Operations", "Basic Networking", "Technology Management"],
+    "slug": "it-management"
+  },
+  {
+    "id": 20,
+    "number": "20",
+    "division": "Civil Engineering",
+    "code": "CETC",
+    "certificate": "Civil Engineering Training Certificate",
+    "programme": "Diploma in Civil Management",
+    "group": "Business & Technical",
+    "keyAreas": ["Construction Management", "Site Management", "Basic Estimation", "Construction Safety", "Project Documentation", "Infrastructure Operations"],
+    "slug": "civil-management"
+  },
+  {
+    "id": 21,
+    "number": "21",
+    "division": "Electrical Engineering",
+    "code": "EETC",
+    "certificate": "Electrical Engineering Training Certificate",
+    "programme": "Diploma in Electrical Engineering Management",
+    "group": "Business & Technical",
+    "keyAreas": ["Electrical Engineering Basics", "Electrical Maintenance", "Safety Procedures", "Equipment Operations", "Technical Documentation", "Maintenance Management"],
+    "slug": "electrical-engineering-management"
+  }
+]
