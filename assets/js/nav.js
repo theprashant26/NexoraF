@@ -47,6 +47,10 @@
     return "programmes.html?search=" + encodeURIComponent(division);
   }
 
+  function pad(number) {
+    return String(number).padStart(2, "0");
+  }
+
   /* --- Header ----------------------------------------------------------------- */
 
   function headerMarkup() {
@@ -54,29 +58,31 @@
       var links = group.items.map(function (item) {
         return '<li><a href="' + divisionHref(item) + '">' + escapeHtml(item) + "</a></li>";
       }).join("");
-      return '<div><p class="nx-mega__title">' + escapeHtml(group.title) + "</p>" +
+      return '<div class="nx-mega__col"><p class="nx-mega__title">' + escapeHtml(group.title) + "</p>" +
         '<ul class="nx-mega__list">' + links + "</ul></div>";
+    }).join("");
+
+    var navLinks = PRIMARY_LINKS.map(function (link) {
+      if (link.label === "Programmes") {
+        return '<button class="nx-nav__trigger" type="button" aria-expanded="false" aria-controls="nx-mega" data-mega-trigger>Programmes</button>';
+      }
+      return '<a class="nx-nav__link" href="' + link.href + '">' + link.label + "</a>";
+    }).join("");
+
+    var drawerLinks = PRIMARY_LINKS.map(function (link, index) {
+      return '<a href="' + link.href + '"><span>' + pad(index + 1) + "</span>" + link.label + "</a>";
     }).join("");
 
     return '' +
       '<header class="nx-header" data-header>' +
-        '<div class="nx-container nx-container--wide nx-header__inner">' +
+        '<div class="nx-container nx-header__inner">' +
           '<a class="nx-brand" href="index.html" aria-label="Nexora Institute of Professional Studies, home">' +
             '<img src="assets/brand/nexoralogo.jpeg" width="120" height="120" alt="" loading="eager" decoding="async">' +
             '<span class="nx-brand__words"><strong>NEXORA</strong><small>Institute of Professional Studies</small></span>' +
           "</a>" +
-          '<nav class="nx-nav" aria-label="Primary">' +
-            '<a class="nx-nav__link" href="index.html">Home</a>' +
-            '<a class="nx-nav__link" href="about.html">About</a>' +
-            '<button class="nx-nav__trigger" type="button" aria-expanded="false" aria-controls="nx-mega" data-mega-trigger>' +
-              'Programmes<span aria-hidden="true">+</span>' +
-            "</button>" +
-            '<a class="nx-nav__link" href="admissions.html">Admissions</a>' +
-            '<a class="nx-nav__link" href="gallery.html">Gallery</a>' +
-            '<a class="nx-nav__link" href="contact.html">Contact</a>' +
-          "</nav>" +
+          '<nav class="nx-nav" aria-label="Primary">' + navLinks + "</nav>" +
           '<div class="nx-header__actions">' +
-            '<a class="nx-btn nx-btn--primary nx-btn--sm" href="admissions.html#enquiry" data-magnetic="0.25">Apply now</a>' +
+            '<a class="nx-btn nx-btn--sm" href="admissions.html#enquiry">Enquire</a>' +
             '<button class="nx-burger" type="button" aria-expanded="false" aria-controls="nx-drawer" data-drawer-open>' +
               '<span class="nx-visually-hidden">Open menu</span>' +
               '<span class="nx-burger__bars" aria-hidden="true"><span></span><span></span><span></span></span>' +
@@ -84,10 +90,12 @@
           "</div>" +
         "</div>" +
         '<div class="nx-mega" id="nx-mega" data-mega hidden>' +
-          '<div class="nx-mega__grid">' + megaColumns + "</div>" +
-          '<div class="nx-mega__footer">' +
-            '<p class="nx-muted">Twenty-one programme directions across four learning groups.</p>' +
-            '<a class="nx-btn nx-btn--on-dark nx-btn--sm" href="programmes.html">View all programmes <i class="bi bi-arrow-up-right" aria-hidden="true"></i></a>' +
+          '<div class="nx-container nx-mega__inner">' +
+            '<div class="nx-mega__grid">' + megaColumns + "</div>" +
+            '<div class="nx-mega__footer">' +
+              '<p class="nx-label">21 programmes / 4 learning groups</p>' +
+              '<a class="nx-arrow-link" href="programmes.html">View the full index <i class="bi bi-arrow-right" aria-hidden="true"></i></a>' +
+            "</div>" +
           "</div>" +
         "</div>" +
       "</header>" +
@@ -95,12 +103,8 @@
         '<div class="nx-drawer__backdrop" data-drawer-close></div>' +
         '<aside class="nx-drawer__panel" role="dialog" aria-modal="true" aria-label="Site menu">' +
           '<button class="nx-drawer__close" type="button" data-drawer-close aria-label="Close menu">&times;</button>' +
-          '<nav class="nx-drawer__nav" aria-label="Mobile primary">' +
-            PRIMARY_LINKS.map(function (link) {
-              return '<a href="' + link.href + '">' + link.label + "</a>";
-            }).join("") +
-          "</nav>" +
-          '<a class="nx-btn nx-btn--primary nx-drawer__cta" href="admissions.html#enquiry">Apply now</a>' +
+          '<nav class="nx-drawer__nav" aria-label="Mobile primary">' + drawerLinks + "</nav>" +
+          '<a class="nx-btn nx-drawer__cta" href="admissions.html#enquiry">Send an enquiry</a>' +
           '<p class="nx-drawer__meta">{{PLACEHOLDER: phone}}<br>{{PLACEHOLDER: email}}</p>' +
         "</aside>" +
       "</div>";
@@ -110,9 +114,8 @@
 
   function footerMarkup() {
     return '' +
-      '<footer class="nx-footer nx-surface-ink">' +
-        '<div class="nx-container nx-container--wide">' +
-          '<span class="nx-footer__mark" aria-hidden="true">NEXORA</span>' +
+      '<footer class="nx-footer">' +
+        '<div class="nx-container">' +
           '<div class="nx-footer__grid">' +
             "<div>" +
               '<a class="nx-brand" href="index.html">' +
@@ -134,7 +137,7 @@
               '<p class="nx-footer__heading">Support</p>' +
               '<ul class="nx-footer__links">' +
                 '<li><a href="contact.html">Contact</a></li>' +
-                '<li><a href="disclaimer.html">Disclaimer</a></li>' +
+                '<li><a href="disclaimer.html">Important information</a></li>' +
                 '<li><a href="disclaimer.html#privacy">Privacy</a></li>' +
                 '<li><a href="disclaimer.html#terms">Terms</a></li>' +
               "</ul>" +
@@ -153,7 +156,7 @@
             "<p>" + escapeHtml(RECOGNITION) + "</p>" +
             "<p>" + escapeHtml(CAREER_NOTICE) + "</p>" +
             '<div class="nx-footer__base">' +
-              "<span>Copyright &copy; 2026 Nexora Institute of Professional Studies.</span>" +
+              "<span>&copy; 2026 Nexora Institute of Professional Studies</span>" +
               '<a href="disclaimer.html">Important information</a>' +
             "</div>" +
           "</div>" +
@@ -172,8 +175,10 @@
   function trapTab(event, container) {
     var focusable = focusableWithin(container);
     if (!focusable.length) return;
+
     var first = focusable[0];
     var last = focusable[focusable.length - 1];
+
     if (event.shiftKey && document.activeElement === first) {
       event.preventDefault();
       last.focus();
@@ -199,6 +204,8 @@
     var drawerOpen = document.querySelector("[data-drawer-open]");
     var lastFocused = null;
 
+    var reduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
     function closeMega() {
       if (!mega || mega.hidden) return;
       mega.hidden = true;
@@ -209,11 +216,14 @@
       if (!mega) return;
       mega.hidden = false;
       if (megaTrigger) megaTrigger.setAttribute("aria-expanded", "true");
-      if (window.gsap && !window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
-        window.gsap.fromTo(mega, { y: -12, opacity: 0 }, { y: 0, opacity: 1, duration: 0.35, ease: "power3.out" });
-        window.gsap.fromTo(mega.querySelectorAll(".nx-mega__list a"),
-          { y: 10, opacity: 0 },
-          { y: 0, opacity: 1, duration: 0.3, stagger: 0.012, ease: "power2.out" });
+
+      if (window.gsap && !reduced) {
+        window.gsap.fromTo(mega,
+          { clipPath: "inset(0 0 100% 0)" },
+          { clipPath: "inset(0 0 0% 0)", duration: 0.4, ease: "power3.out" });
+        window.gsap.fromTo(mega.querySelectorAll(".nx-mega__col"),
+          { opacity: 0, y: 10 },
+          { opacity: 1, y: 0, duration: 0.35, stagger: 0.05, delay: 0.1, ease: "power2.out" });
       }
     }
 
@@ -233,11 +243,11 @@
       if (drawerOpen) drawerOpen.setAttribute("aria-expanded", "true");
 
       var panel = drawer.querySelector(".nx-drawer__panel");
-      if (window.gsap && panel && !window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
-        window.gsap.fromTo(panel, { xPercent: 100 }, { xPercent: 0, duration: 0.5, ease: "power4.out" });
+      if (window.gsap && panel && !reduced) {
+        window.gsap.fromTo(panel, { x: "100%" }, { x: "0%", duration: 0.4, ease: "power3.out" });
         window.gsap.fromTo(drawer.querySelectorAll(".nx-drawer__nav a, .nx-drawer__cta"),
-          { x: 28, opacity: 0 },
-          { x: 0, opacity: 1, duration: 0.45, stagger: 0.06, delay: 0.15, ease: "power3.out" });
+          { opacity: 0, x: 20 },
+          { opacity: 1, x: 0, duration: 0.35, stagger: 0.05, delay: 0.12, ease: "power2.out" });
       }
 
       var first = focusableWithin(drawer)[0];
@@ -255,7 +265,6 @@
       el.addEventListener("click", closeDrawer);
     });
 
-    // Close the mega menu on an outside click or when focus leaves the header.
     document.addEventListener("click", function (event) {
       if (!mega || mega.hidden) return;
       if (event.target.closest("[data-mega]") || event.target.closest("[data-mega-trigger]")) return;
@@ -279,10 +288,6 @@
       var href = link.getAttribute("href") || "";
       if (href.split("?")[0].split("#")[0] === current) link.setAttribute("aria-current", "page");
     });
-
-    if (current === "programmes.html" || current === "programme.html") {
-      if (megaTrigger) megaTrigger.classList.add("is-active");
-    }
 
     if (NX.motion) {
       NX.motion.init();

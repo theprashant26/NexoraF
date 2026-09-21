@@ -4,11 +4,11 @@ A static, build-free HTML site for Nexora Institute of Professional Studies. No 
 bundler, no `npm install` — just files a web server can hand out.
 
 Send [CLIENT-REQUIREMENTS.md](CLIENT-REQUIREMENTS.md) to the institute to collect verified content,
-legal copy, integrations, and correctly sized image assets. That is the only requirements document.
+legal copy, integrations, and image assets. That is the only requirements document.
 
 ## Run locally
 
-Serve the project directory through any static web server. The programme listing, the programme
+Serve the project directory through any static web server. The programme index, the programme
 detail template, and the admissions programme select all load JSON with `fetch`, so opening the
 HTML directly from the filesystem (`file://`) will not work.
 
@@ -18,16 +18,34 @@ python -m http.server 8080
 
 Then open `http://localhost:8080/`.
 
+## The design
+
+A light editorial system. There is no dark theme, and no dark surface anywhere in the stylesheet.
+
+- **Palette** — warm paper `#F6F4EF`, ink `#1A1A18` for text, cobalt `#2340D8` as the single brand
+  colour, coral `#E84921` for warnings only. One saturated block exists in the whole system: the
+  call-to-action band.
+- **Type** — Bricolage Grotesque for display, Karla for body, IBM Plex Mono for labels, programme
+  codes, buttons, and figures. The mono is doing real work here; it is what makes the index read
+  as an index.
+- **Structure** — hairline rules and shared borders, never drop shadows. Elevation, where it
+  exists, is a hard offset block.
+- **Shape** — near-square. Radii top out at 6px; there are no pills.
+- **Signature block** — the programme listing is a ruled contents index, one row per programme,
+  rather than a grid of cards.
+
+To rebrand, change `assets/css/tokens.css`. Every colour, size, radius, and easing lives there.
+
 ## Pages
 
 | File | Purpose |
 |---|---|
-| `index.html` | Home — hero, division stack, featured rail, bento, process, gallery, CTA |
+| `index.html` | Home — masthead, learning groups, statement, sample index, commitments, route, tiles, CTA |
 | `about.html` | Institute and programme approach |
-| `programmes.html` | Searchable, filterable index of all 21 programmes |
+| `programmes.html` | The full searchable, filterable index of all 21 programmes |
 | `programme.html?code=MIRTC` | Shared programme detail template |
 | `admissions.html` | Four-step route, enquiry form, FAQ |
-| `gallery.html` | Filterable gallery with lightbox |
+| `gallery.html` | Filterable tiles with lightbox |
 | `contact.html` | Contact details and contact form |
 | `disclaimer.html` | Recognition, career, privacy, and terms statements |
 | `404.html` | Not-found page |
@@ -47,9 +65,9 @@ assets/
 
 `main.css` is the only stylesheet the pages link. It imports, in cascade order:
 
-- `tokens.css` — colours, type scale, spacing, radii, easing, z-layers. Change the brand here.
-- `base.css` — reset, typography, containers, surfaces, motion initial states.
-- `components.css` — buttons, cards, header, footer, forms, accordion, lightbox, marquee.
+- `tokens.css` — colours, type scale, spacing, radii, easing, z-layers.
+- `base.css` — reset, typography, containers, rules, surfaces, motion initial states.
+- `components.css` — buttons, index rows, panels, header, footer, forms, accordion, lightbox.
 - `layout.css` — page-level compositions and all responsive rules.
 
 ### JavaScript
@@ -60,7 +78,7 @@ Each file is a plain IIFE attaching to a shared `window.NX` namespace. Load orde
 - `nav.js` — renders the header, mega menu, mobile drawer, and footer into `[data-nx-site-header]`
   and `[data-nx-site-footer]` mount points on every page.
 - `data.js` — one memoised `fetch` of `programmes.json`, plus HTML escaping.
-- `programmes.js` — listing filter/search and the programme detail template.
+- `programmes.js` — index filter/search and the programme detail template.
 - `forms.js` — validation, honeypot, and submission for both forms.
 - `gallery.js` — category filters and the shared lightbox.
 - `motion.js` — the GSAP system (see below).
@@ -68,37 +86,39 @@ Each file is a plain IIFE attaching to a shared `window.NX` namespace. Load orde
 
 ## Motion
 
-Animation is GSAP 3 with ScrollTrigger, loaded from CDN and orchestrated entirely by
-`assets/js/motion.js`:
+GSAP 3 with ScrollTrigger, loaded from CDN and orchestrated entirely by `assets/js/motion.js`.
+The vocabulary is editorial rather than cinematic — there is no preloader, no custom cursor, no
+marquee, and nothing is pinned, so the page always scrolls at its natural speed.
 
-- an intro curtain with a load counter on the home page,
-- a word-by-word hero headline reveal (text is split by a local helper, so no premium plugin),
-- scroll-triggered batch reveals for anything marked `data-reveal`,
-- a manifesto block whose words light up as it scrolls through,
-- sticky, scaling division cards,
-- a pinned horizontal programme rail with a progress bar,
-- a velocity-reactive marquee,
-- parallax media, animated counters, drawn progress lines,
-- magnetic buttons and a custom cursor on fine-pointer devices.
+| Hook | Effect |
+|---|---|
+| `data-mast` | The one scripted entrance: kicker, rule draw, headline wipe, band reveal |
+| `data-wipe` | A heading opens left to right behind its own mask |
+| `data-draw` | A hairline rule draws from the left |
+| `data-reveal` | Fade and rise, batched by ScrollTrigger |
+| `data-deal` | Ruled rows deal in from the left, staggered |
+| `data-count` | A figure counts up |
+| `data-media-reveal` | An image opens from the bottom edge |
 
-Three rules hold the system together:
+Headings are wiped rather than split into words, so text stays selectable and reads normally to
+assistive technology.
+
+Two rules hold the system together:
 
 1. **Nothing is hidden unless something can bring it back.** An inline script adds `nx-js` to
    `<html>`; only then do the pre-hidden states apply. If GSAP fails to load, `motion.js` removes
    the class and everything paints normally.
-2. **`prefers-reduced-motion` is respected.** Animation is skipped, but behaviour that users depend
-   on — accordions, the lightbox, the sticky header — is bound regardless.
-3. **Pinned sections use `gsap.matchMedia()`** and `ScrollTrigger.config({ ignoreMobileResize: true })`,
-   so mobile address-bar resizes never tear them down.
+2. **`prefers-reduced-motion` is respected.** Animation is skipped, but behaviour users depend on
+   — accordions, the lightbox, the sticky header — is bound regardless.
 
-Add motion to new markup with `data-reveal` (fade and rise) or `data-split` (word-by-word heading).
-Content rendered after page load should call `NX.motion.reveal(container)`.
+Content rendered after page load should call `NX.motion.reveal(container)` or
+`NX.motion.deal(container)`.
 
 ## Add a programme
 
 Add one complete object to `assets/data/programmes.json` using the existing schema: `id`, `number`,
 `division`, `code`, `certificate`, `programme`, `group`, `keyAreas`, `slug`. `group` must be one of
-the four existing values, or the filter pills will not match it.
+the four existing values, or the filters will not match it.
 
 Then update, together:
 
@@ -108,10 +128,14 @@ Then update, together:
 
 ## Swap images
 
-Replace the SVG files in `assets/img/placeholders/` with approved client images, using the exact
-filenames and dimensions in section 6 of [CLIENT-REQUIREMENTS.md](CLIENT-REQUIREMENTS.md). Keep the
-explicit `width`, `height`, and descriptive `alt` on every `<img>`. Add `<picture>` with WebP and
-JPEG sources once photographic assets arrive.
+The design needs 13 photographs in total — the index and the learning-group columns are
+typographic, not image-led. Replace the SVG placeholders in `assets/img/placeholders/` with
+approved client images using the filenames and dimensions in section 6 of
+[CLIENT-REQUIREMENTS.md](CLIENT-REQUIREMENTS.md). Keep the explicit `width`, `height`, and
+descriptive `alt` on every `<img>`, and add `<picture>` with WebP and JPEG sources.
+
+Photographs are shown with no colour overlay, so natural, well-lit frames suit the paper
+background best.
 
 ## Before launch
 

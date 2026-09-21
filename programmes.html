@@ -3,9 +3,9 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="theme-color" content="#071A16">
+  <meta name="theme-color" content="#F6F4EF">
   <title>Programmes | Nexora Institute of Professional Studies</title>
-  <meta name="description" content="Search and filter all twenty-one Nexora Institute professional training programmes across transport, service, health, business, and technical divisions.">
+  <meta name="description" content="The full index of twenty-one Nexora Institute professional training programmes across transport, service, health, business, and technical divisions.">
   <link rel="canonical" href="programmes.html">
   <meta property="og:title" content="Programmes | Nexora Institute of Professional Studies">
   <meta property="og:description" content="Twenty-one industry-oriented professional training programmes.">
@@ -18,7 +18,7 @@
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter+Tight:wght@400;500;600;700&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400..800&family=IBM+Plex+Mono:wght@400;500&family=Karla:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css" rel="stylesheet">
   <link rel="stylesheet" href="assets/css/main.css">
   <script>document.documentElement.classList.add("nx-js");</script>
@@ -29,33 +29,33 @@
   <div data-nx-site-header></div>
 
   <main id="main" class="nx-page">
-
-    <section class="nx-page-hero nx-surface-ink" aria-labelledby="programmes-title">
-      <span class="nx-page-hero__aura" aria-hidden="true"></span>
-      <div class="nx-container nx-container--wide nx-page-hero__inner">
-        <span class="nx-eyebrow" data-reveal>Find your direction</span>
-        <h1 class="nx-page-hero__title nx-display nx-display--dark" id="programmes-title" data-split>
-          Twenty-one ways to build a <em>working</em> skill.
-        </h1>
-        <p class="nx-lede" data-reveal>
-          Filter by learning group or search by field, programme code, or skill area.
-        </p>
+    <section class="nx-phead" data-mast aria-labelledby="page-title">
+      <div class="nx-container">
+        <div class="nx-phead__kicker">
+          <span class="nx-label nx-label--blue" data-mast-kicker>The index</span>
+          <span class="nx-rule" data-mast-rule></span>
+          <span class="nx-label">21 entries</span>
+        </div>
+        <h1 class="nx-phead__title" id="page-title" data-mast-title>Every programme, in <span class="nx-hl">one list</span>.</h1>
+        <div class="nx-phead__sub">
+          <p class="nx-lede" data-reveal>Filter by learning group, or search by field, programme code, or skill area.</p>
+          
+        </div>
       </div>
     </section>
 
-    <section class="nx-section nx-section--sm" aria-labelledby="listing-title">
+    <section class="nx-section--sm" aria-labelledby="listing-title">
       <h2 class="nx-visually-hidden" id="listing-title">All programmes</h2>
 
       <div class="nx-listing-bar">
-        <div class="nx-container nx-container--wide nx-listing-bar__inner">
+        <div class="nx-container nx-listing-bar__inner">
           <div class="nx-filter-row" role="group" aria-label="Filter programmes by learning group">
-            <button class="nx-filter-pill is-active" type="button" data-group="all" aria-pressed="true">All</button>
-            <button class="nx-filter-pill" type="button" data-group="Transport &amp; Aviation" aria-pressed="false">Transport &amp; Aviation</button>
-            <button class="nx-filter-pill" type="button" data-group="Service &amp; Hospitality" aria-pressed="false">Service &amp; Hospitality</button>
-            <button class="nx-filter-pill" type="button" data-group="Health &amp; Sciences" aria-pressed="false">Health &amp; Sciences</button>
-            <button class="nx-filter-pill" type="button" data-group="Business &amp; Technical" aria-pressed="false">Business &amp; Technical</button>
+            <button class="nx-filter is-active" type="button" data-group="all" aria-pressed="true">All</button>
+            <button class="nx-filter" type="button" data-group="Transport &amp; Aviation" aria-pressed="false">Transport &amp; Aviation</button>
+            <button class="nx-filter" type="button" data-group="Service &amp; Hospitality" aria-pressed="false">Service &amp; Hospitality</button>
+            <button class="nx-filter" type="button" data-group="Health &amp; Sciences" aria-pressed="false">Health &amp; Sciences</button>
+            <button class="nx-filter" type="button" data-group="Business &amp; Technical" aria-pressed="false">Business &amp; Technical</button>
           </div>
-
           <label class="nx-search">
             <span class="nx-visually-hidden">Search programmes</span>
             <i class="bi bi-search" aria-hidden="true"></i>
@@ -65,28 +65,28 @@
         </div>
       </div>
 
-      <div class="nx-container nx-container--wide">
+      <div class="nx-container">
         <div class="nx-listing-meta">
-          <p id="programme-count" role="status" aria-live="polite">Loading…</p>
-          <button class="nx-filter-pill" type="button" id="programme-clear">Reset filters</button>
+          <p id="programme-count" role="status" aria-live="polite">Loading</p>
+          <button class="nx-filter" type="button" id="programme-clear">Reset</button>
         </div>
 
         <div class="nx-notice" id="programme-not-found" hidden role="status">
           <i class="bi bi-exclamation-circle" aria-hidden="true"></i>
-          <span>That programme code could not be found. Browse the available programmes below.</span>
+          <span>That programme code could not be found. Browse the index below.</span>
         </div>
 
         <div class="nx-loading" id="programme-loading">
           <span class="nx-spinner" aria-hidden="true"></span>
-          <span>Loading programmes…</span>
+          <span>Loading programmes</span>
         </div>
 
-        <div class="nx-programmes-grid" id="programme-grid"></div>
+        <div class="nx-index" id="programme-index"></div>
 
         <div class="nx-empty" id="programme-empty" hidden>
           <i class="bi bi-search" aria-hidden="true"></i>
           <h3>No programmes match that search.</h3>
-          <p class="nx-muted">Try a different field, or reset the filters to see all twenty-one programmes.</p>
+          <p class="nx-muted">Try a different field, or reset the filters to see all twenty-one.</p>
         </div>
 
         <noscript>
@@ -118,18 +118,14 @@
       </div>
     </section>
 
-    <section class="nx-cta nx-surface-ink" aria-labelledby="programmes-cta">
-      <span class="nx-cta__aura" aria-hidden="true"></span>
+    <section class="nx-cta nx-surface-blue" aria-labelledby="cta-title">
       <div class="nx-container nx-cta__inner">
-        <span class="nx-eyebrow" data-reveal>Not sure which one?</span>
-        <h2 class="nx-cta__title nx-display nx-display--dark" id="programmes-cta" data-split>
-          Talk it through before you decide.
-        </h2>
+        <div class="nx-stack">
+          <span class="nx-label" data-reveal>Not sure which one?</span>
+          <h2 class="nx-cta__title" id="cta-title" data-wipe>Talk it through before you decide.</h2>
+        </div>
         <div class="nx-btn-row" data-reveal>
-          <a class="nx-btn nx-btn--primary nx-btn--lg" href="admissions.html#enquiry" data-magnetic="0.2">
-            Send an enquiry <i class="bi bi-arrow-up-right" aria-hidden="true"></i>
-          </a>
-          <a class="nx-btn nx-btn--on-dark nx-btn--lg" href="contact.html">Contact the institute</a>
+          <a class="nx-btn nx-btn--invert nx-btn--lg" href="admissions.html#enquiry">Send an enquiry <i class="bi bi-arrow-right" aria-hidden="true"></i></a>
         </div>
       </div>
     </section>

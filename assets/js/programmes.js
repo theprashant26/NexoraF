@@ -1,5 +1,8 @@
 /* ==========================================================================
-   Programme listing and programme detail template
+   Programme index and programme detail template
+
+   The listing renders as a ruled contents index — one row per programme —
+   rather than a grid of cards.
    ========================================================================== */
 
 (function () {
@@ -29,33 +32,33 @@
     return GROUP_ALIASES[normalise(value)] || value;
   }
 
-  function cardMarkup(programme) {
-    return '<article class="nx-card nx-programme-card" data-reveal>' +
-      '<div class="nx-media nx-media--4-3">' +
-        '<img src="assets/img/placeholders/nx-programme-card-01.svg" width="800" height="600" loading="lazy" ' +
-        'decoding="async" alt="' + esc(programme.division) + ' training environment">' +
-      "</div>" +
-      '<div class="nx-programme-card__body">' +
-        '<div class="nx-programme-card__meta">' +
-          '<span class="nx-programme-card__code">' + esc(programme.code) + "</span>" +
-          '<span class="nx-programme-card__division">' + esc(programme.division) + "</span>" +
-        "</div>" +
-        '<h3 class="nx-programme-card__title">' +
-          '<a href="programme.html?code=' + encodeURIComponent(programme.code) + '">' + esc(programme.programme) + "</a>" +
-        "</h3>" +
-        '<p class="nx-programme-card__areas">' + esc(programme.keyAreas.slice(0, 3).join(" · ")) + "</p>" +
-      "</div>" +
+  function pad(number) {
+    return String(number).padStart(2, "0");
+  }
+
+  // `position` arrives from Array#map, so it is zero-based; the index is
+  // numbered from 01.
+  function rowMarkup(programme, position) {
+    return '<article class="nx-index__row">' +
+      '<span class="nx-index__num">' + pad(position + 1) + "</span>" +
+      '<span class="nx-index__code">' + esc(programme.code) + "</span>" +
+      '<h3 class="nx-index__name">' +
+        '<a href="programme.html?code=' + encodeURIComponent(programme.code) + '">' +
+          esc(programme.programme) +
+        "</a>" +
+      "</h3>" +
+      '<span class="nx-index__division">' + esc(programme.division) + "</span>" +
+      '<span class="nx-index__go" aria-hidden="true"><i class="bi bi-arrow-right"></i></span>' +
       "</article>";
   }
 
   function relatedMarkup(programme) {
-    return '<article class="nx-card" data-reveal>' +
-      '<div class="nx-programme-card__meta">' +
-        '<span class="nx-programme-card__code">' + esc(programme.code) + "</span>" +
-        '<span class="nx-programme-card__division">' + esc(programme.division) + "</span>" +
-      "</div>" +
-      '<h3 class="nx-programme-card__title">' +
-        '<a href="programme.html?code=' + encodeURIComponent(programme.code) + '">' + esc(programme.programme) + "</a>" +
+    return '<article class="nx-panel" data-reveal>' +
+      '<span class="nx-panel__num">' + esc(programme.code) + "</span>" +
+      '<h3>' +
+        '<a href="programme.html?code=' + encodeURIComponent(programme.code) + '">' +
+          esc(programme.programme) +
+        "</a>" +
       "</h3>" +
       '<p class="nx-muted">' + esc(programme.keyAreas.slice(0, 2).join(" · ")) + "</p>" +
       "</article>";
@@ -64,8 +67,8 @@
   /* --- Listing ------------------------------------------------------------- */
 
   function initListing() {
-    var grid = document.getElementById("programme-grid");
-    if (!grid || !NX.loadProgrammes) return;
+    var index = document.getElementById("programme-index");
+    if (!index || !NX.loadProgrammes) return;
 
     var search = document.getElementById("programme-search");
     var count = document.getElementById("programme-count");
@@ -103,6 +106,7 @@
         programme.programme,
         programme.group
       ].concat(programme.keyAreas).join(" "));
+
       var okQuery = !state.query || haystack.indexOf(normalise(state.query)) !== -1;
       var okGroup = state.group === "all" || programme.group === state.group;
       return okQuery && okGroup;
@@ -120,15 +124,17 @@
       var visible = state.programmes.filter(matches);
 
       function paint() {
-        grid.innerHTML = visible.map(cardMarkup).join("");
+        index.innerHTML = visible.map(rowMarkup).join("");
+        index.removeAttribute("data-nx-dealt");
         if (empty) empty.hidden = visible.length > 0;
         if (count) {
           count.textContent = visible.length + (visible.length === 1 ? " programme" : " programmes");
         }
         syncFilters();
         syncUrl();
+
         if (NX.motion) {
-          NX.motion.reveal(grid);
+          NX.motion.deal(index);
           NX.motion.refresh();
         }
       }
@@ -136,12 +142,12 @@
       var gsap = window.gsap;
       var reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
-      if (animate && gsap && !reduce && grid.children.length) {
-        gsap.to(grid.children, {
-          y: -12,
+      if (animate && gsap && !reduce && index.children.length) {
+        gsap.to(index.children, {
           opacity: 0,
-          duration: 0.2,
-          stagger: 0.015,
+          x: 14,
+          duration: 0.18,
+          stagger: 0.012,
           ease: "power2.in",
           onComplete: paint
         });
@@ -214,7 +220,7 @@
     var code = new URLSearchParams(window.location.search).get("code");
 
     // Every matching slot is filled, not just the first — the division label
-    // appears in both the breadcrumb and the hero.
+    // appears in both the breadcrumb and the masthead.
     function fill(selector, value) {
       detail.querySelectorAll(selector).forEach(function (el) { el.textContent = value; });
     }
@@ -229,6 +235,7 @@
       var description = introFor(programme);
 
       document.title = programme.programme + " | Nexora Institute of Professional Studies";
+
       var meta = document.querySelector('meta[name="description"]');
       if (meta) meta.setAttribute("content", description);
 
@@ -268,8 +275,8 @@
 
       var areas = detail.querySelector("[data-detail-areas]");
       if (areas) {
-        areas.innerHTML = programme.keyAreas.map(function (area) {
-          return '<span class="nx-detail-area"><i class="bi bi-check2" aria-hidden="true"></i>' + esc(area) + "</span>";
+        areas.innerHTML = programme.keyAreas.map(function (area, position) {
+          return '<span class="nx-detail-area"><span>' + pad(position + 1) + "</span><span>" + esc(area) + "</span></span>";
         }).join("");
       }
 

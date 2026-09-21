@@ -19,8 +19,8 @@ hold usage rights for.
 
 Also needed:
 
-- Approved brand fonts, if different from the current Instrument Serif / Inter Tight / Inter set.
-- Approved brand colour references, if the current jade-and-gold palette needs to change.
+- Approved brand fonts, if different from the current Bricolage Grotesque / Karla / IBM Plex Mono set.
+- Approved brand colour references, if the current cobalt-on-paper palette needs to change.
 - Correct spelling, capitalization, and the final institute tagline.
 
 ---
@@ -58,7 +58,6 @@ Please verify all 21 programme records in `assets/data/programmes.json`:
 - Fees, taxes, instalments, and payment instructions.
 - Assessment and completion rules.
 - Certificate or diploma wording.
-- Approved programme image, if available.
 
 Do not provide employment guarantees, salary guarantees, placement percentages, or recognition
 claims unless the applicable approval and written legal copy are supplied.
@@ -116,33 +115,33 @@ layout change, as long as the exact dimensions below are matched.
 
 ### Image slots
 
+The design is deliberately light on photography — the programme index and the
+learning-group columns are typographic, not image-led. That means far fewer
+photographs are needed than a card-based layout would require.
+
 | Slot ID | Page | Section | Filename | Exact size (px) | Ratio | Format | Max size | What it should show |
 |---|---|---|---|---|---|---|---|---|
-| `home-hero-01` | Home | Hero panel | `nx-home-hero-01.jpg` | 1200 × 1500 | 4:5 | WebP + JPEG | 220 KB | Learner in a real professional training environment |
-| `home-group-01` | Home | Transport & Aviation card | `nx-home-group-01.jpg` | 1400 × 1000 | 7:5 | WebP + JPEG | 180 KB | Rail, metro, aviation, or logistics learning |
-| `home-group-02` | Home | Service & Hospitality card | `nx-home-group-02.jpg` | 1400 × 1000 | 7:5 | WebP + JPEG | 180 KB | Hospitality, tourism, retail, or service practice |
-| `home-group-03` | Home | Health & Sciences card | `nx-home-group-03.jpg` | 1400 × 1000 | 7:5 | WebP + JPEG | 180 KB | Healthcare, medical, or pharmaceutical learning |
-| `home-group-04` | Home | Business & Technical card | `nx-home-group-04.jpg` | 1400 × 1000 | 7:5 | WebP + JPEG | 180 KB | Business, IT, engineering, or manufacturing learning |
-| `programme-card-01`…`08` | Home | Featured programme rail | `nx-programme-card-01.jpg` … `-08.jpg` | 800 × 600 | 4:3 | WebP + JPEG | 100 KB each | One per featured sector: metro, railway, aviation, hotel, healthcare, banking, IT, civil |
-| `home-inside-01` | Home | Inside Nexora tile | `nx-home-inside-01.jpg` | 1600 × 1067 | 3:2 | WebP + JPEG | 180 KB | Classroom or seminar environment |
-| `home-inside-02` | Home | Inside Nexora tile | `nx-home-inside-02.jpg` | 1067 × 1600 | 2:3 | WebP + JPEG | 180 KB | Learner in a practical activity |
-| `home-inside-03` | Home | Inside Nexora tile | `nx-home-inside-03.jpg` | 1200 × 1200 | 1:1 | WebP + JPEG | 150 KB | Learning materials or equipment detail |
-| `home-inside-04` | Home | Inside Nexora tile | `nx-home-inside-04.jpg` | 1600 × 1067 | 3:2 | WebP + JPEG | 180 KB | Group learning or guided discussion |
-| `home-inside-05` | Home | Inside Nexora tile | `nx-home-inside-05.jpg` | 1067 × 1600 | 2:3 | WebP + JPEG | 180 KB | Instructor in a training setting |
-| `programme-banner-01` | Programme detail | Hero banner | `nx-programme-banner-01.jpg` | 1920 × 720 | 8:3 | WebP + JPEG | 220 KB | Wide sector-relevant training environment |
-| `gallery-landscape-01`…`02` | Gallery | Landscape tiles | `nx-gallery-landscape-01.jpg` … `-02.jpg` | 1600 × 1067 | 3:2 | WebP + JPEG | 180 KB each | Campus, classroom, or practical learning |
-| `gallery-portrait-01`…`02` | Gallery | Portrait tiles | `nx-gallery-portrait-01.jpg` … `-02.jpg` | 1067 × 1600 | 2:3 | WebP + JPEG | 180 KB each | Learner or instructor activity |
-| `gallery-square-01`…`02` | Gallery | Square tiles | `nx-gallery-square-01.jpg` … `-02.jpg` | 1200 × 1200 | 1:1 | WebP + JPEG | 150 KB each | Equipment, materials, or group detail |
+| `home-hero-01` | Home | Masthead band | `nx-home-hero-01.jpg` | 2400 × 900 | 8:3 | WebP + JPEG | 260 KB | Wide, calm shot of a real training environment. It runs full width under the headline, so keep the subject off-centre and leave room at the sides |
+| `home-tile-01`…`04` | Home | Inside Nexora | `nx-home-tile-01.jpg` … `-04.jpg` | 1600 × 1200 | 4:3 | WebP + JPEG | 160 KB each | Classroom, materials or equipment, a learner mid-task, a group session |
+| `programme-banner-01` | Programme detail | Banner | `nx-programme-banner-01.jpg` | 1920 × 720 | 8:3 | WebP + JPEG | 220 KB | Wide sector-relevant training environment |
+| `gallery-01`…`06` | Gallery | Tiles | `nx-gallery-01.jpg` … `-06.jpg` | 1600 × 1200 | 4:3 | WebP + JPEG | 160 KB each | Two campus, two learning, two people — these are the filter categories |
 | `about-team-01` | About | Faculty portrait | `nx-about-team-01.jpg` | 800 × 1000 | 4:5 | WebP + JPEG | 140 KB | Trainer or representative — only with approved name and role |
 | `contact-map-01` | Contact | Location image | `nx-contact-map-01.jpg` | 1400 × 700 | 2:1 | WebP + JPEG | 120 KB | Verified campus location or exterior |
 | `og-share-01` | All | Social share card | `nx-og-share-01.jpg` | 1200 × 630 | 1.91:1 | JPEG or PNG | 180 KB | Approved Nexora social-share composition |
 
-All images sit behind a jade duotone wash, so mid-tone photographs with clear subjects work better
-than very dark or very bright frames.
+That is **13 photographs in total**, plus the optional faculty portrait.
+
+Photographs sit on a warm off-white page with no colour overlay applied, so
+natural, well-lit frames work best. Very dark or heavily filtered images will
+look out of place against the paper background.
 
 ### Naming pattern
 
-`nx-[page]-[slot]-[number].jpg` — for example `nx-home-hero-01.jpg`, `nx-gallery-landscape-01.jpg`.
+`nx-[page]-[slot]-[number].jpg` — for example `nx-home-hero-01.jpg`, `nx-gallery-03.jpg`.
+
+The repository currently ships four generic SVG placeholders rather than one per slot,
+since every placeholder would otherwise look identical. Supplied photographs are saved
+under the filenames in the table above and the markup is pointed at them.
 
 ### Also required with the photography
 

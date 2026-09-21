@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="theme-color" content="#071A16">
+  <meta name="theme-color" content="#F6F4EF">
   <title>Programme | Nexora Institute of Professional Studies</title>
   <meta name="description" content="Explore a Nexora Institute of Professional Studies training programme, its key learning areas, and what you will practise.">
   <link rel="canonical" href="programme.html">
@@ -18,7 +18,7 @@
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter+Tight:wght@400;500;600;700&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400..800&family=IBM+Plex+Mono:wght@400;500&family=Karla:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css" rel="stylesheet">
   <link rel="stylesheet" href="assets/css/main.css">
   <script>document.documentElement.classList.add("nx-js");</script>
@@ -28,118 +28,120 @@
   <a class="nx-skip-link" href="#main">Skip to content</a>
   <div data-nx-site-header></div>
 
-  <main id="main" class="nx-page" data-programme-detail>
+  <main id="main" class="nx-page">
+    <div data-programme-detail>
 
-    <div class="nx-detail-state nx-container" data-detail-loading role="status">
-      <span class="nx-spinner" aria-hidden="true"></span>
-      <p class="nx-muted">Loading programme details…</p>
-    </div>
+      <div class="nx-detail-state nx-container" data-detail-loading role="status">
+        <div class="nx-loading"><span class="nx-spinner" aria-hidden="true"></span><span>Loading programme</span></div>
+      </div>
 
-    <div class="nx-detail-state nx-container" data-detail-error hidden role="alert">
-      <h1>Programme not found</h1>
-      <p class="nx-muted">That programme code is not available. Browse all programmes to choose another direction.</p>
-      <a class="nx-btn nx-btn--primary" href="programmes.html">Browse programmes</a>
-    </div>
+      <div class="nx-detail-state nx-container" data-detail-error hidden role="alert">
+        <span class="nx-label nx-label--blue">Not found</span>
+        <h1 class="nx-phead__title">That programme is not in the index.</h1>
+        <a class="nx-btn" href="programmes.html">Open the index <i class="bi bi-arrow-right" aria-hidden="true"></i></a>
+      </div>
 
-    <div data-detail-content hidden>
+      <div data-detail-content hidden>
 
-      <section class="nx-detail-hero nx-surface-ink" aria-labelledby="programme-name">
-        <span class="nx-page-hero__aura" aria-hidden="true"></span>
-        <div class="nx-container nx-container--wide">
-          <nav aria-label="Breadcrumb">
-            <ol class="nx-breadcrumb">
-              <li><a href="index.html">Home</a></li>
-              <li><a href="programmes.html">Programmes</a></li>
-              <li data-detail-division>Programme</li>
-            </ol>
-          </nav>
+        <section class="nx-detail-head" aria-labelledby="programme-name">
+          <div class="nx-container">
+            <nav aria-label="Breadcrumb">
+              <ol class="nx-breadcrumb">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="programmes.html">Programmes</a></li>
+                <li data-detail-division>Programme</li>
+              </ol>
+            </nav>
 
-          <div class="nx-detail-hero__grid">
-            <div class="nx-detail-hero__copy">
-              <div class="nx-detail-hero__meta">
-                <span class="nx-chip" data-detail-group>Programme group</span>
-                <span class="nx-programme-card__code" data-detail-code>CODE</span>
+            <div class="nx-detail-head__grid">
+              <div>
+                <div class="nx-detail-meta">
+                  <span class="nx-tag" data-detail-code>CODE</span>
+                  <span class="nx-label" data-detail-group>Programme group</span>
+                </div>
+                <h1 class="nx-detail-title" id="programme-name" data-detail-name>Programme name</h1>
+                <p class="nx-detail-certificate" data-detail-certificate>Certificate title</p>
+                <p class="nx-lede nx-detail-intro" data-detail-intro>Programme introduction.</p>
               </div>
-              <p class="nx-eyebrow" data-detail-division>Division</p>
-              <h1 class="nx-detail-hero__title nx-display nx-display--dark" id="programme-name" data-detail-name>Programme name</h1>
-              <p class="nx-detail-certificate" data-detail-certificate>Certificate title</p>
-              <p class="nx-lede" data-detail-intro>Programme introduction.</p>
-            </div>
-
-            <div class="nx-media nx-media--8-3" data-parallax="5">
-              <img src="assets/img/placeholders/nx-programme-banner-01.svg" width="1920" height="720"
-                   loading="eager" decoding="async" alt="Programme training environment">
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section class="nx-section" aria-labelledby="areas-title">
-        <div class="nx-container nx-container--wide nx-detail-body">
-          <div class="nx-detail-main">
-            <div class="nx-stack">
-              <span class="nx-eyebrow" data-reveal>Programme focus</span>
-              <h2 id="areas-title" data-reveal>Key learning areas</h2>
-              <div class="nx-detail-areas" data-detail-areas></div>
-            </div>
-
-            <div class="nx-stack" data-reveal>
-              <h2>What you will practise</h2>
-              <p class="nx-muted" data-detail-practice>
-                Practical and professional learning areas relevant to this field.
-              </p>
-            </div>
-
-            <p class="nx-notice" data-reveal>
-              <i class="bi bi-info-circle" aria-hidden="true"></i>
-              <span>Completion of a programme does not by itself guarantee employment, appointment or a specific salary.</span>
-            </p>
-          </div>
-
-          <aside class="nx-detail-aside">
-            <div class="nx-card" data-reveal>
-              <span class="nx-eyebrow">Have questions?</span>
-              <h3>Talk through your options.</h3>
-              <p class="nx-muted">
-                Ask about this programme, the applicable enrolment steps, and the learning areas it covers.
-              </p>
-              <dl class="nx-detail-facts">
-                <div><dt>Duration</dt><dd>{{PLACEHOLDER: programme duration}}</dd></div>
-                <div><dt>Fees</dt><dd>{{PLACEHOLDER: programme fees}}</dd></div>
-                <div><dt>Eligibility</dt><dd>{{PLACEHOLDER: programme eligibility}}</dd></div>
-                <div><dt>Learning mode</dt><dd>{{PLACEHOLDER: learning mode}}</dd></div>
-              </dl>
-              <a class="nx-btn nx-btn--primary" href="admissions.html#enquiry" data-detail-enquiry-link>
-                Send an enquiry <i class="bi bi-arrow-up-right" aria-hidden="true"></i>
+              <a class="nx-btn nx-btn--lg" href="admissions.html#enquiry" data-detail-enquiry-link>
+                Enquire about this <i class="bi bi-arrow-right" aria-hidden="true"></i>
               </a>
             </div>
-          </aside>
-        </div>
-      </section>
-
-      <section class="nx-section nx-surface-bone" aria-labelledby="related-title">
-        <div class="nx-container nx-container--wide">
-          <div class="nx-section-head">
-            <span class="nx-eyebrow" data-reveal>Continue exploring</span>
-            <h2 id="related-title" data-reveal>Related programmes</h2>
-            <p class="nx-muted" data-reveal>Other programmes from the same learning group.</p>
           </div>
-          <div class="nx-grid nx-grid--3" data-related-programmes></div>
-        </div>
-      </section>
+        </section>
 
-      <section class="nx-section nx-surface-ink" aria-labelledby="recognition-title">
-        <div class="nx-container nx-container--narrow nx-stack">
-          <span class="nx-eyebrow" data-reveal>Important information</span>
-          <h2 id="recognition-title" data-reveal>Programme recognition</h2>
-          <p class="nx-muted" data-reveal>
-            Unless specifically stated otherwise, certificates and diplomas issued by Nexora Institute
-            are institute-level professional training credentials and should not be represented as
-            government, university, UGC, AICTE, statutory-board or professional-licensing qualifications
-            without the applicable approval, affiliation or recognition.
-          </p>
+        <div class="nx-container">
+          <span class="nx-media nx-media--8-3" data-media-reveal>
+            <img src="assets/img/placeholders/nx-programme-banner-01.svg" width="1920" height="720"
+                 loading="eager" decoding="async" alt="Programme training environment">
+          </span>
         </div>
-      </section>
+
+        <section class="nx-section" aria-labelledby="areas-title">
+          <div class="nx-container nx-detail-body">
+            <div class="nx-detail-main">
+              <div class="nx-stack">
+                <span class="nx-label" data-reveal>Programme focus</span>
+                <h2 id="areas-title" data-wipe>Key learning areas</h2>
+                <div class="nx-detail-areas" data-detail-areas></div>
+              </div>
+
+              <div class="nx-stack" data-reveal>
+                <h2>What you will practise</h2>
+                <p class="nx-muted" data-detail-practice>
+                  Practical and professional learning areas relevant to this field.
+                </p>
+              </div>
+
+              <p class="nx-notice" data-reveal>
+                <i class="bi bi-info-circle" aria-hidden="true"></i>
+                <span>Completion of a programme does not by itself guarantee employment, appointment or a specific salary.</span>
+              </p>
+            </div>
+
+            <aside class="nx-detail-aside">
+              <div class="nx-panel nx-panel--static" data-reveal>
+                <span class="nx-label">At a glance</span>
+                <dl class="nx-detail-facts">
+                  <div><dt>Duration</dt><dd>{{PLACEHOLDER: programme duration}}</dd></div>
+                  <div><dt>Fees</dt><dd>{{PLACEHOLDER: programme fees}}</dd></div>
+                  <div><dt>Eligibility</dt><dd>{{PLACEHOLDER: programme eligibility}}</dd></div>
+                  <div><dt>Mode</dt><dd>{{PLACEHOLDER: learning mode}}</dd></div>
+                </dl>
+                <a class="nx-arrow-link" href="contact.html">Ask a question <i class="bi bi-arrow-right" aria-hidden="true"></i></a>
+              </div>
+            </aside>
+          </div>
+        </section>
+
+        <section class="nx-section nx-surface-paper2" aria-labelledby="related-title">
+          <div class="nx-container">
+            <div class="nx-open">
+              <span class="nx-label" data-reveal>Continue exploring</span>
+              <h2 id="related-title" data-wipe>Related programmes</h2>
+            </div>
+            <div class="nx-grid nx-grid--3" data-related-programmes></div>
+          </div>
+        </section>
+
+        <section class="nx-section" aria-labelledby="recognition-title">
+          <div class="nx-container nx-cols">
+            <div class="nx-stack">
+              <span class="nx-label" data-reveal>Important information</span>
+              <span class="nx-rule" data-draw></span>
+            </div>
+            <div class="nx-stack">
+              <h2 id="recognition-title" data-wipe>Programme recognition</h2>
+              <p class="nx-muted" data-reveal>
+                Unless specifically stated otherwise, certificates and diplomas issued by Nexora Institute
+                are institute-level professional training credentials and should not be represented as
+                government, university, UGC, AICTE, statutory-board or professional-licensing qualifications
+                without the applicable approval, affiliation or recognition.
+              </p>
+            </div>
+          </div>
+        </section>
+      </div>
     </div>
   </main>
 
