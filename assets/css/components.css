@@ -143,6 +143,9 @@
 }
 
 .nx-media--wide { aspect-ratio: 16 / 6; }
+
+@media (max-width: 900px) { .nx-media--wide { aspect-ratio: 2 / 1; } }
+@media (max-width: 620px) { .nx-media--wide { aspect-ratio: 3 / 2; } }
 .nx-media--3-2 { aspect-ratio: 3 / 2; }
 .nx-media--4-3 { aspect-ratio: 4 / 3; }
 .nx-media--2-3 { aspect-ratio: 2 / 3; }
@@ -343,8 +346,8 @@ a:hover > .nx-media img,
   margin-top: 0.25rem;
   color: var(--nx-ink-3);
   font-family: var(--nx-font-mono);
-  font-size: 0.54rem;
-  letter-spacing: 0.12em;
+  font-size: 0.7rem;
+  letter-spacing: 0.09em;
   text-transform: uppercase;
 }
 
@@ -457,8 +460,8 @@ a:hover > .nx-media img,
 .nx-burger {
   display: none;
   place-items: center;
-  width: 2.6rem;
-  height: 2.6rem;
+  width: 2.75rem;
+  height: 2.75rem;
   color: var(--nx-ink);
   background: transparent;
   border: 1px solid var(--nx-ink);
@@ -492,8 +495,8 @@ a:hover > .nx-media img,
   display: grid;
   place-items: center;
   align-self: flex-end;
-  width: 2.6rem;
-  height: 2.6rem;
+  width: 2.75rem;
+  height: 2.75rem;
   color: var(--nx-ink);
   background: transparent;
   border: 1px solid var(--nx-ink);
@@ -657,9 +660,9 @@ select.nx-form__control {
 }
 
 .nx-form__check input {
-  width: 1.05rem;
-  height: 1.05rem;
-  margin-top: 0.2rem;
+  width: 1.2rem;
+  height: 1.2rem;
+  margin-top: 0.15rem;
   flex: 0 0 auto;
   accent-color: var(--nx-blue);
 }
@@ -879,6 +882,22 @@ select.nx-form__control {
 .nx-breadcrumb li + li::before { margin-right: 0.45rem; content: "/"; }
 .nx-breadcrumb a { color: inherit; text-decoration: none; }
 .nx-breadcrumb a:hover { color: var(--nx-blue); }
+
+/* --- Touch targets -----------------------------------------------------------
+   Pointer-driven rather than width-driven: a small laptop keeps the compact
+   sizing, while anything tapped with a finger gets the 44px minimum. */
+
+@media (pointer: coarse) {
+  .nx-filter { min-height: 44px; padding-block: 0.7rem; }
+  .nx-arrow-link { min-height: 44px; padding-block: 0.6rem 0.5rem; }
+  .nx-brand { min-height: 44px; }
+  .nx-burger,
+  .nx-drawer__close { width: 44px; height: 44px; }
+  .nx-footer__links a { display: inline-block; padding-block: 0.35rem; }
+  .nx-footer__base a { display: inline-block; padding-block: 0.8rem; }
+  .nx-breadcrumb a { display: inline-block; padding-block: 0.3rem; }
+  .nx-form__check { padding-block: 0.35rem; }
+}
 
 /* --- Responsive -------------------------------------------------------------------------------------------- */
 

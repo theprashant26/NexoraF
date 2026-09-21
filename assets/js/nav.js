@@ -204,8 +204,6 @@
     var drawerOpen = document.querySelector("[data-drawer-open]");
     var lastFocused = null;
 
-    var reduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-
     function closeMega() {
       if (!mega || mega.hidden) return;
       mega.hidden = true;
@@ -217,13 +215,13 @@
       mega.hidden = false;
       if (megaTrigger) megaTrigger.setAttribute("aria-expanded", "true");
 
-      if (window.gsap && !reduced) {
-        window.gsap.fromTo(mega,
+      if (NX.motion && NX.motion.enter) {
+        NX.motion.enter(mega,
           { clipPath: "inset(0 0 100% 0)" },
-          { clipPath: "inset(0 0 0% 0)", duration: 0.4, ease: "power3.out" });
-        window.gsap.fromTo(mega.querySelectorAll(".nx-mega__col"),
+          { clipPath: "inset(0 0 0% 0)", duration: 0.4, ease: "power3.out" }, 800);
+        NX.motion.enter(mega.querySelectorAll(".nx-mega__col"),
           { opacity: 0, y: 10 },
-          { opacity: 1, y: 0, duration: 0.35, stagger: 0.05, delay: 0.1, ease: "power2.out" });
+          { opacity: 1, y: 0, duration: 0.35, stagger: 0.05, delay: 0.1, ease: "power2.out" }, 900);
       }
     }
 
@@ -243,11 +241,11 @@
       if (drawerOpen) drawerOpen.setAttribute("aria-expanded", "true");
 
       var panel = drawer.querySelector(".nx-drawer__panel");
-      if (window.gsap && panel && !reduced) {
-        window.gsap.fromTo(panel, { x: "100%" }, { x: "0%", duration: 0.4, ease: "power3.out" });
-        window.gsap.fromTo(drawer.querySelectorAll(".nx-drawer__nav a, .nx-drawer__cta"),
+      if (panel && NX.motion && NX.motion.enter) {
+        NX.motion.enter(panel, { x: "100%" }, { x: "0%", duration: 0.4, ease: "power3.out" }, 800);
+        NX.motion.enter(drawer.querySelectorAll(".nx-drawer__nav a, .nx-drawer__cta"),
           { opacity: 0, x: 20 },
-          { opacity: 1, x: 0, duration: 0.35, stagger: 0.05, delay: 0.12, ease: "power2.out" });
+          { opacity: 1, x: 0, duration: 0.35, stagger: 0.05, delay: 0.12, ease: "power2.out" }, 1000);
       }
 
       var first = focusableWithin(drawer)[0];

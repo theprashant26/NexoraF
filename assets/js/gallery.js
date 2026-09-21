@@ -141,10 +141,10 @@
         });
 
         var shown = visible();
-        if (window.gsap && !reduced() && shown.length) {
-          window.gsap.fromTo(shown,
-            { opacity: 0, y: 18, scale: 0.98 },
-            { opacity: 1, y: 0, scale: 1, duration: 0.45, stagger: 0.04, ease: "power3.out", overwrite: true });
+        if (shown.length && window.NX && window.NX.motion && window.NX.motion.enter) {
+          window.NX.motion.enter(shown,
+            { opacity: 0, y: 14 },
+            { opacity: 1, y: 0, duration: 0.4, stagger: 0.04, ease: "power3.out", overwrite: true }, 1100);
         }
 
         if (window.NX && window.NX.motion) window.NX.motion.refresh();

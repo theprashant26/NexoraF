@@ -191,11 +191,16 @@ a:hover { color: var(--nx-coral); }
 
 /* --- Motion initial states ---------------------------------------------------------------
    Applied only while `nx-js` is on <html>. motion.js removes that class if GSAP
-   never arrives, so nothing can stay invisible. */
+   never arrives, so nothing can stay invisible.
 
-.nx-js [data-reveal] { opacity: 0; }
-.nx-js [data-wipe] { clip-path: inset(0 100% 0 0); }
-.nx-js [data-draw] { transform: scaleX(0); }
+   The `:not([data-nx-seen])` guard matters: motion.js stamps that attribute the
+   moment it takes charge of an element. Without it, clearing GSAP's inline
+   styles would drop the element straight back onto this rule and hide it
+   again. */
+
+.nx-js [data-reveal]:not([data-nx-seen]) { opacity: 0; }
+.nx-js [data-wipe]:not([data-nx-seen]) { clip-path: inset(0 100% 0 0); }
+.nx-js [data-draw]:not([data-nx-seen]) { transform: scaleX(0); }
 
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
@@ -208,7 +213,7 @@ a:hover { color: var(--nx-coral); }
     transition-duration: 0.01ms !important;
   }
 
-  .nx-js [data-reveal] { opacity: 1; }
-  .nx-js [data-wipe] { clip-path: none; }
-  .nx-js [data-draw] { transform: none; }
+  .nx-js [data-reveal]:not([data-nx-seen]) { opacity: 1; }
+  .nx-js [data-wipe]:not([data-nx-seen]) { clip-path: none; }
+  .nx-js [data-draw]:not([data-nx-seen]) { transform: none; }
 }

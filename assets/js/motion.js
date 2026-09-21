@@ -109,6 +109,7 @@
   function initWipes(gsap, ScrollTrigger) {
     document.querySelectorAll("[data-wipe]").forEach(function (el) {
       if (el.closest("[data-mast]")) return;
+      el.setAttribute("data-nx-seen", "");
       gsap.fromTo(el,
         { clipPath: "inset(0 100% 0 0)" },
         {
@@ -124,6 +125,7 @@
 
   function initRules(gsap, ScrollTrigger) {
     document.querySelectorAll("[data-draw]").forEach(function (el) {
+      el.setAttribute("data-nx-seen", "");
       gsap.fromTo(el,
         { scaleX: 0 },
         {
@@ -149,9 +151,19 @@
       start: "top 90%",
       once: true,
       onEnter: function (batch) {
-        gsap.fromTo(batch,
+        // Hand the element over from the CSS guard to GSAP before animating.
+        batch.forEach(function (el) { el.setAttribute("data-nx-seen", ""); });
+
+        var tween = gsap.fromTo(batch,
           { opacity: 0, y: 20 },
           { opacity: 1, y: 0, duration: 0.65, stagger: 0.07, overwrite: true });
+
+        // Same backstop as enter(): a throttled frame loop must never leave
+        // content parked at opacity 0.
+        window.setTimeout(function () {
+          if (tween.progress() < 1) tween.progress(1);
+          gsap.set(batch, { clearProps: "opacity,transform" });
+        }, 2000);
       }
     });
 
@@ -172,7 +184,7 @@
     var rows = container.children;
     if (!rows.length) return;
 
-    gsap.fromTo(rows,
+    var tween = gsap.fromTo(rows,
       { opacity: 0, x: -18 },
       {
         opacity: 1,
@@ -180,7 +192,19 @@
         duration: 0.5,
         stagger: 0.035,
         ease: "power2.out",
-        scrollTrigger: { trigger: container, start: "top 88%", once: true }
+        scrollTrigger: {
+          trigger: container,
+          start: "top 88%",
+          once: true,
+          onEnter: function () {
+            // A 21-row index has a long stagger; make sure a throttled frame
+            // loop cannot leave the tail of it invisible.
+            window.setTimeout(function () {
+              if (tween.progress() < 1) tween.progress(1);
+              gsap.set(rows, { clearProps: "opacity,transform" });
+            }, 2500);
+          }
+        }
       });
   }
 
@@ -297,10 +321,37 @@
     });
   }
 
+  /* --- Safe entrances --------------------------------------------------------------
+     Chrome throttles requestAnimationFrame in background tabs and on low-power
+     devices, which can leave a tween parked on its `from` state. Anything that
+     animates in from opacity 0 therefore gets a wall-clock backstop: if the
+     tween has not finished in time, it is snapped to the end and the inline
+     styles are cleared. Used for navigation surfaces, where being stuck
+     invisible would be more than cosmetic. */
+
+  function enter(targets, fromVars, toVars, settleMs) {
+    var gsap = window.gsap;
+    var list = typeof targets === "string" ? document.querySelectorAll(targets) : targets;
+    if (!list || (list.length === 0 && !list.nodeType)) return;
+
+    if (!gsap || prefersReduced()) {
+      if (gsap) gsap.set(list, { clearProps: "opacity,transform,clipPath" });
+      return;
+    }
+
+    var tween = gsap.fromTo(list, fromVars, toVars);
+
+    window.setTimeout(function () {
+      if (tween.progress() < 1) tween.progress(1);
+      gsap.set(list, { clearProps: "opacity,transform,clipPath" });
+    }, settleMs || 900);
+  }
+
   /* --- Public surface -------------------------------------------------------------- */
 
   NX.motion = {
     init: init,
+    enter: enter,
 
     /** Animate content injected after boot, such as the async programme index. */
     reveal: function (scope) {
