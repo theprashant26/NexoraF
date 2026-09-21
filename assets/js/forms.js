@@ -1,55 +1,152 @@
+/* ==========================================================================
+   Enquiry and contact forms
+
+   Client-side validation only. Nothing is transmitted until the institute
+   supplies a real endpoint — see FORM_ENDPOINT below.
+   ========================================================================== */
+
 (function () {
   "use strict";
 
-  window.NX = window.NX || {};
-  var FORM_ENDPOINT = "{{PLACEHOLDER: form endpoint}}";
+  var NX = (window.NX = window.NX || {});
+  var esc = NX.escapeHtml || function (value) { return String(value); };
 
-  function showError(form, field, visible) {
-    var input = form.elements[field];
-    var message = form.querySelector('[data-error-for="' + field + '"]');
-    if (input) input.setAttribute("aria-invalid", String(visible));
+  var FORM_ENDPOINT = "{{PLACEHOLDER: form endpoint}}";
+  var ENDPOINT_READY = FORM_ENDPOINT.indexOf("{{PLACEHOLDER") === -1;
+
+  var EMAIL = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/;
+  var PHONE = /^[+()\d][\d\s\-()]{6,}$/;
+
+  function setFieldError(form, name, visible) {
+    var field = form.elements.namedItem(name);
+    var message = form.querySelector('[data-error-for="' + name + '"]');
+    if (field && field.setAttribute) field.setAttribute("aria-invalid", String(visible));
     if (message) message.hidden = !visible;
   }
 
-  function validate(form) {
-    var valid = true;
-    Array.prototype.forEach.call(form.querySelectorAll("[required]"), function (input) {
-      var value = input.type === "checkbox" ? input.checked : input.value.trim();
-      var fieldValid = Boolean(value);
-      if (input.type === "email" && fieldValid) fieldValid = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(input.value);
-      showError(form, input.name, !fieldValid);
-      valid = fieldValid && valid;
-    });
-    return valid;
+  function isValidField(input) {
+    if (input.type === "checkbox") return input.checked;
+    var value = input.value.trim();
+    if (!value) return false;
+    if (input.type === "email") return EMAIL.test(value);
+    if (input.type === "tel") return PHONE.test(value);
+    return true;
   }
 
+  function validate(form) {
+    var firstInvalid = null;
+    var valid = true;
+
+    Array.prototype.forEach.call(form.querySelectorAll("[required]"), function (input) {
+      var ok = isValidField(input);
+      setFieldError(form, input.name, !ok);
+      if (!ok) {
+        valid = false;
+        if (!firstInvalid) firstInvalid = input;
+      }
+    });
+
+    return { valid: valid, firstInvalid: firstInvalid };
+  }
+
+  function shake(el) {
+    var gsap = window.gsap;
+    if (!gsap || window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+    gsap.fromTo(el, { x: -7 }, { x: 0, duration: 0.5, ease: "elastic.out(1, 0.35)" });
+  }
+
+  /* --- Programme select ------------------------------------------------------ */
+
   function populateProgrammeSelect() {
-    var select = document.getElementById("admission-programme");
-    if (!select || !window.NX.loadProgrammes) return;
-    window.NX.loadProgrammes().then(function (programmes) {
-      select.innerHTML = '<option value="">Choose a programme</option>' + programmes.map(function (programme) {
-        return '<option value="' + programme.code + '">' + programme.programme + '</option>';
+    var select = document.getElementById("enquiry-programme");
+    if (!select || !NX.loadProgrammes) return;
+
+    var preset = new URLSearchParams(window.location.search).get("programme");
+
+    NX.loadProgrammes().then(function (programmes) {
+      var options = programmes.map(function (programme) {
+        return '<option value="' + esc(programme.code) + '">' +
+          esc(programme.programme) + " (" + esc(programme.code) + ")</option>";
       }).join("");
+      select.innerHTML = '<option value="">Choose a programme</option>' + options;
+      if (preset) select.value = String(preset).toUpperCase();
     }).catch(function () {
       select.innerHTML = '<option value="">Programme list unavailable</option>';
     });
   }
 
+  /* --- Submission ------------------------------------------------------------- */
+
+  function handleSubmit(form, event) {
+    event.preventDefault();
+
+    var success = form.querySelector("[data-form-success]");
+    var failure = form.querySelector("[data-form-error]");
+    if (success) success.hidden = true;
+    if (failure) failure.hidden = true;
+
+    // Bots fill hidden fields; people do not.
+    var honeypot = form.elements.namedItem("company");
+    if (honeypot && honeypot.value) return;
+
+    var result = validate(form);
+    if (!result.valid) {
+      shake(form);
+      if (result.firstInvalid) result.firstInvalid.focus();
+      return;
+    }
+
+    if (!ENDPOINT_READY) {
+      // No endpoint configured yet: confirm locally and say so plainly.
+      if (success) {
+        success.hidden = false;
+        success.focus && success.focus();
+      }
+      if (window.gsap && !window.matchMedia("(prefers-reduced-motion: reduce)").matches && success) {
+        window.gsap.fromTo(success, { y: 10, opacity: 0 }, { y: 0, opacity: 1, duration: 0.4 });
+      }
+      return;
+    }
+
+    var submit = form.querySelector('[type="submit"]');
+    if (submit) submit.disabled = true;
+
+    fetch(FORM_ENDPOINT, {
+      method: "POST",
+      headers: { Accept: "application/json" },
+      body: new FormData(form)
+    }).then(function (response) {
+      if (!response.ok) throw new Error("Submission failed.");
+      form.reset();
+      if (success) success.hidden = false;
+    }).catch(function () {
+      if (failure) failure.hidden = false;
+    }).then(function () {
+      if (submit) submit.disabled = false;
+    });
+  }
+
   function initForms() {
     populateProgrammeSelect();
+
     document.querySelectorAll("[data-contact-form]").forEach(function (form) {
-      form.addEventListener("submit", function (event) {
-        event.preventDefault();
-        var success = form.querySelector("[data-form-success]");
-        if (!validate(form)) return;
-        if (success) {
-          success.hidden = false;
-          success.textContent = "Thanks. Your enquiry is ready for the institute team.";
-        }
-        form.dataset.endpoint = FORM_ENDPOINT;
-      });
+      form.addEventListener("submit", function (event) { handleSubmit(form, event); });
+
       form.querySelectorAll("[required]").forEach(function (input) {
-        input.addEventListener("blur", function () { validate(form); });
+        input.addEventListener("blur", function () {
+          setFieldError(form, input.name, !isValidField(input));
+        });
+        // Clear the error as soon as the field becomes valid again.
+        input.addEventListener("input", function () {
+          if (input.getAttribute("aria-invalid") === "true" && isValidField(input)) {
+            setFieldError(form, input.name, false);
+          }
+        });
+        input.addEventListener("change", function () {
+          if (input.type === "checkbox" || input.tagName === "SELECT") {
+            setFieldError(form, input.name, !isValidField(input));
+          }
+        });
       });
     });
   }

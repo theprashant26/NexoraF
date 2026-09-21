@@ -3,43 +3,154 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Explore a Nexora Institute of Professional Studies programme.">
+  <meta name="theme-color" content="#071A16">
+  <title>Programme | Nexora Institute of Professional Studies</title>
+  <meta name="description" content="Explore a Nexora Institute of Professional Studies training programme, its key learning areas, and what you will practise.">
   <link rel="canonical" href="programme.html">
+  <meta property="og:title" content="Programme | Nexora Institute of Professional Studies">
+  <meta property="og:description" content="Explore a Nexora Institute of Professional Studies training programme.">
   <meta property="og:type" content="website">
   <meta property="og:image" content="assets/img/placeholders/nx-og-share-01.svg">
   <meta name="twitter:card" content="summary_large_image">
-  <title>Programme | Nexora Institute of Professional Studies</title>
+
+  <link rel="icon" href="favicon.ico" sizes="any">
+  <link rel="apple-touch-icon" href="assets/brand/nexoralogo.jpeg">
+
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Inter+Tight:wght@600;700&display=swap" rel="stylesheet">
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter+Tight:wght@400;500;600;700&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css" rel="stylesheet">
   <link rel="stylesheet" href="assets/css/main.css">
+  <script>document.documentElement.classList.add("nx-js");</script>
 </head>
+
 <body>
-  <a class="nx-skip-link" href="#main-content">Skip to content</a>
+  <a class="nx-skip-link" href="#main">Skip to content</a>
   <div data-nx-site-header></div>
-  <main id="main-content" class="nx-page-shell" data-programme-detail>
-    <div class="nx-detail-loading nx-container nx-section--compact" role="status">Loading programme details...</div>
-    <div class="nx-detail-error nx-container nx-section--compact" hidden role="alert"><h2>Programme not found</h2><p>That programme code is not available. Browse all programmes to choose another direction.</p><a class="nx-btn nx-btn--primary" href="programmes.html">Browse programmes</a></div>
-    <div class="nx-detail-content" hidden>
-      <section class="nx-detail-hero nx-surface-pine" aria-labelledby="programme-name">
-        <div class="nx-container">
-          <nav aria-label="Breadcrumb"><ol class="nx-breadcrumb"><li><a href="index.html">Home</a></li><li><a href="programmes.html">Programmes</a></li><li data-detail-division>Programme</li></ol></nav>
-          <div class="nx-detail-hero__grid"><div><span class="nx-chip" data-detail-group>Programme group</span><span class="nx-detail-code" data-detail-code>CODE</span><p class="nx-eyebrow nx-eyebrow--light" data-detail-division>Division</p><h1 id="programme-name" data-detail-name>Programme name</h1><p class="nx-detail-certificate" data-detail-certificate>Certificate title</p><p data-detail-intro>Programme introduction.</p></div><div class="nx-media nx-media--8-3"><img src="assets/img/placeholders/nx-programme-banner-01.svg" width="1920" height="720" loading="eager" alt="Programme training environment placeholder"></div></div>
+
+  <main id="main" class="nx-page" data-programme-detail>
+
+    <div class="nx-detail-state nx-container" data-detail-loading role="status">
+      <span class="nx-spinner" aria-hidden="true"></span>
+      <p class="nx-muted">Loading programme details…</p>
+    </div>
+
+    <div class="nx-detail-state nx-container" data-detail-error hidden role="alert">
+      <h1>Programme not found</h1>
+      <p class="nx-muted">That programme code is not available. Browse all programmes to choose another direction.</p>
+      <a class="nx-btn nx-btn--primary" href="programmes.html">Browse programmes</a>
+    </div>
+
+    <div data-detail-content hidden>
+
+      <section class="nx-detail-hero nx-surface-ink" aria-labelledby="programme-name">
+        <span class="nx-page-hero__aura" aria-hidden="true"></span>
+        <div class="nx-container nx-container--wide">
+          <nav aria-label="Breadcrumb">
+            <ol class="nx-breadcrumb">
+              <li><a href="index.html">Home</a></li>
+              <li><a href="programmes.html">Programmes</a></li>
+              <li data-detail-division>Programme</li>
+            </ol>
+          </nav>
+
+          <div class="nx-detail-hero__grid">
+            <div class="nx-detail-hero__copy">
+              <div class="nx-detail-hero__meta">
+                <span class="nx-chip" data-detail-group>Programme group</span>
+                <span class="nx-programme-card__code" data-detail-code>CODE</span>
+              </div>
+              <p class="nx-eyebrow" data-detail-division>Division</p>
+              <h1 class="nx-detail-hero__title nx-display nx-display--dark" id="programme-name" data-detail-name>Programme name</h1>
+              <p class="nx-detail-certificate" data-detail-certificate>Certificate title</p>
+              <p class="nx-lede" data-detail-intro>Programme introduction.</p>
+            </div>
+
+            <div class="nx-media nx-media--8-3" data-parallax="5">
+              <img src="assets/img/placeholders/nx-programme-banner-01.svg" width="1920" height="720"
+                   loading="eager" decoding="async" alt="Programme training environment">
+            </div>
+          </div>
         </div>
       </section>
-      <section class="nx-section" aria-labelledby="areas-heading"><div class="nx-container nx-detail-body"><div class="nx-detail-main"><span class="nx-eyebrow">Programme focus</span><h2 id="areas-heading">Key learning areas</h2><div class="nx-detail-areas" data-detail-areas></div><h2>What you will practise</h2><p data-detail-practice>Practical and professional learning areas relevant to this field.</p><div class="nx-detail-compliance"><p>Completion of a programme does not by itself guarantee employment, appointment or a specific salary.</p></div></div><aside class="nx-detail-aside"><div class="nx-card nx-detail-enquiry"><span class="nx-eyebrow">Have questions?</span><h2>Talk through your options.</h2><p>Ask about this programme, the applicable enrolment steps, and the learning areas it covers.</p><dl><div><dt>Duration</dt><dd>{{PLACEHOLDER: programme duration}}</dd></div><div><dt>Fees</dt><dd>{{PLACEHOLDER: programme fees}}</dd></div><div><dt>Eligibility</dt><dd>{{PLACEHOLDER: programme eligibility}}</dd></div></dl><a class="nx-btn nx-btn--primary" href="admissions.html#enquiry">Send an enquiry</a></div></aside></div></section>
-      <section class="nx-section nx-surface-mist" aria-labelledby="related-heading"><div class="nx-container"><div class="nx-section-header"><span class="nx-eyebrow">Continue exploring</span><h2 id="related-heading">Related programmes</h2><p>Other programmes from the same learning group.</p></div><div class="nx-grid nx-grid--3" data-related-programmes></div></div></section>
-      <section class="nx-section nx-surface-pine" aria-labelledby="recognition-heading"><div class="nx-container nx-detail-recognition"><span class="nx-eyebrow nx-eyebrow--light">Important information</span><h2 id="recognition-heading">Programme recognition</h2><p>Unless specifically stated otherwise, certificates and diplomas issued by Nexora Institute are institute-level professional training credentials and should not be represented as government, university, UGC, AICTE, statutory-board or professional-licensing qualifications without the applicable approval, affiliation or recognition.</p></div></section>
+
+      <section class="nx-section" aria-labelledby="areas-title">
+        <div class="nx-container nx-container--wide nx-detail-body">
+          <div class="nx-detail-main">
+            <div class="nx-stack">
+              <span class="nx-eyebrow" data-reveal>Programme focus</span>
+              <h2 id="areas-title" data-reveal>Key learning areas</h2>
+              <div class="nx-detail-areas" data-detail-areas></div>
+            </div>
+
+            <div class="nx-stack" data-reveal>
+              <h2>What you will practise</h2>
+              <p class="nx-muted" data-detail-practice>
+                Practical and professional learning areas relevant to this field.
+              </p>
+            </div>
+
+            <p class="nx-notice" data-reveal>
+              <i class="bi bi-info-circle" aria-hidden="true"></i>
+              <span>Completion of a programme does not by itself guarantee employment, appointment or a specific salary.</span>
+            </p>
+          </div>
+
+          <aside class="nx-detail-aside">
+            <div class="nx-card" data-reveal>
+              <span class="nx-eyebrow">Have questions?</span>
+              <h3>Talk through your options.</h3>
+              <p class="nx-muted">
+                Ask about this programme, the applicable enrolment steps, and the learning areas it covers.
+              </p>
+              <dl class="nx-detail-facts">
+                <div><dt>Duration</dt><dd>{{PLACEHOLDER: programme duration}}</dd></div>
+                <div><dt>Fees</dt><dd>{{PLACEHOLDER: programme fees}}</dd></div>
+                <div><dt>Eligibility</dt><dd>{{PLACEHOLDER: programme eligibility}}</dd></div>
+                <div><dt>Learning mode</dt><dd>{{PLACEHOLDER: learning mode}}</dd></div>
+              </dl>
+              <a class="nx-btn nx-btn--primary" href="admissions.html#enquiry" data-detail-enquiry-link>
+                Send an enquiry <i class="bi bi-arrow-up-right" aria-hidden="true"></i>
+              </a>
+            </div>
+          </aside>
+        </div>
+      </section>
+
+      <section class="nx-section nx-surface-bone" aria-labelledby="related-title">
+        <div class="nx-container nx-container--wide">
+          <div class="nx-section-head">
+            <span class="nx-eyebrow" data-reveal>Continue exploring</span>
+            <h2 id="related-title" data-reveal>Related programmes</h2>
+            <p class="nx-muted" data-reveal>Other programmes from the same learning group.</p>
+          </div>
+          <div class="nx-grid nx-grid--3" data-related-programmes></div>
+        </div>
+      </section>
+
+      <section class="nx-section nx-surface-ink" aria-labelledby="recognition-title">
+        <div class="nx-container nx-container--narrow nx-stack">
+          <span class="nx-eyebrow" data-reveal>Important information</span>
+          <h2 id="recognition-title" data-reveal>Programme recognition</h2>
+          <p class="nx-muted" data-reveal>
+            Unless specifically stated otherwise, certificates and diplomas issued by Nexora Institute
+            are institute-level professional training credentials and should not be represented as
+            government, university, UGC, AICTE, statutory-board or professional-licensing qualifications
+            without the applicable approval, affiliation or recognition.
+          </p>
+        </div>
+      </section>
     </div>
   </main>
+
   <div data-nx-site-footer></div>
-  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js" defer></script>
-  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js" defer></script>
-  <script src="assets/js/motion.js?v=20260921-qa" defer></script>
+
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/gsap.min.js" defer></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/ScrollTrigger.min.js" defer></script>
+  <script src="assets/js/nav.js" defer></script>
   <script src="assets/js/data.js" defer></script>
   <script src="assets/js/programmes.js" defer></script>
-  <script src="assets/js/nav.js" defer></script>
+  <script src="assets/js/motion.js" defer></script>
+  <script src="assets/js/seo.js" defer></script>
 </body>
 </html>

@@ -3,138 +3,591 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Nexora Institute of Professional Studies offers industry-oriented professional training programmes across multiple sectors.">
+  <meta name="theme-color" content="#071A16">
+  <title>Nexora Institute of Professional Studies</title>
+  <meta name="description" content="Industry-oriented professional training across transport, service, health, business, and technical fields. Twenty-one programme directions at Nexora Institute of Professional Studies.">
   <link rel="canonical" href="index.html">
   <meta property="og:title" content="Nexora Institute of Professional Studies">
-  <meta property="og:description" content="Industry-oriented professional training across multiple sectors.">
+  <meta property="og:description" content="Industry-oriented professional training across twenty-one programme directions.">
   <meta property="og:type" content="website">
   <meta property="og:image" content="assets/img/placeholders/nx-og-share-01.svg">
+  <meta property="og:site_name" content="Nexora Institute of Professional Studies">
   <meta name="twitter:card" content="summary_large_image">
-  <title>Nexora Institute of Professional Studies</title>
+
+  <link rel="icon" href="favicon.ico" sizes="any">
+  <link rel="apple-touch-icon" href="assets/brand/nexoralogo.jpeg">
+
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Inter+Tight:wght@600;700&display=swap" rel="stylesheet">
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter+Tight:wght@400;500;600;700&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css" rel="stylesheet">
   <link rel="preload" as="image" href="assets/img/placeholders/nx-home-hero-01.svg" type="image/svg+xml">
   <link rel="stylesheet" href="assets/css/main.css">
-  <script type="application/ld+json">{"@context":"https://schema.org","@type":"EducationalOrganization","name":"Nexora Institute of Professional Studies","description":"Industry-oriented professional training across multiple sectors.","url":"index.html"}</script>
+
+  <!-- Marks that scripting is available, so pre-hidden elements only hide when
+       something is able to animate them back in. -->
+  <script>document.documentElement.classList.add("nx-js");</script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "EducationalOrganization",
+    "name": "Nexora Institute of Professional Studies",
+    "description": "Industry-oriented professional training across transport, service, health, business, and technical fields.",
+    "url": "https://{{PLACEHOLDER: production domain}}/"
+  }
+  </script>
 </head>
+
 <body>
-  <a class="nx-skip-link" href="#main-content">Skip to content</a>
+  <a class="nx-skip-link" href="#main">Skip to content</a>
+
+  <div class="nx-curtain" data-curtain>
+    <div class="nx-curtain__inner">
+      <span class="nx-curtain__word">NEXORA</span>
+      <span class="nx-curtain__bar"><span class="nx-curtain__fill" data-curtain-fill></span></span>
+      <span class="nx-curtain__count" data-curtain-count>000</span>
+    </div>
+  </div>
+
   <div data-nx-site-header></div>
-  <main id="main-content" class="nx-page-shell">
-    <section class="nx-home-hero" aria-labelledby="hero-heading">
-      <div class="nx-container nx-home-hero__grid">
-        <div class="nx-home-hero__copy">
-          <span class="nx-eyebrow nx-eyebrow--light">Professional learning, made practical</span>
-          <h1 id="hero-heading">Build skills for the work ahead.</h1>
-          <p>Industry-oriented professional training across transport, service, health, business, and technical fields.</p>
-          <div class="nx-home-hero__actions">
-            <a class="nx-btn nx-btn--primary nx-btn--lg" href="programmes.html">Explore programmes <i class="bi bi-arrow-up-right" aria-hidden="true"></i></a>
+
+  <main id="main" class="nx-page">
+
+    <!-- ===================== Hero ===================== -->
+    <section class="nx-hero nx-surface-ink" data-hero aria-labelledby="hero-title">
+      <span class="nx-hero__aura nx-hero__aura--jade" aria-hidden="true"></span>
+      <span class="nx-hero__aura nx-hero__aura--gold" aria-hidden="true"></span>
+
+      <div class="nx-container nx-container--wide nx-hero__grid">
+        <div class="nx-hero__copy">
+          <span class="nx-eyebrow" data-hero-fade>Professional training institute</span>
+          <h1 class="nx-hero__title nx-display nx-display--dark" id="hero-title" data-hero-title>
+            Where ambition becomes <em>capability</em>.
+          </h1>
+          <p class="nx-lede nx-hero__lede" data-hero-fade>
+            Industry-oriented professional training across transport, service, health, business,
+            and technical fields — twenty-one programme directions, one practical standard.
+          </p>
+          <div class="nx-btn-row" data-hero-fade>
+            <a class="nx-btn nx-btn--primary nx-btn--lg" href="programmes.html" data-magnetic="0.2">
+              Explore programmes <i class="bi bi-arrow-up-right" aria-hidden="true"></i>
+            </a>
             <a class="nx-btn nx-btn--on-dark nx-btn--lg" href="contact.html">Talk to an advisor</a>
           </div>
         </div>
-        <div class="nx-media nx-media--4-5 nx-home-hero__media">
-          <picture>
-            <img src="assets/img/placeholders/nx-home-hero-01.svg" width="1200" height="1500" alt="Learner in a professional training environment" loading="eager">
-          </picture>
+
+        <div class="nx-hero__media" data-hero-media>
+          <div class="nx-media nx-media--4-5" data-parallax="6">
+            <img src="assets/img/placeholders/nx-home-hero-01.svg" width="1200" height="1500"
+                 alt="Learner in a professional training environment" loading="eager" decoding="async" fetchpriority="high">
+          </div>
         </div>
       </div>
-      <div class="nx-container nx-home-hero__stats" aria-label="Nexora facts">
-        <div class="nx-stat nx-stat--light"><span class="nx-stat__value">21</span><span class="nx-stat__label">Programmes</span></div>
-        <div class="nx-stat nx-stat--light"><span class="nx-stat__value">21</span><span class="nx-stat__label">Industry divisions</span></div>
-        <div class="nx-stat nx-stat--light"><span class="nx-stat__value">{{PLACEHOLDER}}</span><span class="nx-stat__label">Learning modes</span></div>
+
+      <div class="nx-container nx-container--wide nx-hero__foot">
+        <div class="nx-hero__stats">
+          <div class="nx-stat" data-hero-stat>
+            <span class="nx-stat__value" data-count="21">21</span>
+            <span class="nx-stat__label">Programmes</span>
+          </div>
+          <div class="nx-stat" data-hero-stat>
+            <span class="nx-stat__value" data-count="21">21</span>
+            <span class="nx-stat__label">Industry divisions</span>
+          </div>
+          <div class="nx-stat" data-hero-stat>
+            <span class="nx-stat__value" data-count="4">4</span>
+            <span class="nx-stat__label">Learning groups</span>
+          </div>
+        </div>
+
+        <span class="nx-scroll-cue" data-hero-fade>
+          <span class="nx-scroll-cue__line" data-scroll-cue-line aria-hidden="true"></span>
+          Scroll
+        </span>
       </div>
     </section>
 
-    <section class="nx-section nx-home-train" aria-labelledby="train-heading">
+    <!-- ===================== Marquee ===================== -->
+    <div class="nx-marquee nx-surface-ink" data-marquee data-marquee-speed="34" aria-hidden="true">
+      <div class="nx-marquee__track" data-marquee-track>
+        <span class="nx-marquee__item">Metro &amp; Rail</span>
+        <span class="nx-marquee__item">Aviation</span>
+        <span class="nx-marquee__item">Hospitality</span>
+        <span class="nx-marquee__item">Healthcare</span>
+        <span class="nx-marquee__item">Logistics</span>
+        <span class="nx-marquee__item">Banking</span>
+        <span class="nx-marquee__item">IT &amp; Technology</span>
+        <span class="nx-marquee__item">Civil Engineering</span>
+        <span class="nx-marquee__item">Travel &amp; Tourism</span>
+        <span class="nx-marquee__item">Pharmaceutical</span>
+      </div>
+    </div>
+
+    <!-- ===================== Manifesto ===================== -->
+    <section class="nx-section nx-manifesto" aria-labelledby="manifesto-title">
       <div class="nx-container">
-        <div class="nx-section-header">
-          <span class="nx-eyebrow">What we train for</span>
-          <h2 id="train-heading">Choose a direction. Build useful capability.</h2>
-          <p>Nexora brings sector-specific learning areas together with practical and professional skill development.</p>
+        <h2 class="nx-visually-hidden" id="manifesto-title">What Nexora is for</h2>
+        <p class="nx-manifesto__text nx-display" data-manifesto>
+          Nexora is for the learner who wants the work, not only the certificate.
+          Every programme starts from what the job actually asks for.
+        </p>
+      </div>
+    </section>
+
+    <!-- ===================== Divisions ===================== -->
+    <section class="nx-section nx-surface-bone" aria-labelledby="divisions-title">
+      <div class="nx-container nx-container--wide">
+        <div class="nx-section-head">
+          <span class="nx-eyebrow" data-reveal>What we train for</span>
+          <h2 id="divisions-title" data-split>Choose a direction. Build useful capability.</h2>
+          <p class="nx-lede" data-reveal>
+            Four learning groups gather twenty-one sector divisions, each with its own practical
+            and professional skill focus.
+          </p>
         </div>
-        <div class="nx-home-train__list">
-          <article class="nx-home-train__panel">
-            <div class="nx-home-train__content"><span class="nx-chip">Transport &amp; Aviation</span><h3>Move people, goods, and systems.</h3><p>Explore learning areas across metro and rail, railway, aviation, logistics, and driver services.</p><a class="nx-text-link" href="programmes.html?group=transport">Explore the division <i class="bi bi-arrow-up-right" aria-hidden="true"></i></a></div>
-            <div class="nx-media nx-media--7-5"><picture><img src="assets/img/placeholders/nx-section-feature-01.svg" width="1400" height="1000" loading="lazy" alt="Transport and aviation training environment"></picture></div>
+
+        <div class="nx-stack-cards">
+          <article class="nx-stack-card nx-on-dark" data-stack-card>
+            <div class="nx-stack-card__body">
+              <span class="nx-stack-card__index">01</span>
+              <span class="nx-chip">Transport &amp; Aviation</span>
+              <h3>Move people, goods, and systems.</h3>
+              <p class="nx-muted">
+                Learning areas across metro and rail, railway, aviation, logistics, and driver services —
+                operations, safety, ticketing, and passenger handling.
+              </p>
+              <a class="nx-text-link" href="programmes.html?group=transport">
+                Explore the group <i class="bi bi-arrow-right" aria-hidden="true"></i>
+              </a>
+            </div>
+            <div class="nx-media nx-media--7-5" data-parallax="5">
+              <img src="assets/img/placeholders/nx-section-feature-01.svg" width="1400" height="1000"
+                   loading="lazy" decoding="async" alt="Transport and aviation training environment">
+            </div>
           </article>
-          <article class="nx-home-train__panel nx-home-train__panel--reverse">
-            <div class="nx-home-train__content"><span class="nx-chip">Service &amp; Hospitality</span><h3>Make every interaction count.</h3><p>Build foundations in hospitality, travel and tourism, retail, and security operations.</p><a class="nx-text-link" href="programmes.html?group=service">Explore the division <i class="bi bi-arrow-up-right" aria-hidden="true"></i></a></div>
-            <div class="nx-media nx-media--7-5"><picture><img src="assets/img/placeholders/nx-section-feature-01.svg" width="1400" height="1000" loading="lazy" alt="Service and hospitality training environment"></picture></div>
+
+          <article class="nx-stack-card nx-on-dark" data-stack-card>
+            <div class="nx-stack-card__body">
+              <span class="nx-stack-card__index">02</span>
+              <span class="nx-chip">Service &amp; Hospitality</span>
+              <h3>Make every interaction count.</h3>
+              <p class="nx-muted">
+                Foundations in hospitality, travel and tourism, retail, and security operations —
+                front office, guest relations, and service standards.
+              </p>
+              <a class="nx-text-link" href="programmes.html?group=service">
+                Explore the group <i class="bi bi-arrow-right" aria-hidden="true"></i>
+              </a>
+            </div>
+            <div class="nx-media nx-media--7-5" data-parallax="5">
+              <img src="assets/img/placeholders/nx-section-feature-01.svg" width="1400" height="1000"
+                   loading="lazy" decoding="async" alt="Service and hospitality training environment">
+            </div>
           </article>
-          <article class="nx-home-train__panel">
-            <div class="nx-home-train__content"><span class="nx-chip">Health &amp; Sciences</span><h3>Support better care systems.</h3><p>Study practical learning areas in medical, pharmaceutical, and healthcare management.</p><a class="nx-text-link" href="programmes.html?group=health">Explore the division <i class="bi bi-arrow-up-right" aria-hidden="true"></i></a></div>
-            <div class="nx-media nx-media--7-5"><picture><img src="assets/img/placeholders/nx-section-feature-01.svg" width="1400" height="1000" loading="lazy" alt="Health and sciences training environment"></picture></div>
+
+          <article class="nx-stack-card nx-on-dark" data-stack-card>
+            <div class="nx-stack-card__body">
+              <span class="nx-stack-card__index">03</span>
+              <span class="nx-chip">Health &amp; Sciences</span>
+              <h3>Support better care systems.</h3>
+              <p class="nx-muted">
+                Practical learning areas in medical, pharmaceutical, and healthcare management —
+                records, coordination, and clinical support environments.
+              </p>
+              <a class="nx-text-link" href="programmes.html?group=health">
+                Explore the group <i class="bi bi-arrow-right" aria-hidden="true"></i>
+              </a>
+            </div>
+            <div class="nx-media nx-media--7-5" data-parallax="5">
+              <img src="assets/img/placeholders/nx-section-feature-01.svg" width="1400" height="1000"
+                   loading="lazy" decoding="async" alt="Health and sciences training environment">
+            </div>
           </article>
-          <article class="nx-home-train__panel nx-home-train__panel--reverse">
-            <div class="nx-home-train__content"><span class="nx-chip">Business &amp; Technical</span><h3>Learn how work gets done.</h3><p>Build workplace knowledge across business, education, IT, engineering, and manufacturing.</p><a class="nx-text-link" href="programmes.html?group=business">Explore the division <i class="bi bi-arrow-up-right" aria-hidden="true"></i></a></div>
-            <div class="nx-media nx-media--7-5"><picture><img src="assets/img/placeholders/nx-section-feature-01.svg" width="1400" height="1000" loading="lazy" alt="Business and technical training environment"></picture></div>
+
+          <article class="nx-stack-card nx-on-dark" data-stack-card>
+            <div class="nx-stack-card__body">
+              <span class="nx-stack-card__index">04</span>
+              <span class="nx-chip">Business &amp; Technical</span>
+              <h3>Learn how the work gets done.</h3>
+              <p class="nx-muted">
+                Workplace knowledge across banking, finance, education, IT, electrical, civil
+                engineering, manufacturing, and professional skill development.
+              </p>
+              <a class="nx-text-link" href="programmes.html?group=business">
+                Explore the group <i class="bi bi-arrow-right" aria-hidden="true"></i>
+              </a>
+            </div>
+            <div class="nx-media nx-media--7-5" data-parallax="5">
+              <img src="assets/img/placeholders/nx-section-feature-01.svg" width="1400" height="1000"
+                   loading="lazy" decoding="async" alt="Business and technical training environment">
+            </div>
           </article>
         </div>
       </div>
     </section>
 
-    <section class="nx-section nx-surface-mist" aria-labelledby="highlights-heading">
-      <div class="nx-container">
-        <div class="nx-section-header"><span class="nx-eyebrow">Programme highlights</span><h2 id="highlights-heading">A practical route into professional learning.</h2><p>Each programme is built around focused learning areas and workplace capability.</p></div>
-        <div class="nx-grid nx-grid--3 nx-home-highlights">
-          <article class="nx-card nx-feature-card"><i class="bi bi-diagram-3 nx-feature-card__icon" aria-hidden="true"></i><h3>Industry-oriented curriculum</h3><p class="nx-muted">Learning shaped around the selected sector.</p></article>
-          <article class="nx-card nx-feature-card"><i class="bi bi-tools nx-feature-card__icon" aria-hidden="true"></i><h3>Practical skill development</h3><p class="nx-muted">Practical-oriented training alongside classroom learning.</p></article>
-          <article class="nx-card nx-feature-card"><i class="bi bi-journal-text nx-feature-card__icon" aria-hidden="true"></i><h3>Sector-specific modules</h3><p class="nx-muted">Focused content for different professional directions.</p></article>
-          <article class="nx-card nx-feature-card"><i class="bi bi-chat-square-text nx-feature-card__icon" aria-hidden="true"></i><h3>Workplace communication</h3><p class="nx-muted">Communication and professional skills for the workplace.</p></article>
-          <article class="nx-card nx-feature-card"><i class="bi bi-compass nx-feature-card__icon" aria-hidden="true"></i><h3>Career-oriented training</h3><p class="nx-muted">Learning that keeps career readiness in view.</p></article>
-          <article class="nx-card nx-feature-card"><i class="bi bi-patch-check nx-feature-card__icon" aria-hidden="true"></i><h3>Completion certification</h3><p class="nx-muted">Assessment and programme completion certification, subject to applicable rules.</p></article>
+    <!-- ===================== Featured rail ===================== -->
+    <section class="nx-section nx-rail" data-rail aria-labelledby="featured-title">
+      <div class="nx-container nx-container--wide">
+        <div class="nx-section-head nx-section-head--row">
+          <div>
+            <span class="nx-eyebrow" data-reveal>Featured programmes</span>
+            <h2 id="featured-title" data-split>Start with a field that fits.</h2>
+          </div>
+          <a class="nx-btn nx-btn--ghost" href="programmes.html">
+            See all 21 <i class="bi bi-arrow-right" aria-hidden="true"></i>
+          </a>
+        </div>
+      </div>
+
+      <div class="nx-rail__track" data-rail-track>
+        <article class="nx-card nx-programme-card nx-rail__item">
+          <div class="nx-media nx-media--4-3">
+            <img src="assets/img/placeholders/nx-programme-card-01.svg" width="800" height="600" loading="lazy" decoding="async" alt="Metro rail training environment">
+          </div>
+          <div class="nx-programme-card__body">
+            <div class="nx-programme-card__meta">
+              <span class="nx-programme-card__code">MIRTC</span>
+              <span class="nx-programme-card__division">Metro &amp; Rail</span>
+            </div>
+            <h3 class="nx-programme-card__title"><a href="programme.html?code=MIRTC">Diploma in Metro Rail Management</a></h3>
+            <p class="nx-programme-card__areas">Metro Rail Operations · Station Operations · Ticketing</p>
+          </div>
+        </article>
+
+        <article class="nx-card nx-programme-card nx-rail__item">
+          <div class="nx-media nx-media--4-3">
+            <img src="assets/img/placeholders/nx-programme-card-01.svg" width="800" height="600" loading="lazy" decoding="async" alt="Railway training environment">
+          </div>
+          <div class="nx-programme-card__body">
+            <div class="nx-programme-card__meta">
+              <span class="nx-programme-card__code">RIATC</span>
+              <span class="nx-programme-card__division">Railway</span>
+            </div>
+            <h3 class="nx-programme-card__title"><a href="programme.html?code=RIATC">Diploma in Railway Management</a></h3>
+            <p class="nx-programme-card__areas">Railway Operations · Station Management · Passenger Handling</p>
+          </div>
+        </article>
+
+        <article class="nx-card nx-programme-card nx-rail__item">
+          <div class="nx-media nx-media--4-3">
+            <img src="assets/img/placeholders/nx-programme-card-01.svg" width="800" height="600" loading="lazy" decoding="async" alt="Aviation training environment">
+          </div>
+          <div class="nx-programme-card__body">
+            <div class="nx-programme-card__meta">
+              <span class="nx-programme-card__code">AATC</span>
+              <span class="nx-programme-card__division">Aviation</span>
+            </div>
+            <h3 class="nx-programme-card__title"><a href="programme.html?code=AATC">Diploma in Aviation Management</a></h3>
+            <p class="nx-programme-card__areas">Airport Operations · Airline Ticketing · Ground Operations</p>
+          </div>
+        </article>
+
+        <article class="nx-card nx-programme-card nx-rail__item">
+          <div class="nx-media nx-media--4-3">
+            <img src="assets/img/placeholders/nx-programme-card-01.svg" width="800" height="600" loading="lazy" decoding="async" alt="Hotel training environment">
+          </div>
+          <div class="nx-programme-card__body">
+            <div class="nx-programme-card__meta">
+              <span class="nx-programme-card__code">HITC</span>
+              <span class="nx-programme-card__division">Hospitality</span>
+            </div>
+            <h3 class="nx-programme-card__title"><a href="programme.html?code=HITC">Diploma in Hotel Management</a></h3>
+            <p class="nx-programme-card__areas">Front Office · Housekeeping · Food &amp; Beverage</p>
+          </div>
+        </article>
+
+        <article class="nx-card nx-programme-card nx-rail__item">
+          <div class="nx-media nx-media--4-3">
+            <img src="assets/img/placeholders/nx-programme-card-01.svg" width="800" height="600" loading="lazy" decoding="async" alt="Healthcare training environment">
+          </div>
+          <div class="nx-programme-card__body">
+            <div class="nx-programme-card__meta">
+              <span class="nx-programme-card__code">HIMTC</span>
+              <span class="nx-programme-card__division">Healthcare</span>
+            </div>
+            <h3 class="nx-programme-card__title"><a href="programme.html?code=HIMTC">Diploma in Healthcare Management</a></h3>
+            <p class="nx-programme-card__areas">Healthcare Administration · Patient Coordination · Records</p>
+          </div>
+        </article>
+
+        <article class="nx-card nx-programme-card nx-rail__item">
+          <div class="nx-media nx-media--4-3">
+            <img src="assets/img/placeholders/nx-programme-card-01.svg" width="800" height="600" loading="lazy" decoding="async" alt="Banking training environment">
+          </div>
+          <div class="nx-programme-card__body">
+            <div class="nx-programme-card__meta">
+              <span class="nx-programme-card__code">BITC</span>
+              <span class="nx-programme-card__division">Banking</span>
+            </div>
+            <h3 class="nx-programme-card__title"><a href="programme.html?code=BITC">Diploma in Banking Management</a></h3>
+            <p class="nx-programme-card__areas">Banking Operations · Customer Service · Documentation</p>
+          </div>
+        </article>
+
+        <article class="nx-card nx-programme-card nx-rail__item">
+          <div class="nx-media nx-media--4-3">
+            <img src="assets/img/placeholders/nx-programme-card-01.svg" width="800" height="600" loading="lazy" decoding="async" alt="IT training environment">
+          </div>
+          <div class="nx-programme-card__body">
+            <div class="nx-programme-card__meta">
+              <span class="nx-programme-card__code">ITITC</span>
+              <span class="nx-programme-card__division">IT &amp; Technology</span>
+            </div>
+            <h3 class="nx-programme-card__title"><a href="programme.html?code=ITITC">Diploma in IT Management</a></h3>
+            <p class="nx-programme-card__areas">IT Support · Systems Basics · Workplace Technology</p>
+          </div>
+        </article>
+
+        <article class="nx-card nx-programme-card nx-rail__item">
+          <div class="nx-media nx-media--4-3">
+            <img src="assets/img/placeholders/nx-programme-card-01.svg" width="800" height="600" loading="lazy" decoding="async" alt="Civil engineering training environment">
+          </div>
+          <div class="nx-programme-card__body">
+            <div class="nx-programme-card__meta">
+              <span class="nx-programme-card__code">CETC</span>
+              <span class="nx-programme-card__division">Civil Engineering</span>
+            </div>
+            <h3 class="nx-programme-card__title"><a href="programme.html?code=CETC">Diploma in Civil Management</a></h3>
+            <p class="nx-programme-card__areas">Site Coordination · Drawings · Construction Basics</p>
+          </div>
+        </article>
+      </div>
+
+      <div class="nx-rail__progress" aria-hidden="true"><span class="nx-rail__bar" data-rail-bar></span></div>
+    </section>
+
+    <!-- ===================== Why Nexora ===================== -->
+    <section class="nx-section nx-surface-bone" aria-labelledby="why-title">
+      <div class="nx-container nx-container--wide">
+        <div class="nx-section-head">
+          <span class="nx-eyebrow" data-reveal>Programme highlights</span>
+          <h2 id="why-title" data-split>A practical route into professional learning.</h2>
+        </div>
+
+        <div class="nx-bento">
+          <div class="nx-bento__lead nx-on-dark nx-bento--wide" data-reveal>
+            <span class="nx-eyebrow">The approach</span>
+            <h3 class="nx-display nx-display--dark">
+              Classroom learning, practical orientation, and workplace behaviour — taught together.
+            </h3>
+            <p class="nx-muted">
+              Each programme keeps the same shape: sector knowledge, applied practice, communication,
+              and readiness for the next professional conversation.
+            </p>
+          </div>
+
+          <article class="nx-card nx-bento--wide" data-reveal>
+            <span class="nx-card__icon"><i class="bi bi-diagram-3" aria-hidden="true"></i></span>
+            <h3>Industry-oriented curriculum</h3>
+            <p class="nx-muted">Learning shaped around the selected sector rather than a generic syllabus.</p>
+          </article>
+
+          <article class="nx-card" data-reveal>
+            <span class="nx-card__icon"><i class="bi bi-tools" aria-hidden="true"></i></span>
+            <h3>Practical skill development</h3>
+            <p class="nx-muted">Practical-oriented training alongside classroom sessions.</p>
+          </article>
+
+          <article class="nx-card" data-reveal>
+            <span class="nx-card__icon"><i class="bi bi-journal-text" aria-hidden="true"></i></span>
+            <h3>Sector-specific modules</h3>
+            <p class="nx-muted">Focused content for each professional direction.</p>
+          </article>
+
+          <article class="nx-card" data-reveal>
+            <span class="nx-card__icon"><i class="bi bi-chat-square-text" aria-hidden="true"></i></span>
+            <h3>Workplace communication</h3>
+            <p class="nx-muted">Communication and professional conduct for work settings.</p>
+          </article>
+
+          <article class="nx-card nx-bento--wide" data-reveal>
+            <span class="nx-card__icon"><i class="bi bi-compass" aria-hidden="true"></i></span>
+            <h3>Career-oriented training</h3>
+            <p class="nx-muted">Learning that keeps career readiness in view throughout the programme.</p>
+          </article>
+
+          <article class="nx-card nx-bento--wide" data-reveal>
+            <span class="nx-card__icon"><i class="bi bi-patch-check" aria-hidden="true"></i></span>
+            <h3>Completion certification</h3>
+            <p class="nx-muted">Assessment and programme completion certification, subject to applicable rules.</p>
+          </article>
         </div>
       </div>
     </section>
 
-    <section class="nx-section nx-home-featured" aria-labelledby="featured-heading">
-      <div class="nx-container">
-        <div class="nx-section-header nx-section-header--row"><div><span class="nx-eyebrow">Featured programmes</span><h2 id="featured-heading">Start with a field that fits.</h2></div><a class="nx-btn nx-btn--secondary" href="programmes.html">See all 21 programmes</a></div>
-        <div class="nx-home-featured__rail">
-          <article class="nx-card nx-programme-card nx-card--elevated"><div class="nx-media nx-media--4-3"><img src="assets/img/placeholders/nx-programme-card-01.svg" width="800" height="600" loading="lazy" alt="Metro rail training placeholder"></div><span class="nx-programme-card__code">MIRTC</span><span class="nx-programme-card__division">Metro &amp; Rail</span><h3 class="nx-programme-card__title"><a class="nx-programme-card__link" href="programme.html?code=MIRTC">Diploma in Metro Rail Management</a></h3></article>
-          <article class="nx-card nx-programme-card nx-card--elevated"><div class="nx-media nx-media--4-3"><img src="assets/img/placeholders/nx-programme-card-01.svg" width="800" height="600" loading="lazy" alt="Railway training placeholder"></div><span class="nx-programme-card__code">RIATC</span><span class="nx-programme-card__division">Railway</span><h3 class="nx-programme-card__title"><a class="nx-programme-card__link" href="programme.html?code=RIATC">Diploma in Railway Management</a></h3></article>
-          <article class="nx-card nx-programme-card nx-card--elevated"><div class="nx-media nx-media--4-3"><img src="assets/img/placeholders/nx-programme-card-01.svg" width="800" height="600" loading="lazy" alt="Aviation training placeholder"></div><span class="nx-programme-card__code">AATC</span><span class="nx-programme-card__division">Aviation</span><h3 class="nx-programme-card__title"><a class="nx-programme-card__link" href="programme.html?code=AATC">Diploma in Aviation Management</a></h3></article>
-          <article class="nx-card nx-programme-card nx-card--elevated"><div class="nx-media nx-media--4-3"><img src="assets/img/placeholders/nx-programme-card-01.svg" width="800" height="600" loading="lazy" alt="Hotel training placeholder"></div><span class="nx-programme-card__code">HITC</span><span class="nx-programme-card__division">Hospitality</span><h3 class="nx-programme-card__title"><a class="nx-programme-card__link" href="programme.html?code=HITC">Diploma in Hotel Management</a></h3></article>
-          <article class="nx-card nx-programme-card nx-card--elevated"><div class="nx-media nx-media--4-3"><img src="assets/img/placeholders/nx-programme-card-01.svg" width="800" height="600" loading="lazy" alt="Healthcare training placeholder"></div><span class="nx-programme-card__code">HIMTC</span><span class="nx-programme-card__division">Healthcare</span><h3 class="nx-programme-card__title"><a class="nx-programme-card__link" href="programme.html?code=HIMTC">Diploma in Healthcare Management</a></h3></article>
-          <article class="nx-card nx-programme-card nx-card--elevated"><div class="nx-media nx-media--4-3"><img src="assets/img/placeholders/nx-programme-card-01.svg" width="800" height="600" loading="lazy" alt="Banking training placeholder"></div><span class="nx-programme-card__code">BITC</span><span class="nx-programme-card__division">Banking</span><h3 class="nx-programme-card__title"><a class="nx-programme-card__link" href="programme.html?code=BITC">Diploma in Banking Management</a></h3></article>
-          <article class="nx-card nx-programme-card nx-card--elevated"><div class="nx-media nx-media--4-3"><img src="assets/img/placeholders/nx-programme-card-01.svg" width="800" height="600" loading="lazy" alt="IT training placeholder"></div><span class="nx-programme-card__code">ITITC</span><span class="nx-programme-card__division">IT &amp; Technology</span><h3 class="nx-programme-card__title"><a class="nx-programme-card__link" href="programme.html?code=ITITC">Diploma in IT Management</a></h3></article>
-          <article class="nx-card nx-programme-card nx-card--elevated"><div class="nx-media nx-media--4-3"><img src="assets/img/placeholders/nx-programme-card-01.svg" width="800" height="600" loading="lazy" alt="Civil engineering training placeholder"></div><span class="nx-programme-card__code">CETC</span><span class="nx-programme-card__division">Civil Engineering</span><h3 class="nx-programme-card__title"><a class="nx-programme-card__link" href="programme.html?code=CETC">Diploma in Civil Management</a></h3></article>
+    <!-- ===================== Process ===================== -->
+    <section class="nx-section nx-surface-ink" data-progress aria-labelledby="process-title">
+      <div class="nx-container nx-container--wide">
+        <div class="nx-section-head">
+          <span class="nx-eyebrow" data-reveal>How learning works</span>
+          <h2 id="process-title" data-split>A clear route from question to capability.</h2>
+        </div>
+
+        <div class="nx-process">
+          <div class="nx-process__track" aria-hidden="true"><span class="nx-process__fill" data-progress-fill></span></div>
+          <ol class="nx-process__steps nx-bare-list">
+            <li class="nx-process__step" data-reveal>
+              <span class="nx-process__dot">01</span>
+              <h3>Enquire</h3>
+              <p class="nx-muted">Share what you want to learn and ask your questions.</p>
+            </li>
+            <li class="nx-process__step" data-reveal>
+              <span class="nx-process__dot">02</span>
+              <h3>Counselling</h3>
+              <p class="nx-muted">Discuss programme choices and the learning areas that fit.</p>
+            </li>
+            <li class="nx-process__step" data-reveal>
+              <span class="nx-process__dot">03</span>
+              <h3>Enrol</h3>
+              <p class="nx-muted">Complete the institute's applicable enrolment steps.</p>
+            </li>
+            <li class="nx-process__step" data-reveal>
+              <span class="nx-process__dot">04</span>
+              <h3>Train &amp; certify</h3>
+              <p class="nx-muted">Develop practical and professional skills through the programme.</p>
+            </li>
+          </ol>
         </div>
       </div>
     </section>
 
-    <section class="nx-section nx-surface-pine nx-home-process" aria-labelledby="process-heading">
-      <div class="nx-container"><div class="nx-section-header"><span class="nx-eyebrow nx-eyebrow--light">How learning works</span><h2 id="process-heading">A clear route from question to capability.</h2><p>Start with a conversation, choose a direction, and prepare for focused professional learning.</p></div><div class="nx-grid nx-grid--4 nx-home-process__grid">
-        <article><span class="nx-home-process__number">01</span><h3>Enquire</h3><p>Share what you want to learn and ask your questions.</p></article>
-        <article><span class="nx-home-process__number">02</span><h3>Counselling</h3><p>Discuss programme choices and the learning areas that fit.</p></article>
-        <article><span class="nx-home-process__number">03</span><h3>Enrol</h3><p>Complete the institute's applicable enrolment steps.</p></article>
-        <article><span class="nx-home-process__number">04</span><h3>Train &amp; certify</h3><p>Develop practical and professional skills through the programme.</p></article>
-      </div></div>
+    <!-- ===================== Inside Nexora ===================== -->
+    <section class="nx-section" aria-labelledby="inside-title">
+      <div class="nx-container nx-container--wide">
+        <div class="nx-section-head nx-section-head--row">
+          <div>
+            <span class="nx-eyebrow" data-reveal>Inside Nexora</span>
+            <h2 id="inside-title" data-split>A closer look at the learning environment.</h2>
+          </div>
+          <a class="nx-btn nx-btn--ghost" href="gallery.html">
+            Open the gallery <i class="bi bi-arrow-right" aria-hidden="true"></i>
+          </a>
+        </div>
+
+        <div class="nx-masonry">
+          <button class="nx-masonry__item" type="button" data-reveal data-gallery-item
+                  data-gallery-src="assets/img/placeholders/nx-gallery-landscape-01.svg"
+                  data-gallery-alt="Classroom environment at Nexora Institute">
+            <span class="nx-visually-hidden">Open image: classroom environment</span>
+            <span class="nx-media">
+              <img src="assets/img/placeholders/nx-gallery-landscape-01.svg" width="1600" height="1067" loading="lazy" decoding="async" alt="">
+            </span>
+          </button>
+
+          <button class="nx-masonry__item" type="button" data-reveal data-gallery-item
+                  data-gallery-src="assets/img/placeholders/nx-gallery-square-01.svg"
+                  data-gallery-alt="Learning materials and equipment">
+            <span class="nx-visually-hidden">Open image: learning materials and equipment</span>
+            <span class="nx-media">
+              <img src="assets/img/placeholders/nx-gallery-square-01.svg" width="1200" height="1200" loading="lazy" decoding="async" alt="">
+            </span>
+          </button>
+
+          <button class="nx-masonry__item" type="button" data-reveal data-gallery-item
+                  data-gallery-src="assets/img/placeholders/nx-gallery-square-01.svg"
+                  data-gallery-alt="Practical session detail">
+            <span class="nx-visually-hidden">Open image: practical session detail</span>
+            <span class="nx-media">
+              <img src="assets/img/placeholders/nx-gallery-square-01.svg" width="1200" height="1200" loading="lazy" decoding="async" alt="">
+            </span>
+          </button>
+
+          <button class="nx-masonry__item" type="button" data-reveal data-gallery-item
+                  data-gallery-src="assets/img/placeholders/nx-gallery-landscape-01.svg"
+                  data-gallery-alt="Group learning session">
+            <span class="nx-visually-hidden">Open image: group learning session</span>
+            <span class="nx-media">
+              <img src="assets/img/placeholders/nx-gallery-landscape-01.svg" width="1600" height="1067" loading="lazy" decoding="async" alt="">
+            </span>
+          </button>
+
+          <button class="nx-masonry__item" type="button" data-reveal data-gallery-item
+                  data-gallery-src="assets/img/placeholders/nx-gallery-landscape-01.svg"
+                  data-gallery-alt="Instructor guiding a practical activity">
+            <span class="nx-visually-hidden">Open image: instructor guiding a practical activity</span>
+            <span class="nx-media">
+              <img src="assets/img/placeholders/nx-gallery-landscape-01.svg" width="1600" height="1067" loading="lazy" decoding="async" alt="">
+            </span>
+          </button>
+
+          <button class="nx-masonry__item" type="button" data-reveal data-gallery-item
+                  data-gallery-src="assets/img/placeholders/nx-gallery-landscape-01.svg"
+                  data-gallery-alt="Campus and learning spaces">
+            <span class="nx-visually-hidden">Open image: campus and learning spaces</span>
+            <span class="nx-media">
+              <img src="assets/img/placeholders/nx-gallery-landscape-01.svg" width="1600" height="1067" loading="lazy" decoding="async" alt="">
+            </span>
+          </button>
+        </div>
+      </div>
     </section>
 
-    <section class="nx-section" aria-labelledby="inside-heading">
-      <div class="nx-container"><div class="nx-section-header"><span class="nx-eyebrow">Inside Nexora</span><h2 id="inside-heading">A closer look at the learning environment.</h2><p>Photography will be supplied by the institute. These local placeholders preserve the intended rhythm for now.</p></div><div class="nx-home-masonry">
-        <button class="nx-media nx-media--3-2" type="button" aria-label="Open classroom image"><img src="assets/img/placeholders/nx-gallery-landscape-01.svg" width="1600" height="1067" loading="lazy" alt="Classroom environment placeholder"></button>
-        <button class="nx-media nx-media--2-3" type="button" aria-label="Open practical learning image"><img src="assets/img/placeholders/nx-gallery-portrait-01.svg" width="1067" height="1600" loading="lazy" alt="Practical learning placeholder"></button>
-        <button class="nx-media nx-media--square" type="button" aria-label="Open learning materials image"><img src="assets/img/placeholders/nx-gallery-square-01.svg" width="1200" height="1200" loading="lazy" alt="Learning materials placeholder"></button>
-        <button class="nx-media nx-media--3-2" type="button" aria-label="Open group learning image"><img src="assets/img/placeholders/nx-gallery-landscape-01.svg" width="1600" height="1067" loading="lazy" alt="Group learning placeholder"></button>
-        <button class="nx-media nx-media--2-3" type="button" aria-label="Open training image"><img src="assets/img/placeholders/nx-gallery-portrait-01.svg" width="1067" height="1600" loading="lazy" alt="Training setting placeholder"></button>
-      </div></div>
+    <!-- ===================== Career support ===================== -->
+    <section class="nx-section nx-surface-bone" aria-labelledby="career-title">
+      <div class="nx-container nx-container--wide nx-split">
+        <div class="nx-stack">
+          <span class="nx-eyebrow" data-reveal>Career support</span>
+          <h2 id="career-title" data-split>Support that keeps the next step in view.</h2>
+        </div>
+        <div class="nx-stack" data-reveal>
+          <p class="nx-lede">
+            The institute may provide career guidance, interview preparation, resume assistance,
+            and employment-oriented skill development alongside the programme.
+          </p>
+          <p class="nx-notice">
+            <i class="bi bi-info-circle" aria-hidden="true"></i>
+            <span>Completion of a programme does not by itself guarantee employment, appointment or a specific salary.</span>
+          </p>
+        </div>
+      </div>
     </section>
 
-    <section class="nx-section nx-home-career nx-surface-mist" aria-labelledby="career-heading">
-      <div class="nx-container nx-home-career__grid"><div><span class="nx-eyebrow">Career support</span><h2 id="career-heading">Support that keeps the next step in view.</h2></div><div><p>The institute may provide career guidance, interview preparation, resume assistance and employment-oriented skill development.</p><p class="nx-home-career__notice">Completion of a programme does not by itself guarantee employment, appointment or a specific salary.</p></div></div>
+    <!-- ===================== CTA ===================== -->
+    <section class="nx-cta nx-surface-ink" aria-labelledby="cta-title">
+      <span class="nx-cta__aura" aria-hidden="true"></span>
+      <div class="nx-container nx-cta__inner">
+        <span class="nx-eyebrow" data-reveal>Start with a question</span>
+        <h2 class="nx-cta__title nx-display nx-display--dark" id="cta-title" data-split>
+          Find the programme that fits your <em>direction</em>.
+        </h2>
+        <div class="nx-btn-row" data-reveal>
+          <a class="nx-btn nx-btn--primary nx-btn--lg" href="admissions.html#enquiry" data-magnetic="0.2">
+            Send an enquiry <i class="bi bi-arrow-up-right" aria-hidden="true"></i>
+          </a>
+          <a class="nx-btn nx-btn--on-dark nx-btn--lg" href="programmes.html">Browse programmes</a>
+        </div>
+      </div>
     </section>
-
-    <section class="nx-home-cta nx-surface-pine" aria-labelledby="cta-heading"><div class="nx-container nx-home-cta__inner"><div><span class="nx-eyebrow nx-eyebrow--light">Start with a question</span><h2 id="cta-heading">Find the programme that fits your direction.</h2></div><a class="nx-btn nx-btn--primary nx-btn--lg" href="contact.html">Talk to an advisor <i class="bi bi-arrow-up-right" aria-hidden="true"></i></a></div></section>
   </main>
+
   <div data-nx-site-footer></div>
-  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js" defer></script>
-  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js" defer></script>
-  <script src="assets/js/motion.js?v=20260921-qa4" defer></script>
-  <script src="assets/js/nav.js?v=20260921-qa" defer></script>
+
+  <!-- ===================== Lightbox ===================== -->
+  <div class="nx-lightbox" data-lightbox aria-hidden="true">
+    <div class="nx-lightbox__dialog" role="dialog" aria-modal="true" aria-label="Image viewer">
+      <button class="nx-btn nx-btn--on-dark nx-btn--sm nx-lightbox__close" type="button" data-lightbox-close>
+        Close <i class="bi bi-x-lg" aria-hidden="true"></i>
+      </button>
+      <button class="nx-lightbox__nav nx-lightbox__nav--prev" type="button" data-lightbox-prev aria-label="Previous image">
+        <i class="bi bi-chevron-left" aria-hidden="true"></i>
+      </button>
+      <button class="nx-lightbox__nav nx-lightbox__nav--next" type="button" data-lightbox-next aria-label="Next image">
+        <i class="bi bi-chevron-right" aria-hidden="true"></i>
+      </button>
+      <figure class="nx-lightbox__figure">
+        <img data-lightbox-image src="" alt="">
+        <figcaption class="nx-lightbox__caption" data-lightbox-caption></figcaption>
+      </figure>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/gsap.min.js" defer></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/ScrollTrigger.min.js" defer></script>
+  <script src="assets/js/nav.js" defer></script>
+  <script src="assets/js/gallery.js" defer></script>
+  <script src="assets/js/motion.js" defer></script>
+  <script src="assets/js/seo.js" defer></script>
 </body>
 </html>

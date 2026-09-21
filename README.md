@@ -1,12 +1,16 @@
 # Nexora Institute website
 
-A static HTML5 website for Nexora Institute of Professional Studies.
+A static, build-free HTML site for Nexora Institute of Professional Studies. No framework, no
+bundler, no `npm install` — just files a web server can hand out.
+
+Send [CLIENT-REQUIREMENTS.md](CLIENT-REQUIREMENTS.md) to the institute to collect verified content,
+legal copy, integrations, and correctly sized image assets. That is the only requirements document.
 
 ## Run locally
 
-Serve the project directory through any static web server. The programme listing, programme detail pages, and admissions select load JSON with `fetch`, so opening HTML directly with `file://` is not supported.
-
-Example with Python:
+Serve the project directory through any static web server. The programme listing, the programme
+detail template, and the admissions programme select all load JSON with `fetch`, so opening the
+HTML directly from the filesystem (`file://`) will not work.
 
 ```powershell
 python -m http.server 8080
@@ -14,40 +18,109 @@ python -m http.server 8080
 
 Then open `http://localhost:8080/`.
 
+## Pages
+
+| File | Purpose |
+|---|---|
+| `index.html` | Home — hero, division stack, featured rail, bento, process, gallery, CTA |
+| `about.html` | Institute and programme approach |
+| `programmes.html` | Searchable, filterable index of all 21 programmes |
+| `programme.html?code=MIRTC` | Shared programme detail template |
+| `admissions.html` | Four-step route, enquiry form, FAQ |
+| `gallery.html` | Filterable gallery with lightbox |
+| `contact.html` | Contact details and contact form |
+| `disclaimer.html` | Recognition, career, privacy, and terms statements |
+| `404.html` | Not-found page |
+
 ## Structure
 
-- `index.html`: home page
-- `about.html`: institute and programme approach
-- `programmes.html`: searchable, filterable programme index
-- `programme.html?code=MIRTC`: shared programme detail template
-- `admissions.html`: process, FAQ, and enquiry form
-- `gallery.html`: filterable gallery and lightbox
-- `contact.html`: contact form and contact placeholders
-- `disclaimer.html`: recognition, career, terms, and privacy information
-- `assets/data/programmes.json`: source of truth for all 21 programmes
-- `assets/js/`: navigation, data, rendering, forms, gallery, SEO, and GSAP motion
-- `assets/css/`: tokens, base, components, layout, and import layer
+```
+assets/
+  css/     tokens → base → components → layout, imported by main.css
+  js/      nav, data, programmes, forms, gallery, motion, seo
+  data/    programmes.json — source of truth for all 21 programmes
+  img/     SVG placeholders, swapped for client photography
+  brand/   logo
+```
+
+### CSS
+
+`main.css` is the only stylesheet the pages link. It imports, in cascade order:
+
+- `tokens.css` — colours, type scale, spacing, radii, easing, z-layers. Change the brand here.
+- `base.css` — reset, typography, containers, surfaces, motion initial states.
+- `components.css` — buttons, cards, header, footer, forms, accordion, lightbox, marquee.
+- `layout.css` — page-level compositions and all responsive rules.
+
+### JavaScript
+
+Each file is a plain IIFE attaching to a shared `window.NX` namespace. Load order matters:
+`nav.js` renders the chrome, then `motion.js` animates it.
+
+- `nav.js` — renders the header, mega menu, mobile drawer, and footer into `[data-nx-site-header]`
+  and `[data-nx-site-footer]` mount points on every page.
+- `data.js` — one memoised `fetch` of `programmes.json`, plus HTML escaping.
+- `programmes.js` — listing filter/search and the programme detail template.
+- `forms.js` — validation, honeypot, and submission for both forms.
+- `gallery.js` — category filters and the shared lightbox.
+- `motion.js` — the GSAP system (see below).
+- `seo.js` — fills in canonical and Open Graph tags on pages that do not declare them.
+
+## Motion
+
+Animation is GSAP 3 with ScrollTrigger, loaded from CDN and orchestrated entirely by
+`assets/js/motion.js`:
+
+- an intro curtain with a load counter on the home page,
+- a word-by-word hero headline reveal (text is split by a local helper, so no premium plugin),
+- scroll-triggered batch reveals for anything marked `data-reveal`,
+- a manifesto block whose words light up as it scrolls through,
+- sticky, scaling division cards,
+- a pinned horizontal programme rail with a progress bar,
+- a velocity-reactive marquee,
+- parallax media, animated counters, drawn progress lines,
+- magnetic buttons and a custom cursor on fine-pointer devices.
+
+Three rules hold the system together:
+
+1. **Nothing is hidden unless something can bring it back.** An inline script adds `nx-js` to
+   `<html>`; only then do the pre-hidden states apply. If GSAP fails to load, `motion.js` removes
+   the class and everything paints normally.
+2. **`prefers-reduced-motion` is respected.** Animation is skipped, but behaviour that users depend
+   on — accordions, the lightbox, the sticky header — is bound regardless.
+3. **Pinned sections use `gsap.matchMedia()`** and `ScrollTrigger.config({ ignoreMobileResize: true })`,
+   so mobile address-bar resizes never tear them down.
+
+Add motion to new markup with `data-reveal` (fade and rise) or `data-split` (word-by-word heading).
+Content rendered after page load should call `NX.motion.reveal(container)`.
 
 ## Add a programme
 
-Add one complete object to `assets/data/programmes.json` using the existing schema: `id`, `number`, `division`, `code`, `certificate`, `programme`, `group`, `keyAreas`, and `slug`. The listing, detail page, admissions select, related programmes, sitemap, and static crawlable list should then be updated or checked together.
+Add one complete object to `assets/data/programmes.json` using the existing schema: `id`, `number`,
+`division`, `code`, `certificate`, `programme`, `group`, `keyAreas`, `slug`. `group` must be one of
+the four existing values, or the filter pills will not match it.
+
+Then update, together:
+
+- `sitemap.xml` — add the `programme.html?code=…` entry,
+- the `<noscript>` list in `programmes.html`,
+- the mega-menu division list in `assets/js/nav.js`, if the division is new.
 
 ## Swap images
 
-Replace the local SVG files in `assets/img/placeholders/` with approved client images using the filenames and exact dimensions listed in `IMAGE-REQUIREMENTS.md`. Keep explicit width, height, aspect ratio, descriptive alt text, and the teal overlay treatment. Add WebP and JPEG sources when photographic assets arrive.
+Replace the SVG files in `assets/img/placeholders/` with approved client images, using the exact
+filenames and dimensions in section 6 of [CLIENT-REQUIREMENTS.md](CLIENT-REQUIREMENTS.md). Keep the
+explicit `width`, `height`, and descriptive `alt` on every `<img>`. Add `<picture>` with WebP and
+JPEG sources once photographic assets arrive.
 
-## Placeholders to resolve
+## Before launch
 
-- `{{PLACEHOLDER: production domain}}`: replace in `robots.txt`, `sitemap.xml`, and canonical deployment configuration.
-- `{{PLACEHOLDER: form endpoint}}`: replace the centralized endpoint constant in `assets/js/forms.js`.
-- `{{PLACEHOLDER: learning modes}}`: confirm the supported learning modes for the home stat strip.
-- `{{PLACEHOLDER: institute address}}`, phone, email, office hours, and verified map location: add confirmed contact details.
-- `{{PLACEHOLDER: eligibility requirements}}` and required documents: add verified admissions information.
-- `{{PLACEHOLDER: programme duration}}`, fees, and eligibility: add verified programme-specific information.
-- `{{PLACEHOLDER: admissions fee and duration information}}`: add verified FAQ content.
-- `{{PLACEHOLDER: privacy policy content}}` and terms and conditions content: add approved legal copy.
-- Brand PNG, SVG master, horizontal lockup, and favicon: replace the supplied JPEG when delivered.
+Search the project for `{{PLACEHOLDER` — every match is something the institute still needs to
+supply. Section 9 of the requirements document lists them all with their locations.
 
 ## Compliance
 
-Do not add claims of government, university, UGC, AICTE, statutory-board, professional-licensing recognition, guaranteed employment, guaranteed appointment, or guaranteed salary without verified applicable approval and approved copy.
+Do not add claims of government, university, UGC, AICTE, statutory-board, or professional-licensing
+recognition, or of guaranteed employment, appointment, or salary, without verified applicable
+approval and approved legal copy. The recognition statement and the career notice appear in the
+footer on every page and must stay unless replaced with approved wording of the same meaning.

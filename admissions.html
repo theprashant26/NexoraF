@@ -1,9 +1,241 @@
 <!doctype html>
 <html lang="en">
-<head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="description" content="Learn how to enquire and enrol in a Nexora Institute professional training programme."><title>Admissions | Nexora Institute of Professional Studies</title><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Inter+Tight:wght@600;700&display=swap" rel="stylesheet"><link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"><link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet"><link rel="stylesheet" href="assets/css/main.css"></head>
-<body><a class="nx-skip-link" href="#main-content">Skip to content</a><div data-nx-site-header></div><main id="main-content" class="nx-page-shell">
-<section class="nx-page-intro nx-surface-mist"><div class="nx-container"><span class="nx-eyebrow">Admissions</span><h1>Start with the information you need.</h1><p>Ask questions, compare programme directions, and complete the applicable enrolment steps.</p></div></section>
-<section class="nx-section"><div class="nx-container"><div class="nx-section-header"><span class="nx-eyebrow">Your route</span><h2>Four steps to get started.</h2></div><div class="nx-grid nx-grid--4 nx-admissions-steps"><article><span>01</span><h3>Enquire</h3><p>Share your interests and questions with the institute.</p></article><article><span>02</span><h3>Counselling</h3><p>Discuss programme choices and learning areas.</p></article><article><span>03</span><h3>Enrol</h3><p>Complete the applicable enrolment process.</p></article><article><span>04</span><h3>Train &amp; certify</h3><p>Begin the selected programme and work through its learning areas.</p></article></div></div></section>
-<section class="nx-section nx-surface-mist"><div class="nx-container nx-grid nx-grid--2"><div><span class="nx-eyebrow">Before you enquire</span><h2>Keep the essentials ready.</h2><h3>Eligibility</h3><p>{{PLACEHOLDER: eligibility requirements}}</p><h3>Documents needed</h3><p>{{PLACEHOLDER: required documents}}</p></div><div class="nx-card" id="enquiry"><span class="nx-eyebrow">Enquiry form</span><h2>Tell us where you want to begin.</h2><form class="nx-form" data-contact-form novalidate><div class="nx-form__field"><label class="nx-form__label" for="admission-name">Name</label><input class="nx-form__control" id="admission-name" name="name" type="text" required autocomplete="name"><span class="nx-form__message nx-form__message--error" data-error-for="name" hidden>Enter your name.</span></div><div class="nx-grid nx-grid--2"><div class="nx-form__field"><label class="nx-form__label" for="admission-phone">Phone</label><input class="nx-form__control" id="admission-phone" name="phone" type="tel" required autocomplete="tel"><span class="nx-form__message nx-form__message--error" data-error-for="phone" hidden>Enter your phone number.</span></div><div class="nx-form__field"><label class="nx-form__label" for="admission-email">Email</label><input class="nx-form__control" id="admission-email" name="email" type="email" required autocomplete="email"><span class="nx-form__message nx-form__message--error" data-error-for="email" hidden>Enter a valid email address.</span></div></div><div class="nx-form__field"><label class="nx-form__label" for="admission-programme">Programme</label><select class="nx-form__control" id="admission-programme" name="programme" required><option value="">Loading programmes...</option></select><span class="nx-form__message nx-form__message--error" data-error-for="programme" hidden>Select a programme.</span></div><div class="nx-grid nx-grid--2"><div class="nx-form__field"><label class="nx-form__label" for="admission-city">City</label><input class="nx-form__control" id="admission-city" name="city" type="text" autocomplete="address-level2"></div><div class="nx-form__field"><label class="nx-form__label" for="admission-message">Message</label><textarea class="nx-form__control" id="admission-message" name="message" rows="3"></textarea></div></div><label class="nx-form__check"><input type="checkbox" name="consent" required><span>I agree to be contacted about my enquiry.</span></label><div class="nx-form__message nx-form__message--success" data-form-success hidden>Thanks. Your enquiry is ready for the institute team.</div><button class="nx-btn nx-btn--primary" type="submit">Send enquiry</button></form></div></div></section>
-<section class="nx-section"><div class="nx-container nx-section-header"><span class="nx-eyebrow">Questions</span><h2>Frequently asked questions.</h2><div class="nx-accordion" data-accordion><div class="nx-accordion__item"><button class="nx-accordion__trigger" type="button" aria-expanded="false" aria-controls="admission-faq-1">How do I choose a programme?<span aria-hidden="true">+</span></button><div class="nx-accordion__panel" id="admission-faq-1" hidden>Compare the programme divisions and key learning areas, then contact the institute for guidance.</div></div><div class="nx-accordion__item"><button class="nx-accordion__trigger" type="button" aria-expanded="false" aria-controls="admission-faq-2">Are fees and duration listed here?<span aria-hidden="true">+</span></button><div class="nx-accordion__panel" id="admission-faq-2" hidden>{{PLACEHOLDER: admissions fee and duration information}}</div></div></div></div></section>
-</main><div data-nx-site-footer></div><script src="assets/js/data.js" defer></script><script src="assets/js/forms.js" defer></script><script src="assets/js/nav.js" defer></script></body></html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#071A16">
+  <title>Admissions | Nexora Institute of Professional Studies</title>
+  <meta name="description" content="How to enquire and enrol in a Nexora Institute professional training programme: the four-step route, what to prepare, and the enquiry form.">
+  <link rel="canonical" href="admissions.html">
+  <meta property="og:title" content="Admissions | Nexora Institute of Professional Studies">
+  <meta property="og:description" content="Enquire, get counselling, enrol, and begin a professional training programme.">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="assets/img/placeholders/nx-og-share-01.svg">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <link rel="icon" href="favicon.ico" sizes="any">
+  <link rel="apple-touch-icon" href="assets/brand/nexoralogo.jpeg">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter+Tight:wght@400;500;600;700&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/main.css">
+  <script>document.documentElement.classList.add("nx-js");</script>
+</head>
+
+<body>
+  <a class="nx-skip-link" href="#main">Skip to content</a>
+  <div data-nx-site-header></div>
+
+  <main id="main" class="nx-page">
+
+    <section class="nx-page-hero nx-surface-ink" aria-labelledby="admissions-title">
+      <span class="nx-page-hero__aura" aria-hidden="true"></span>
+      <div class="nx-container nx-container--wide nx-page-hero__inner">
+        <span class="nx-eyebrow" data-reveal>Admissions</span>
+        <h1 class="nx-page-hero__title nx-display nx-display--dark" id="admissions-title" data-split>
+          Start with the information you <em>need</em>.
+        </h1>
+        <p class="nx-lede" data-reveal>
+          Ask questions, compare programme directions, and complete the applicable enrolment steps.
+        </p>
+      </div>
+    </section>
+
+    <section class="nx-section nx-surface-ink" data-progress aria-labelledby="route-title">
+      <div class="nx-container nx-container--wide">
+        <div class="nx-section-head">
+          <span class="nx-eyebrow" data-reveal>Your route</span>
+          <h2 id="route-title" data-split>Four steps to get started.</h2>
+        </div>
+
+        <div class="nx-process">
+          <div class="nx-process__track" aria-hidden="true"><span class="nx-process__fill" data-progress-fill></span></div>
+          <ol class="nx-process__steps nx-bare-list">
+            <li class="nx-process__step" data-reveal>
+              <span class="nx-process__dot">01</span>
+              <h3>Enquire</h3>
+              <p class="nx-muted">Share your interests and questions with the institute.</p>
+            </li>
+            <li class="nx-process__step" data-reveal>
+              <span class="nx-process__dot">02</span>
+              <h3>Counselling</h3>
+              <p class="nx-muted">Discuss programme choices and the learning areas they cover.</p>
+            </li>
+            <li class="nx-process__step" data-reveal>
+              <span class="nx-process__dot">03</span>
+              <h3>Enrol</h3>
+              <p class="nx-muted">Complete the applicable enrolment process.</p>
+            </li>
+            <li class="nx-process__step" data-reveal>
+              <span class="nx-process__dot">04</span>
+              <h3>Train &amp; certify</h3>
+              <p class="nx-muted">Begin the selected programme and work through its learning areas.</p>
+            </li>
+          </ol>
+        </div>
+      </div>
+    </section>
+
+    <section class="nx-section nx-surface-bone" aria-labelledby="enquiry-title">
+      <div class="nx-container nx-container--wide nx-split">
+
+        <div class="nx-stack nx-stack--lg">
+          <div class="nx-stack">
+            <span class="nx-eyebrow" data-reveal>Before you enquire</span>
+            <h2 id="enquiry-title" data-split>Keep the essentials ready.</h2>
+          </div>
+
+          <div class="nx-stack" data-reveal>
+            <h3>Eligibility</h3>
+            <p class="nx-muted">{{PLACEHOLDER: eligibility requirements}}</p>
+          </div>
+
+          <div class="nx-stack" data-reveal>
+            <h3>Documents needed</h3>
+            <ul class="nx-checklist">
+              <li><i class="bi bi-check2-circle" aria-hidden="true"></i><span>{{PLACEHOLDER: required documents}}</span></li>
+            </ul>
+          </div>
+
+          <p class="nx-notice" data-reveal>
+            <i class="bi bi-info-circle" aria-hidden="true"></i>
+            <span>Fees, duration, eligibility, and documents should be confirmed with the institute before enrolment.</span>
+          </p>
+        </div>
+
+        <div class="nx-enquiry-panel" id="enquiry" data-reveal>
+          <span class="nx-eyebrow">Enquiry form</span>
+          <h2>Tell us where you want to begin.</h2>
+
+          <form class="nx-form" data-contact-form novalidate>
+            <div class="nx-form__field">
+              <label class="nx-form__label" for="enquiry-name">Name</label>
+              <input class="nx-form__control" id="enquiry-name" name="name" type="text" required autocomplete="name">
+              <span class="nx-form__message nx-form__message--error" data-error-for="name" hidden>Enter your name.</span>
+            </div>
+
+            <div class="nx-grid nx-grid--2">
+              <div class="nx-form__field">
+                <label class="nx-form__label" for="enquiry-phone">Phone</label>
+                <input class="nx-form__control" id="enquiry-phone" name="phone" type="tel" required autocomplete="tel">
+                <span class="nx-form__message nx-form__message--error" data-error-for="phone" hidden>Enter a valid phone number.</span>
+              </div>
+              <div class="nx-form__field">
+                <label class="nx-form__label" for="enquiry-email">Email</label>
+                <input class="nx-form__control" id="enquiry-email" name="email" type="email" required autocomplete="email">
+                <span class="nx-form__message nx-form__message--error" data-error-for="email" hidden>Enter a valid email address.</span>
+              </div>
+            </div>
+
+            <div class="nx-form__field">
+              <label class="nx-form__label" for="enquiry-programme">Programme</label>
+              <select class="nx-form__control" id="enquiry-programme" name="programme" required>
+                <option value="">Loading programmes…</option>
+              </select>
+              <span class="nx-form__message nx-form__message--error" data-error-for="programme" hidden>Select a programme.</span>
+            </div>
+
+            <div class="nx-grid nx-grid--2">
+              <div class="nx-form__field">
+                <label class="nx-form__label" for="enquiry-city">City</label>
+                <input class="nx-form__control" id="enquiry-city" name="city" type="text" autocomplete="address-level2">
+              </div>
+              <div class="nx-form__field">
+                <label class="nx-form__label" for="enquiry-message">Message</label>
+                <input class="nx-form__control" id="enquiry-message" name="message" type="text">
+              </div>
+            </div>
+
+            <!-- Honeypot: hidden from people, tempting to bots. -->
+            <div class="nx-visually-hidden" aria-hidden="true">
+              <label for="enquiry-company">Company</label>
+              <input id="enquiry-company" name="company" type="text" tabindex="-1" autocomplete="off">
+            </div>
+
+            <label class="nx-form__check">
+              <input type="checkbox" name="consent" required>
+              <span>I agree to be contacted about my enquiry.</span>
+            </label>
+            <span class="nx-form__message nx-form__message--error" data-error-for="consent" hidden>Please confirm you agree to be contacted.</span>
+
+            <div class="nx-form__message nx-form__message--success" data-form-success hidden tabindex="-1">
+              Thanks. Your enquiry has been recorded for the institute team.
+            </div>
+            <div class="nx-form__message nx-form__message--error" data-form-error hidden>
+              That did not send. Please try again, or contact the institute directly.
+            </div>
+
+            <button class="nx-btn nx-btn--primary" type="submit">
+              Send enquiry <i class="bi bi-arrow-up-right" aria-hidden="true"></i>
+            </button>
+            <p class="nx-form__note">{{PLACEHOLDER: consent and privacy wording}}</p>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <section class="nx-section" aria-labelledby="faq-title">
+      <div class="nx-container nx-container--narrow">
+        <div class="nx-section-head">
+          <span class="nx-eyebrow" data-reveal>Questions</span>
+          <h2 id="faq-title" data-split>Frequently asked questions.</h2>
+        </div>
+
+        <div class="nx-accordion" data-accordion>
+          <div class="nx-accordion__item">
+            <button class="nx-accordion__trigger" type="button" aria-expanded="false" aria-controls="faq-1">
+              How do I choose a programme?
+              <span class="nx-accordion__icon" aria-hidden="true"></span>
+            </button>
+            <div class="nx-accordion__panel" id="faq-1" hidden>
+              <div>Compare the learning groups and their key learning areas, then contact the institute for guidance on the direction that fits your background and goal.</div>
+            </div>
+          </div>
+
+          <div class="nx-accordion__item">
+            <button class="nx-accordion__trigger" type="button" aria-expanded="false" aria-controls="faq-2">
+              What are the fees and duration?
+              <span class="nx-accordion__icon" aria-hidden="true"></span>
+            </button>
+            <div class="nx-accordion__panel" id="faq-2" hidden>
+              <div>{{PLACEHOLDER: admissions fee and duration information}}</div>
+            </div>
+          </div>
+
+          <div class="nx-accordion__item">
+            <button class="nx-accordion__trigger" type="button" aria-expanded="false" aria-controls="faq-3">
+              What happens after I send an enquiry?
+              <span class="nx-accordion__icon" aria-hidden="true"></span>
+            </button>
+            <div class="nx-accordion__panel" id="faq-3" hidden>
+              <div>{{PLACEHOLDER: enrolment process and responsible contact person}}</div>
+            </div>
+          </div>
+
+          <div class="nx-accordion__item">
+            <button class="nx-accordion__trigger" type="button" aria-expanded="false" aria-controls="faq-4">
+              Is the certificate a government or university qualification?
+              <span class="nx-accordion__icon" aria-hidden="true"></span>
+            </button>
+            <div class="nx-accordion__panel" id="faq-4" hidden>
+              <div>Unless specifically stated otherwise, certificates and diplomas issued by Nexora Institute are institute-level professional training credentials and should not be represented as government, university, UGC, AICTE, statutory-board or professional-licensing qualifications without the applicable approval, affiliation or recognition.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <div data-nx-site-footer></div>
+
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/gsap.min.js" defer></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/ScrollTrigger.min.js" defer></script>
+  <script src="assets/js/nav.js" defer></script>
+  <script src="assets/js/data.js" defer></script>
+  <script src="assets/js/forms.js" defer></script>
+  <script src="assets/js/motion.js" defer></script>
+  <script src="assets/js/seo.js" defer></script>
+</body>
+</html>

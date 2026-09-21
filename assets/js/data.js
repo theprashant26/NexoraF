@@ -1,24 +1,42 @@
+/* ==========================================================================
+   Programme data access
+
+   One memoised fetch of programmes.json, shared by the listing, the detail
+   template, and the admissions programme select.
+   ========================================================================== */
+
 (function () {
   "use strict";
 
-  window.NX = window.NX || {};
-  var programmesPromise;
+  var NX = (window.NX = window.NX || {});
+  var request;
 
   function loadProgrammes() {
-    if (!programmesPromise) {
-      programmesPromise = fetch("assets/data/programmes.json").then(function (response) {
+    if (!request) {
+      request = fetch("assets/data/programmes.json").then(function (response) {
         if (!response.ok) throw new Error("Programme data could not be loaded.");
         return response.json();
       });
     }
-    return programmesPromise;
+    return request;
   }
 
   function getProgrammeByCode(programmes, code) {
-    var target = String(code || "").toUpperCase();
-    return programmes.find(function (programme) { return programme.code === target; }) || null;
+    var target = String(code || "").trim().toUpperCase();
+    if (!target) return null;
+    for (var i = 0; i < programmes.length; i += 1) {
+      if (programmes[i].code === target) return programmes[i];
+    }
+    return null;
   }
 
-  window.NX.loadProgrammes = loadProgrammes;
-  window.NX.getProgrammeByCode = getProgrammeByCode;
+  function escapeHtml(value) {
+    return String(value == null ? "" : value).replace(/[&<>"']/g, function (character) {
+      return { "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[character];
+    });
+  }
+
+  NX.loadProgrammes = loadProgrammes;
+  NX.getProgrammeByCode = getProgrammeByCode;
+  NX.escapeHtml = escapeHtml;
 }());

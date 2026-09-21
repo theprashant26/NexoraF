@@ -1,20 +1,94 @@
+/* ==========================================================================
+   Nexora design tokens
+   ========================================================================== */
+
 :root {
-  --nx-pine: #0C4F4A;
-  --nx-pine-deep: #073531;
-  --nx-teal: #16786E;
-  --nx-marigold: #EFA020;
-  --nx-marigold-lo: #FFF3DE;
-  --nx-ink: #14201F;
-  --nx-slate: #5B6B69;
-  --nx-mist: #F3F7F6;
-  --nx-line: #DCE6E4;
+  /* --- Surfaces -------------------------------------------------------- */
+  --nx-void: #04100D;
+  --nx-ink: #071A16;
+  --nx-ink-2: #0C2822;
+  --nx-ink-3: #123B32;
+  --nx-bone: #F7F5EF;
+  --nx-bone-2: #EFEBE1;
   --nx-white: #FFFFFF;
 
-  --font-display: "Inter Tight", system-ui, sans-serif;
-  --font-body: "Inter", system-ui, sans-serif;
+  /* --- Brand ----------------------------------------------------------- */
+  --nx-jade: #0D6B59;
+  --nx-jade-lit: #19C99B;
+  --nx-jade-dim: #0A4F42;
+  --nx-gold: #E8B44E;
+  --nx-gold-lit: #F7D58C;
+  --nx-gold-dim: #8A6520;
 
-  --nx-radius-control: 4px;
-  --nx-radius-card: 14px;
-  --nx-radius-media: 28px;
-  --nx-shadow-elevated: 0 18px 40px -24px rgba(7, 53, 49, 0.45);
+  /* --- Text ------------------------------------------------------------ */
+  --nx-text: #071A16;
+  --nx-text-muted: #4E635C;
+  --nx-text-faint: #7B8E88;
+  --nx-on-dark: #F7F5EF;
+  --nx-on-dark-muted: rgba(247, 245, 239, 0.66);
+  --nx-on-dark-faint: rgba(247, 245, 239, 0.4);
+
+  /* --- Lines & fills --------------------------------------------------- */
+  --nx-line: rgba(7, 26, 22, 0.12);
+  --nx-line-strong: rgba(7, 26, 22, 0.22);
+  --nx-line-dark: rgba(247, 245, 239, 0.14);
+  --nx-line-dark-strong: rgba(247, 245, 239, 0.28);
+  --nx-fill-soft: rgba(7, 26, 22, 0.04);
+  --nx-fill-dark: rgba(247, 245, 239, 0.06);
+
+  /* --- Gradients & glow ------------------------------------------------ */
+  --nx-grad-jade: linear-gradient(135deg, #19C99B 0%, #0D6B59 100%);
+  --nx-grad-gold: linear-gradient(135deg, #F7D58C 0%, #E8B44E 100%);
+  --nx-grad-ink: linear-gradient(180deg, #071A16 0%, #04100D 100%);
+  --nx-glow-jade: radial-gradient(closest-side, rgba(25, 201, 155, 0.35), rgba(25, 201, 155, 0));
+  --nx-glow-gold: radial-gradient(closest-side, rgba(232, 180, 78, 0.28), rgba(232, 180, 78, 0));
+
+  /* --- Type ------------------------------------------------------------ */
+  --nx-font-display: "Instrument Serif", "Iowan Old Style", Georgia, serif;
+  --nx-font-ui: "Inter Tight", system-ui, -apple-system, sans-serif;
+  --nx-font-body: "Inter", system-ui, -apple-system, sans-serif;
+
+  --nx-step--2: clamp(0.69rem, 0.67rem + 0.11vw, 0.75rem);
+  --nx-step--1: clamp(0.83rem, 0.79rem + 0.18vw, 0.94rem);
+  --nx-step-0: clamp(1rem, 0.95rem + 0.24vw, 1.13rem);
+  --nx-step-1: clamp(1.2rem, 1.12rem + 0.39vw, 1.5rem);
+  --nx-step-2: clamp(1.44rem, 1.31rem + 0.63vw, 2rem);
+  --nx-step-3: clamp(1.73rem, 1.53rem + 0.98vw, 2.66rem);
+  --nx-step-4: clamp(2.07rem, 1.77rem + 1.49vw, 3.55rem);
+  --nx-step-5: clamp(2.49rem, 2.04rem + 2.23vw, 4.74rem);
+  --nx-step-6: clamp(2.99rem, 2.33rem + 3.28vw, 6.31rem);
+
+  /* --- Space ----------------------------------------------------------- */
+  --nx-gutter: clamp(1.25rem, 4vw, 3.5rem);
+  --nx-measure: 78rem;
+  --nx-section: clamp(5rem, 10vw, 9.5rem);
+  --nx-section-sm: clamp(3rem, 6vw, 5rem);
+
+  /* --- Shape ----------------------------------------------------------- */
+  --nx-r-xs: 6px;
+  --nx-r-sm: 10px;
+  --nx-r-md: 18px;
+  --nx-r-lg: 28px;
+  --nx-r-xl: 40px;
+  --nx-r-pill: 999px;
+
+  /* --- Elevation ------------------------------------------------------- */
+  --nx-shadow-sm: 0 2px 8px -4px rgba(4, 16, 13, 0.3);
+  --nx-shadow-md: 0 18px 40px -28px rgba(4, 16, 13, 0.55);
+  --nx-shadow-lg: 0 40px 90px -50px rgba(4, 16, 13, 0.7);
+  --nx-shadow-glow: 0 24px 70px -34px rgba(13, 107, 89, 0.65);
+
+  /* --- Motion ---------------------------------------------------------- */
+  --nx-ease: cubic-bezier(0.22, 1, 0.36, 1);
+  --nx-ease-in-out: cubic-bezier(0.65, 0, 0.35, 1);
+  --nx-dur-fast: 180ms;
+  --nx-dur: 320ms;
+  --nx-dur-slow: 620ms;
+
+  /* --- Layers ---------------------------------------------------------- */
+  --nx-z-cursor: 200;
+  --nx-z-curtain: 160;
+  --nx-z-lightbox: 120;
+  --nx-z-drawer: 90;
+  --nx-z-header: 70;
 }
