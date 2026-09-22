@@ -121,7 +121,7 @@ photographs are needed than a card-based layout would require.
 
 | Slot ID | Page | Section | Filename | Exact size (px) | Ratio | Format | Max size | What it should show |
 |---|---|---|---|---|---|---|---|---|
-| `home-hero-01`…`03` | Home | Masthead slider | `nx-home-hero-01.jpg` … `-03.jpg` | 2400 × 900 | 8:3 | WebP + JPEG | 260 KB each | Three wide, calm shots of real training environments. They run full width under the headline and cross-fade, so keep the subject off-centre and leave room at the sides. Pick three that look right in sequence |
+| `home-hero-01`…`03` | Home | Masthead background | `nx-home-hero-01.jpg` … `-03.jpg` | 2400 × 1600 | 3:2 | WebP + JPEG | 300 KB each | Three shots of real training environments. They sit **behind** the headline and cross-fade. **Put the main subject on the right-hand side** — the left is where the headline sits and is washed out to keep it readable. Pick three that look right in sequence |
 | `home-tile-01`…`04` | Home | Inside Nexora | `nx-home-tile-01.jpg` … `-04.jpg` | 1600 × 1200 | 4:3 | WebP + JPEG | 160 KB each | Classroom, materials or equipment, a learner mid-task, a group session |
 | `programme-banner-01` | Programme detail | Banner | `nx-programme-banner-01.jpg` | 1920 × 720 | 8:3 | WebP + JPEG | 220 KB | Wide sector-relevant training environment |
 | `gallery-01`…`06` | Gallery | Tiles | `nx-gallery-01.jpg` … `-06.jpg` | 1600 × 1200 | 4:3 | WebP + JPEG | 160 KB each | Two campus, two learning, two people — these are the filter categories |
@@ -132,12 +132,18 @@ photographs are needed than a card-based layout would require.
 That is **15 photographs in total**, plus the social share card and the optional
 faculty portrait.
 
-Photographs are shown with no colour filter over them, and no text is ever laid
-over a photograph — so any well-exposed image will work, and there is no need to
-leave empty space for a headline. The page alternates between a warm off-white
-and a warm charcoal background; all photography sits on the off-white sections.
+**The three masthead images are a special case.** They sit behind the headline,
+under a warm off-white wash that keeps the dark text readable. Two consequences:
 
-If only one masthead image can be supplied, send it and we will run the slider
+- **Compose with the subject on the right.** The left third is washed out almost
+  completely. A face or piece of equipment placed left will disappear.
+- **Any exposure works.** The wash is strong enough that even a very dark photo
+  keeps the text readable, so there is no need to send only bright images. Mid-tone
+  shots with a clear subject show through best.
+
+Every other photograph is shown plainly, with no filter and no text over it.
+
+If only one masthead image can be supplied, send it — the slider runs happily
 with a single slide until the other two arrive.
 
 ### Naming pattern

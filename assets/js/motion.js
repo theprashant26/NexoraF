@@ -93,12 +93,14 @@
       stagger: 0.1
     }, "-=0.5");
 
-    var band = mast.querySelector("[data-mast-band]");
-    if (band) {
-      timeline.fromTo(band,
-        { clipPath: "inset(100% 0 0 0)" },
-        { clipPath: "inset(0% 0 0 0)", duration: 0.9, ease: "power3.inOut" },
-        "-=0.4");
+    // The background sits behind the copy, so it settles in from the start of
+    // the timeline rather than arriving after it.
+    var background = mast.querySelector("[data-mast-bg]");
+    if (background) {
+      timeline.fromTo(background,
+        { opacity: 0, scale: 1.05 },
+        { opacity: 1, scale: 1, duration: 1.4, ease: "power2.out" },
+        0);
     }
   }
 

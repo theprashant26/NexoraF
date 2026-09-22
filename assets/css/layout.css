@@ -36,10 +36,62 @@
 .nx-open--row > div { display: grid; gap: 1rem; max-width: 44rem; }
 
 /* --- Home masthead --------------------------------------------------------
-   A magazine masthead: kicker, oversized headline, a split sub-row, then a
-   full-bleed band. Deliberately not a headline-beside-image hero. */
+   The image slider is the section background. Rather than darkening the photos
+   so white text can sit on them, a warm off-white scrim lightens them and the
+   headline stays dark ink — which is what keeps this hero light. */
 
-.nx-mast { padding-top: clamp(2.5rem, 6vw, 5rem); }
+.nx-mast {
+  position: relative;
+  display: flex;
+  align-items: center;
+  min-height: clamp(34rem, 80svh, 48rem);
+  padding-block: clamp(3rem, 6vw, 5rem);
+  overflow: hidden;
+  isolation: isolate;
+}
+
+.nx-mast__bg {
+  position: absolute;
+  z-index: -2;
+  inset: 0;
+}
+
+/* Left-weighted: the copy side is washed hard so text stays readable over any
+   photograph, and the right side opens up so the image actually reads.
+
+   Kept at exactly 90deg on purpose — a tilted gradient makes the alpha at a
+   given element unpredictable, and the whole contrast argument here rests on
+   knowing the alpha behind each piece of text. Stops are chosen against the
+   worst case, a pure black photograph:
+     ink   (#1A1A18) needs alpha >= 0.53
+     ink-2 (#56534C) needs alpha >= 0.82
+     ink-3 (#6A665D) needs alpha >= 0.94  <- too opaque, so no ink-3 over the
+                                             scrim; see the overrides below. */
+.nx-mast__scrim {
+  position: absolute;
+  z-index: -1;
+  inset: 0;
+  background:
+    linear-gradient(
+      90deg,
+      rgba(246, 244, 239, 0.96) 0%,
+      rgba(246, 244, 239, 0.94) 52%,
+      rgba(246, 244, 239, 0.66) 78%,
+      rgba(246, 244, 239, 0.56) 100%
+    );
+  pointer-events: none;
+}
+
+/* Text sitting on the scrim is promoted one step darker: the faint ink would
+   need an almost opaque wash to pass, which would hide the photograph. */
+.nx-mast .nx-label,
+.nx-mast .nx-figure__label { color: var(--nx-ink); }
+
+/* Everything below lives left of the 52% stop, where alpha is 0.94. */
+.nx-mast__title { max-width: 15ch; }
+.nx-mast .nx-lede { max-width: 42ch; color: var(--nx-ink-2); }
+
+.nx-mast__inner { position: relative; width: 100%; }
 
 .nx-mast__kicker {
   display: flex;
@@ -51,7 +103,6 @@
 .nx-mast__kicker .nx-rule { flex: 1; }
 
 .nx-mast__title {
-  max-width: 17ch;
   font-size: clamp(2.7rem, 7.6vw, 6.5rem);
   letter-spacing: -0.045em;
 }
@@ -64,14 +115,26 @@
   padding-block: clamp(1.75rem, 3.5vw, 2.75rem);
 }
 
-.nx-mast__band { margin-top: 0; }
-
-.nx-mast__band .nx-media {
-  border-inline: 0;
-  border-radius: 0;
+.nx-mast__foot {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 1.5rem;
+  margin-top: clamp(1rem, 2.5vw, 2rem);
 }
 
-.nx-mast__figures { padding-top: clamp(1.5rem, 3vw, 2.5rem); }
+.nx-mast__foot .nx-figures { flex: 1 1 22rem; max-width: 46rem; background: transparent; }
+.nx-mast__foot .nx-figure { background: transparent; }
+
+.nx-mast__controls {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  padding: 0.35rem 0.6rem;
+  background: rgba(246, 244, 239, 0.72);
+  border-radius: var(--nx-r-xs);
+}
 
 /* --- Training groups: four ruled columns, no cards -------------------------- */
 
@@ -542,6 +605,22 @@
   .nx-step:first-child { padding-left: 1.25rem; border-left: 1px solid var(--nx-rule); }
   .nx-groups > :nth-child(odd),
   .nx-steps > :nth-child(odd) { padding-left: 0; border-left: 0; }
+
+  .nx-mast { min-height: auto; }
+
+  .nx-mast__scrim {
+    background: linear-gradient(
+      180deg,
+      rgba(246, 244, 239, 0.96) 0%,
+      rgba(246, 244, 239, 0.94) 100%
+    );
+  }
+
+  .nx-mast__title,
+  .nx-mast .nx-lede { max-width: none; }
+
+  .nx-mast__foot { align-items: flex-start; }
+  .nx-mast__controls { width: 100%; justify-content: flex-start; }
 
   .nx-mast__sub,
   .nx-phead__sub,

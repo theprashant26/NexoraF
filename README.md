@@ -108,10 +108,11 @@ Each file is a plain IIFE attaching to a shared `window.NX` namespace. Load orde
 
 ## Masthead slider
 
-`assets/js/slider.js` drives the image band under the home headline. It is
-deliberately independent of GSAP — the crossfade is a CSS opacity transition, so
-it keeps working if the animation library never loads, and with no JavaScript at
-all the first slide is already marked `is-active` in the markup.
+`assets/js/slider.js` drives the image slider that forms the **background of the
+home hero**. It is deliberately independent of GSAP — the crossfade is a CSS
+opacity transition, so it keeps working if the animation library never loads, and
+with no JavaScript at all the first slide is already marked `is-active` in the
+markup.
 
 - Auto-advances every 6s, with a real pause button, and pauses on hover, on
   keyboard focus, and while the tab is hidden.
@@ -120,7 +121,32 @@ all the first slide is already marked `is-active` in the markup.
 - Arrow keys, swipe, dots and prev/next all work; a visually hidden live region
   announces the slide, but only when the viewer moved it, not the timer.
 
-No text sits over the images, so photography needs no scrim and no safe area.
+### The scrim
+
+Text sits over photography here, which normally means a dark overlay — but this
+hero is meant to be light. So `.nx-mast__scrim` is a **light** wash of the paper
+colour instead, and the headline stays dark ink.
+
+The gradient is held at exactly `90deg`. A tilted gradient makes the alpha behind
+any given element unpredictable, and the whole contrast argument rests on knowing
+that number. Stops were chosen against the worst case — a pure black photograph:
+
+| Text colour | Minimum alpha to pass AA |
+|---|---:|
+| `--nx-ink` `#1A1A18` | 0.53 |
+| `--nx-ink-2` `#56534C` | 0.82 |
+| `--nx-ink-3` `#6A665D` | 0.94 |
+
+`--nx-ink-3` would need an almost opaque wash, so no faint ink is used over the
+scrim: `.nx-mast .nx-label` and `.nx-mast .nx-figure__label` are promoted to full
+ink. The slider controls and the ghost button carry their own light backing,
+because they sit out in the open part of the gradient.
+
+Verified against a pure black slide at 400–1900px: lowest ratio 5.20, no
+failures. Any real photograph is more forgiving than that.
+
+If you change the gradient stops, re-run that check — the promoted text colours
+and the stop values are a matched pair.
 
 ## Motion
 

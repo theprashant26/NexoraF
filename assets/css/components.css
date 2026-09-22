@@ -982,17 +982,9 @@ select.nx-form__control {
 .nx-surface-slab .nx-panel a:not(.nx-btn) { color: var(--nx-blue); }
 
 /* --- Masthead slider ---------------------------------------------------------
-   The crossfade is a CSS transition rather than a scripted one, so it survives
-   GSAP failing to load, and the global reduced-motion rule flattens it to an
-   instant cut without any extra handling. */
-
-.nx-slider { position: relative; }
-
-.nx-slider__viewport {
-  position: relative;
-  border-inline: 0;
-  border-radius: 0;
-}
+   Deliberately independent of GSAP: the crossfade is a CSS opacity transition,
+   so it survives the animation library failing to load, and the global
+   reduced-motion rule flattens it to an instant cut with no extra handling. */
 
 .nx-slide {
   position: absolute;
@@ -1010,19 +1002,10 @@ select.nx-form__control {
   object-fit: cover;
 }
 
-.nx-slider__bar {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 1rem;
-  padding-block: 0.85rem;
-  border-bottom: 1px solid var(--nx-rule);
-}
-
-.nx-slider__group { display: flex; align-items: center; gap: 0.75rem; }
+.nx-mast .nx-btn--ghost { background: rgba(255, 255, 255, 0.82); }
 
 .nx-slider__count {
-  color: var(--nx-ink-3);
+  color: var(--nx-ink-2);
   font-family: var(--nx-font-mono);
   font-size: var(--nx-step--2);
   letter-spacing: 0.1em;
@@ -1045,7 +1028,7 @@ select.nx-form__control {
   transition: background-color var(--nx-dur) var(--nx-ease);
 }
 
-.nx-slider__dot:hover span { background: var(--nx-ink-3); }
+.nx-slider__dot:hover span { background: var(--nx-ink-2); }
 .nx-slider__dot[aria-current="true"] span { background: var(--nx-blue); }
 
 .nx-slider__btn {
@@ -1054,7 +1037,7 @@ select.nx-form__control {
   width: 2.25rem;
   height: 2.25rem;
   color: var(--nx-ink);
-  background: transparent;
+  background: rgba(255, 255, 255, 0.55);
   border: 1px solid var(--nx-rule-strong);
   border-radius: var(--nx-r-xs);
   cursor: pointer;
