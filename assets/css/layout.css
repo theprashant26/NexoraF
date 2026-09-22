@@ -235,6 +235,8 @@
   border-radius: var(--nx-r-sm);
 }
 
+.nx-figure-block .nx-label { color: var(--nx-ink-2); }
+
 .nx-figure-block__value {
   color: var(--nx-blue);
   font-family: var(--nx-font-display);
@@ -471,6 +473,45 @@
   line-height: 0.85;
   letter-spacing: -0.06em;
 }
+
+/* --- Layout blocks on the charcoal slab ------------------------------------------ */
+
+.nx-surface-slab .nx-groups,
+.nx-surface-slab .nx-steps,
+.nx-surface-slab .nx-cells { border-top-color: var(--nx-rule-slab-strong); }
+
+.nx-surface-slab .nx-cells { border-left-color: var(--nx-rule-slab); }
+
+.nx-surface-slab .nx-group,
+.nx-surface-slab .nx-step { border-left-color: var(--nx-rule-slab); }
+
+.nx-surface-slab .nx-cell {
+  border-right-color: var(--nx-rule-slab);
+  border-bottom-color: var(--nx-rule-slab);
+}
+
+.nx-surface-slab .nx-group:hover,
+.nx-surface-slab .nx-cell:hover { background: var(--nx-slab-2); }
+
+.nx-surface-slab .nx-group__num,
+.nx-surface-slab .nx-step__num { color: var(--nx-blue-lit); }
+.nx-surface-slab .nx-cell__num { color: var(--nx-on-slab-3); }
+
+.nx-surface-slab .nx-detail-certificate { color: var(--nx-blue-lit); }
+
+.nx-surface-slab .nx-checklist { border-top-color: var(--nx-rule-slab); }
+.nx-surface-slab .nx-checklist li {
+  color: var(--nx-on-slab-2);
+  border-bottom-color: var(--nx-rule-slab);
+}
+.nx-surface-slab .nx-checklist span:first-child { color: var(--nx-blue-lit); }
+
+.nx-surface-slab .nx-prose h2 { border-top-color: var(--nx-rule-slab); }
+.nx-surface-slab .nx-prose p { color: var(--nx-on-slab-2); }
+
+.nx-surface-slab .nx-404__code { color: var(--nx-blue-lit); }
+
+/* The listing bar sits under a charcoal header, so it stays on paper. */
 
 /* --- Responsive ----------------------------------------------------------------------------------------- */
 

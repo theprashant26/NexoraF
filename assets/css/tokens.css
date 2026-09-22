@@ -1,8 +1,9 @@
 /* ==========================================================================
-   Nexora design tokens — light editorial system
+   Nexora design tokens — editorial system, paper and charcoal
 
    Deliberate constraints that define this design:
-   · Light only. There is no dark surface anywhere in the system.
+   · Two surfaces, alternating down the page: warm paper and warm charcoal.
+     Not a theme toggle — a page uses both, in a fixed rhythm.
    · Structure comes from hairline rules and borders, never from drop shadows
      or glows.
    · Corners are near-square. No pills, no large radii.
@@ -10,21 +11,36 @@
    ========================================================================== */
 
 :root {
-  /* --- Surfaces (all light) -------------------------------------------- */
+  /* --- Light surfaces ---------------------------------------------------- */
   --nx-paper: #F6F4EF;
   --nx-paper-2: #EDE9E0;
   --nx-sand: #E4DDCD;
   --nx-white: #FFFFFF;
 
-  /* --- Ink (text only, never a background) ------------------------------ */
+  /* --- Ink (text on paper) ----------------------------------------------- */
   --nx-ink: #1A1A18;
   --nx-ink-2: #56534C;
-  --nx-ink-3: #868177;
+  --nx-ink-3: #6A665D;
+
+  /* --- Dark surfaces -------------------------------------------------------
+     Warm charcoal, not a blue-black. Paired with a periwinkle accent rather
+     than gold, so a dark section never reads as the usual dark-and-gold. */
+  --nx-slab: #23211D;
+  --nx-slab-2: #2F2C27;
+
+  --nx-on-slab: #F2EFE7;
+  --nx-on-slab-2: rgba(242, 239, 231, 0.66);
+  --nx-on-slab-3: rgba(242, 239, 231, 0.6);
+  --nx-rule-slab: rgba(242, 239, 231, 0.15);
+  --nx-rule-slab-strong: rgba(242, 239, 231, 0.3);
 
   /* --- Brand ------------------------------------------------------------ */
   --nx-blue: #2340D8;
   --nx-blue-deep: #16278A;
   --nx-blue-wash: #E5E8FB;
+  /* Cobalt is too dark to read on charcoal; this is its counterpart there. */
+  --nx-blue-lit: #8AA0FF;
+  --nx-blue-btn-slab: #3E5BFF;
   --nx-coral: #E84921;
   --nx-coral-wash: #FBE7E1;
 
@@ -62,6 +78,7 @@
   /* --- Elevation: offset blocks, not blurred shadows ---------------------- */
   --nx-offset: 6px 6px 0 var(--nx-ink);
   --nx-offset-blue: 6px 6px 0 var(--nx-blue);
+  --nx-offset-slab: 6px 6px 0 var(--nx-on-slab);
 
   /* --- Motion -------------------------------------------------------------- */
   --nx-ease: cubic-bezier(0.2, 0.9, 0.3, 1);

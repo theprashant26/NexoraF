@@ -129,11 +129,33 @@ a:hover { color: var(--nx-coral); }
 /* Sections are separated by hairlines rather than by colour blocks. */
 .nx-divide { border-top: 1px solid var(--nx-rule); }
 
-/* --- Surfaces (all light) ---------------------------------------------------------- */
+/* --- Surfaces ------------------------------------------------------------------------
+   Three surfaces alternate down a page: paper, charcoal slab, and a single
+   cobalt block. A section declares its own surface; nothing switches globally. */
 
 .nx-surface-paper2 { background: var(--nx-paper-2); }
 
-/* The one saturated block in the system, used for a single call to action. */
+/* --- Charcoal slab -------------------------------------------------------------------- */
+
+.nx-surface-slab {
+  color: var(--nx-on-slab);
+  background: var(--nx-slab);
+}
+
+.nx-surface-slab :is(h1, h2, h3, h4) { color: var(--nx-on-slab); }
+.nx-surface-slab .nx-muted { color: var(--nx-on-slab-2); }
+.nx-surface-slab .nx-lede { color: var(--nx-on-slab-2); }
+.nx-surface-slab .nx-label { color: var(--nx-on-slab-3); }
+.nx-surface-slab .nx-label--blue { color: var(--nx-blue-lit); }
+.nx-surface-slab .nx-hl { color: var(--nx-blue-lit); }
+.nx-surface-slab .nx-rule { background: var(--nx-rule-slab); }
+.nx-surface-slab .nx-divide { border-top-color: var(--nx-rule-slab); }
+.nx-surface-slab a:not(.nx-btn) { color: var(--nx-blue-lit); }
+.nx-surface-slab a:not(.nx-btn):hover { color: var(--nx-on-slab); }
+.nx-surface-slab ::selection { color: var(--nx-slab); background: var(--nx-blue-lit); }
+
+/* --- Cobalt block: the one saturated surface, used for a call to action ---------------- */
+
 .nx-surface-blue {
   color: var(--nx-white);
   background: var(--nx-blue);

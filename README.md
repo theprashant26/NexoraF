@@ -20,11 +20,17 @@ Then open `http://localhost:8080/`.
 
 ## The design
 
-A light editorial system. There is no dark theme, and no dark surface anywhere in the stylesheet.
+An editorial system built on **two surfaces that alternate down every page** — warm paper and warm
+charcoal. This is not a theme toggle and there is no switcher: each section declares its own
+surface, and the rhythm is fixed in the markup.
 
-- **Palette** — warm paper `#F6F4EF`, ink `#1A1A18` for text, cobalt `#2340D8` as the single brand
-  colour, coral `#E84921` for warnings only. One saturated block exists in the whole system: the
-  call-to-action band.
+- **Surfaces** — paper `#F6F4EF`, a second paper `#EDE9E0` for banding, charcoal slab `#23211D`,
+  and one saturated cobalt block reserved for the call to action. The chrome (header, mega menu,
+  drawer, footer) is charcoal on every page, so the sticky header reads as one consistent band
+  whether the section under it is light or dark.
+- **Palette** — ink `#1A1A18` on paper, off-white `#F2EFE7` on charcoal. Cobalt `#2340D8` is the
+  brand colour on light; on charcoal it is replaced by periwinkle `#8AA0FF`, which is the only
+  thing bright enough to read there. Coral `#E84921` is for warnings only.
 - **Type** — Bricolage Grotesque for display, Karla for body, IBM Plex Mono for labels, programme
   codes, buttons, and figures. The mono is doing real work here; it is what makes the index read
   as an index.
@@ -35,6 +41,21 @@ A light editorial system. There is no dark theme, and no dark surface anywhere i
   rather than a grid of cards.
 
 To rebrand, change `assets/css/tokens.css`. Every colour, size, radius, and easing lives there.
+
+### Which sections are dark
+
+| Page | Charcoal sections |
+|---|---|
+| Home | Masthead, the "our position" statement, the four-step route |
+| About | Masthead, "what programmes include" |
+| Programmes | Masthead |
+| Programme detail | Masthead, programme recognition |
+| Admissions | Masthead, FAQ |
+| Gallery / Contact / Disclaimer | Masthead |
+| 404 | Whole page |
+
+Add `nx-surface-slab` to a `<section>` to make it charcoal; every component inside it already has
+a dark variant. Contrast on both surfaces is verified to WCAG AA.
 
 ## Pages
 

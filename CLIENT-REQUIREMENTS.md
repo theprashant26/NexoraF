@@ -20,7 +20,7 @@ hold usage rights for.
 Also needed:
 
 - Approved brand fonts, if different from the current Bricolage Grotesque / Karla / IBM Plex Mono set.
-- Approved brand colour references, if the current cobalt-on-paper palette needs to change.
+- Approved brand colour references, if the current cobalt / charcoal / off-white palette needs to change.
 - Correct spelling, capitalization, and the final institute tagline.
 
 ---
@@ -131,9 +131,10 @@ photographs are needed than a card-based layout would require.
 
 That is **13 photographs in total**, plus the optional faculty portrait.
 
-Photographs sit on a warm off-white page with no colour overlay applied, so
-natural, well-lit frames work best. Very dark or heavily filtered images will
-look out of place against the paper background.
+Photographs are shown with no colour filter over them. The page alternates
+between a warm off-white and a warm charcoal background, so natural, well-lit
+frames sit comfortably on both. The home masthead image sits on charcoal;
+the gallery and home tiles sit on off-white.
 
 ### Naming pattern
 
