@@ -981,6 +981,103 @@ select.nx-form__control {
 .nx-surface-slab .nx-panel .nx-muted { color: var(--nx-ink-2); }
 .nx-surface-slab .nx-panel a:not(.nx-btn) { color: var(--nx-blue); }
 
+/* --- Masthead slider ---------------------------------------------------------
+   The crossfade is a CSS transition rather than a scripted one, so it survives
+   GSAP failing to load, and the global reduced-motion rule flattens it to an
+   instant cut without any extra handling. */
+
+.nx-slider { position: relative; }
+
+.nx-slider__viewport {
+  position: relative;
+  border-inline: 0;
+  border-radius: 0;
+}
+
+.nx-slide {
+  position: absolute;
+  inset: 0;
+  margin: 0;
+  opacity: 0;
+  transition: opacity var(--nx-dur-slow) var(--nx-ease);
+}
+
+.nx-slide.is-active { opacity: 1; }
+
+.nx-slide img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.nx-slider__bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding-block: 0.85rem;
+  border-bottom: 1px solid var(--nx-rule);
+}
+
+.nx-slider__group { display: flex; align-items: center; gap: 0.75rem; }
+
+.nx-slider__count {
+  color: var(--nx-ink-3);
+  font-family: var(--nx-font-mono);
+  font-size: var(--nx-step--2);
+  letter-spacing: 0.1em;
+}
+
+.nx-slider__dots { display: flex; gap: 0.3rem; }
+
+.nx-slider__dot {
+  padding: 0.7rem 0.25rem;
+  background: none;
+  border: 0;
+  cursor: pointer;
+}
+
+.nx-slider__dot span {
+  display: block;
+  width: 2rem;
+  height: 2px;
+  background: var(--nx-rule-strong);
+  transition: background-color var(--nx-dur) var(--nx-ease);
+}
+
+.nx-slider__dot:hover span { background: var(--nx-ink-3); }
+.nx-slider__dot[aria-current="true"] span { background: var(--nx-blue); }
+
+.nx-slider__btn {
+  display: grid;
+  place-items: center;
+  width: 2.25rem;
+  height: 2.25rem;
+  color: var(--nx-ink);
+  background: transparent;
+  border: 1px solid var(--nx-rule-strong);
+  border-radius: var(--nx-r-xs);
+  cursor: pointer;
+  transition: color var(--nx-dur) var(--nx-ease), background-color var(--nx-dur) var(--nx-ease),
+    border-color var(--nx-dur) var(--nx-ease);
+}
+
+.nx-slider__btn:hover {
+  color: var(--nx-paper);
+  background: var(--nx-ink);
+  border-color: var(--nx-ink);
+}
+
+.nx-slider__btn[hidden] { display: none; }
+
+@media (pointer: coarse) {
+  .nx-slider__btn { width: 44px; height: 44px; }
+}
+
+@media (max-width: 560px) {
+  .nx-slider__count { display: none; }
+}
+
 /* --- Touch targets -----------------------------------------------------------
    Pointer-driven rather than width-driven: a small laptop keeps the compact
    sizing, while anything tapped with a finger gets the 44px minimum. */

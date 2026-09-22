@@ -121,7 +121,7 @@ photographs are needed than a card-based layout would require.
 
 | Slot ID | Page | Section | Filename | Exact size (px) | Ratio | Format | Max size | What it should show |
 |---|---|---|---|---|---|---|---|---|
-| `home-hero-01` | Home | Masthead band | `nx-home-hero-01.jpg` | 2400 × 900 | 8:3 | WebP + JPEG | 260 KB | Wide, calm shot of a real training environment. It runs full width under the headline, so keep the subject off-centre and leave room at the sides |
+| `home-hero-01`…`03` | Home | Masthead slider | `nx-home-hero-01.jpg` … `-03.jpg` | 2400 × 900 | 8:3 | WebP + JPEG | 260 KB each | Three wide, calm shots of real training environments. They run full width under the headline and cross-fade, so keep the subject off-centre and leave room at the sides. Pick three that look right in sequence |
 | `home-tile-01`…`04` | Home | Inside Nexora | `nx-home-tile-01.jpg` … `-04.jpg` | 1600 × 1200 | 4:3 | WebP + JPEG | 160 KB each | Classroom, materials or equipment, a learner mid-task, a group session |
 | `programme-banner-01` | Programme detail | Banner | `nx-programme-banner-01.jpg` | 1920 × 720 | 8:3 | WebP + JPEG | 220 KB | Wide sector-relevant training environment |
 | `gallery-01`…`06` | Gallery | Tiles | `nx-gallery-01.jpg` … `-06.jpg` | 1600 × 1200 | 4:3 | WebP + JPEG | 160 KB each | Two campus, two learning, two people — these are the filter categories |
@@ -129,12 +129,16 @@ photographs are needed than a card-based layout would require.
 | `contact-map-01` | Contact | Location image | `nx-contact-map-01.jpg` | 1400 × 700 | 2:1 | WebP + JPEG | 120 KB | Verified campus location or exterior |
 | `og-share-01` | All | Social share card | `nx-og-share-01.jpg` | 1200 × 630 | 1.91:1 | JPEG or PNG | 180 KB | Approved Nexora social-share composition |
 
-That is **13 photographs in total**, plus the optional faculty portrait.
+That is **15 photographs in total**, plus the social share card and the optional
+faculty portrait.
 
-Photographs are shown with no colour filter over them. The page alternates
-between a warm off-white and a warm charcoal background, so natural, well-lit
-frames sit comfortably on both. The home masthead image sits on charcoal;
-the gallery and home tiles sit on off-white.
+Photographs are shown with no colour filter over them, and no text is ever laid
+over a photograph — so any well-exposed image will work, and there is no need to
+leave empty space for a headline. The page alternates between a warm off-white
+and a warm charcoal background; all photography sits on the off-white sections.
+
+If only one masthead image can be supplied, send it and we will run the slider
+with a single slide until the other two arrive.
 
 ### Naming pattern
 

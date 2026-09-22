@@ -46,7 +46,7 @@
   <main id="main" class="nx-page">
 
     <!-- ===================== Masthead ===================== -->
-    <section class="nx-mast nx-surface-slab" data-mast aria-labelledby="mast-title">
+    <section class="nx-mast" data-mast aria-labelledby="mast-title">
       <div class="nx-container">
         <div class="nx-mast__kicker">
           <span class="nx-label nx-label--blue" data-mast-kicker>Professional training institute</span>
@@ -73,11 +73,55 @@
       </div>
 
       <div class="nx-mast__band" data-mast-band>
-        <span class="nx-media nx-media--wide">
-          <img src="assets/img/placeholders/nx-home-hero-01.svg" width="2400" height="900"
-               alt="Learners in a professional training environment at Nexora Institute"
-               loading="eager" decoding="async" fetchpriority="high">
-        </span>
+        <div class="nx-slider" data-slider aria-roledescription="carousel"
+             aria-label="Nexora training environments">
+          <div class="nx-slider__viewport nx-media nx-media--wide">
+          <figure class="nx-slide is-active" data-slide aria-roledescription="slide" aria-label="1 of 3">
+            <img src="assets/img/placeholders/nx-home-hero-01.svg" width="2400" height="900"
+                 alt="Learners in a professional training environment at Nexora Institute" loading="eager" decoding="async" fetchpriority="high">
+          </figure>
+          <figure class="nx-slide" data-slide aria-roledescription="slide" aria-label="2 of 3" aria-hidden="true">
+            <img src="assets/img/placeholders/nx-home-hero-02.svg" width="2400" height="900"
+                 alt="A practical training session in progress" loading="lazy" decoding="async">
+          </figure>
+          <figure class="nx-slide" data-slide aria-roledescription="slide" aria-label="3 of 3" aria-hidden="true">
+            <img src="assets/img/placeholders/nx-home-hero-03.svg" width="2400" height="900"
+                 alt="Instructors working with a group of learners" loading="lazy" decoding="async">
+          </figure>
+          </div>
+
+          <div class="nx-container nx-slider__bar">
+            <div class="nx-slider__group">
+              <span class="nx-slider__count" data-slider-count>01 / 03</span>
+              <div class="nx-slider__dots">
+            <button class="nx-slider__dot" type="button" data-slider-dot aria-current="true" aria-label="Show slide 1">
+              <span aria-hidden="true"></span>
+            </button>
+            <button class="nx-slider__dot" type="button" data-slider-dot aria-label="Show slide 2">
+              <span aria-hidden="true"></span>
+            </button>
+            <button class="nx-slider__dot" type="button" data-slider-dot aria-label="Show slide 3">
+              <span aria-hidden="true"></span>
+            </button>
+              </div>
+            </div>
+
+            <div class="nx-slider__group">
+              <button class="nx-slider__btn" type="button" data-slider-pause
+                      aria-label="Pause the slideshow">
+                <i class="bi bi-pause-fill" aria-hidden="true"></i>
+              </button>
+              <button class="nx-slider__btn" type="button" data-slider-prev aria-label="Previous slide">
+                <i class="bi bi-arrow-left" aria-hidden="true"></i>
+              </button>
+              <button class="nx-slider__btn" type="button" data-slider-next aria-label="Next slide">
+                <i class="bi bi-arrow-right" aria-hidden="true"></i>
+              </button>
+            </div>
+          </div>
+
+          <p class="nx-visually-hidden" role="status" aria-live="polite" data-slider-status></p>
+        </div>
       </div>
 
       <div class="nx-container nx-mast__figures">
@@ -99,7 +143,7 @@
     </section>
 
     <!-- ===================== Learning groups ===================== -->
-    <section class="nx-section" aria-labelledby="groups-title">
+    <section class="nx-section nx-surface-paper2" aria-labelledby="groups-title">
       <div class="nx-container">
         <div class="nx-open">
           <span class="nx-label" data-reveal>What we train for</span>
@@ -434,6 +478,7 @@
   <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/ScrollTrigger.min.js" defer></script>
   <script src="assets/js/nav.js" defer></script>
   <script src="assets/js/gallery.js" defer></script>
+  <script src="assets/js/slider.js" defer></script>
   <script src="assets/js/motion.js" defer></script>
   <script src="assets/js/seo.js" defer></script>
 </body>

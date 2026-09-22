@@ -46,7 +46,7 @@ To rebrand, change `assets/css/tokens.css`. Every colour, size, radius, and easi
 
 | Page | Charcoal sections |
 |---|---|
-| Home | Masthead, the "our position" statement, the four-step route |
+| Home | The "our position" statement, the four-step route |
 | About | Masthead, "what programmes include" |
 | Programmes | Masthead |
 | Programme detail | Masthead, programme recognition |
@@ -102,8 +102,25 @@ Each file is a plain IIFE attaching to a shared `window.NX` namespace. Load orde
 - `programmes.js` — index filter/search and the programme detail template.
 - `forms.js` — validation, honeypot, and submission for both forms.
 - `gallery.js` — category filters and the shared lightbox.
+- `slider.js` — the masthead slider.
 - `motion.js` — the GSAP system (see below).
 - `seo.js` — fills in canonical and Open Graph tags on pages that do not declare them.
+
+## Masthead slider
+
+`assets/js/slider.js` drives the image band under the home headline. It is
+deliberately independent of GSAP — the crossfade is a CSS opacity transition, so
+it keeps working if the animation library never loads, and with no JavaScript at
+all the first slide is already marked `is-active` in the markup.
+
+- Auto-advances every 6s, with a real pause button, and pauses on hover, on
+  keyboard focus, and while the tab is hidden.
+- Under `prefers-reduced-motion` it does not auto-advance at all, and the pause
+  button is hidden because it would have nothing to do.
+- Arrow keys, swipe, dots and prev/next all work; a visually hidden live region
+  announces the slide, but only when the viewer moved it, not the timer.
+
+No text sits over the images, so photography needs no scrim and no safe area.
 
 ## Motion
 
@@ -149,7 +166,7 @@ Then update, together:
 
 ## Swap images
 
-The design needs 13 photographs in total — the index and the learning-group columns are
+The design needs 15 photographs in total — the index and the learning-group columns are
 typographic, not image-led. Replace the SVG placeholders in `assets/img/placeholders/` with
 approved client images using the filenames and dimensions in section 6 of
 [CLIENT-REQUIREMENTS.md](CLIENT-REQUIREMENTS.md). Keep the explicit `width`, `height`, and
