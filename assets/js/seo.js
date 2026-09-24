@@ -35,7 +35,7 @@
       document.head.appendChild(canonical);
     }
 
-    var shareImage = new URL("assets/img/placeholders/nx-og-share-01.svg", window.location.href).href;
+    var shareImage = new URL("assets/img/nexora/hero-01.jpg", window.location.href).href;
 
     ensureMeta("property", "og:title", title);
     ensureMeta("property", "og:description", description);

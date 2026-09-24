@@ -761,6 +761,19 @@ select.nx-form__control {
   color: var(--nx-ink-2);
 }
 
+.nx-accordion__panel p + p { margin-top: 0.8rem; }
+
+.nx-accordion__panel ul {
+  display: grid;
+  gap: 0.35rem;
+  margin-top: 0.8rem;
+  padding-left: 1.2rem;
+  list-style: disc;
+}
+
+.nx-accordion__panel li::marker { color: var(--nx-ink-3); }
+.nx-surface-slab .nx-accordion__panel li::marker { color: var(--nx-on-slab-3); }
+
 /* --- Lightbox ---------------------------------------------------------------------------------------- */
 
 .nx-lightbox {
@@ -976,7 +989,12 @@ select.nx-form__control {
   border-color: var(--nx-rule-slab);
 }
 
-.nx-surface-slab .nx-panel:hover { box-shadow: 6px 6px 0 var(--nx-blue-lit); }
+/* border-color is restated because the non-hover slab rule above would
+   otherwise win the tie on source order. */
+.nx-surface-slab .nx-panel:hover {
+  border-color: var(--nx-on-slab-3);
+  box-shadow: 6px 6px 0 var(--nx-blue-lit);
+}
 .nx-surface-slab .nx-panel :is(h1, h2, h3, h4) { color: var(--nx-ink); }
 .nx-surface-slab .nx-panel .nx-muted { color: var(--nx-ink-2); }
 .nx-surface-slab .nx-panel a:not(.nx-btn) { color: var(--nx-blue); }
@@ -1002,7 +1020,12 @@ select.nx-form__control {
   object-fit: cover;
 }
 
-.nx-mast .nx-btn--ghost { background: rgba(255, 255, 255, 0.82); }
+/* The masthead ghost button sits over photography, so it carries its own fill
+   rather than relying on the scrim. Scoped to :not(:hover) because
+   `.nx-mast .nx-btn--ghost` and `.nx-btn--ghost:hover` have equal specificity —
+   without this the later rule wins on hover and leaves white text on a
+   near-white background. */
+.nx-mast .nx-btn--ghost:not(:hover) { background: rgba(255, 255, 255, 0.82); }
 
 .nx-slider__count {
   color: var(--nx-ink-2);

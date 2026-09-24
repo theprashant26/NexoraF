@@ -13,9 +13,13 @@
   var RECOGNITION = "Unless specifically stated otherwise, certificates and diplomas issued by Nexora Institute " +
     "are institute-level professional training credentials and should not be represented as government, university, " +
     "UGC, AICTE, statutory-board or professional-licensing qualifications without the applicable approval, " +
-    "affiliation or recognition.";
+    "affiliation or recognition. Any claim regarding government approval, university affiliation, accreditation, " +
+    "statutory recognition, professional licensing or third-party certification is published only where the " +
+    "applicable approval or documentary evidence exists.";
 
-  var CAREER_NOTICE = "Completion of a programme does not by itself guarantee employment, appointment or a specific salary.";
+  var CAREER_NOTICE = "Completion of a programme does not by itself guarantee employment, appointment or a specific salary. " +
+    "Career opportunities may depend on the learner's qualification, skills, experience, employer requirements, " +
+    "selection process and prevailing employment conditions.";
 
   var DIVISION_GROUPS = [
     { title: "Transport & Aviation", items: ["Metro & Rail", "Railway", "Aviation", "Logistics", "Driver Services"] },
@@ -36,6 +40,9 @@
     { href: "gallery.html", label: "Gallery" },
     { href: "contact.html", label: "Contact" }
   ];
+
+  var PHONE_DISPLAY = "+91 98765 43210";
+  var PHONE_HREF = "+919876543210";
 
   function escapeHtml(value) {
     return String(value).replace(/[&<>"']/g, function (character) {
@@ -105,7 +112,7 @@
           '<button class="nx-drawer__close" type="button" data-drawer-close aria-label="Close menu">&times;</button>' +
           '<nav class="nx-drawer__nav" aria-label="Mobile primary">' + drawerLinks + "</nav>" +
           '<a class="nx-btn nx-drawer__cta" href="admissions.html#enquiry">Send an enquiry</a>' +
-          '<p class="nx-drawer__meta">{{PLACEHOLDER: phone}}<br>{{PLACEHOLDER: email}}</p>' +
+          '<p class="nx-drawer__meta"><a href="tel:' + PHONE_HREF + '">' + PHONE_DISPLAY + '</a><br>{{PLACEHOLDER: email}}</p>' +
         "</aside>" +
       "</div>";
   }
@@ -122,7 +129,7 @@
                 '<img src="assets/brand/nexoralogo.jpeg" width="96" height="96" alt="" loading="lazy" decoding="async">' +
                 '<span class="nx-brand__words"><strong>NEXORA</strong><small>Institute of Professional Studies</small></span>' +
               "</a>" +
-              '<p class="nx-muted nx-footer__blurb">Industry-oriented professional training across transport, service, health, business, and technical fields.</p>' +
+              '<p class="nx-muted nx-footer__blurb">Professional training &middot; Skill development &middot; Career-oriented education</p>' +
             "</div>" +
             "<div>" +
               '<p class="nx-footer__heading">Explore</p>' +
@@ -137,18 +144,18 @@
               '<p class="nx-footer__heading">Support</p>' +
               '<ul class="nx-footer__links">' +
                 '<li><a href="contact.html">Contact</a></li>' +
-                '<li><a href="disclaimer.html">Important information</a></li>' +
-                '<li><a href="disclaimer.html#privacy">Privacy</a></li>' +
-                '<li><a href="disclaimer.html#terms">Terms</a></li>' +
+                '<li><a href="disclaimer.html#privacy">Privacy policy</a></li>' +
+                '<li><a href="disclaimer.html#terms">Terms &amp; conditions</a></li>' +
+                '<li><a href="disclaimer.html#refunds">Refund &amp; cancellation</a></li>' +
               "</ul>" +
             "</div>" +
             "<div>" +
               '<p class="nx-footer__heading">Contact</p>' +
               '<ul class="nx-footer__links">' +
-                "<li>{{PLACEHOLDER: institute address}}</li>" +
-                "<li>{{PLACEHOLDER: phone}}</li>" +
+                "<li>Rana Pratap Nagar (Near Joda Mandir),<br>Chas, Bokaro, Jharkhand 827013</li>" +
+                '<li><a href="tel:' + PHONE_HREF + '">' + PHONE_DISPLAY + "</a></li>" +
                 "<li>{{PLACEHOLDER: email}}</li>" +
-                "<li>{{PLACEHOLDER: social profiles}}</li>" +
+                "<li>{{PLACEHOLDER: social profile links}}</li>" +
               "</ul>" +
             "</div>" +
           "</div>" +
@@ -156,7 +163,7 @@
             "<p>" + escapeHtml(RECOGNITION) + "</p>" +
             "<p>" + escapeHtml(CAREER_NOTICE) + "</p>" +
             '<div class="nx-footer__base">' +
-              "<span>&copy; 2026 Nexora Institute of Professional Studies</span>" +
+              "<span>&copy; 2026 Nexora Institute of Professional Studies. All Rights Reserved.</span>" +
               '<a href="disclaimer.html">Important information</a>' +
             "</div>" +
           "</div>" +

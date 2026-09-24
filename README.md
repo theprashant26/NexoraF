@@ -3,8 +3,9 @@
 A static, build-free HTML site for Nexora Institute of Professional Studies. No framework, no
 bundler, no `npm install` — just files a web server can hand out.
 
-Send [CLIENT-REQUIREMENTS.md](CLIENT-REQUIREMENTS.md) to the institute to collect verified content,
-legal copy, integrations, and image assets. That is the only requirements document.
+Content and photography from the institute have been applied.
+[CLIENT-REQUIREMENTS.md](CLIENT-REQUIREMENTS.md) now lists only what is still outstanding — send
+that to the institute to chase the remainder.
 
 ## Run locally
 
@@ -181,8 +182,11 @@ Content rendered after page load should call `NX.motion.reveal(container)` or
 ## Add a programme
 
 Add one complete object to `assets/data/programmes.json` using the existing schema: `id`, `number`,
-`division`, `code`, `certificate`, `programme`, `group`, `keyAreas`, `slug`. `group` must be one of
-the four existing values, or the filters will not match it.
+`division`, `code`, `certificate`, `programme`, `group`, `keyAreas`, `slug`, `fee`,
+`duration`, `instalments`, `eligibility`, `learningMode`, `certificateTitle`, `feeConfirmed`.
+`group` must be one of the four existing values, or the filters
+will not match it. Fees are plain integers in rupees; the programme page formats them with Indian
+digit grouping.
 
 Then update, together:
 
@@ -190,21 +194,85 @@ Then update, together:
 - the `<noscript>` list in `programmes.html`,
 - the mega-menu division list in `assets/js/nav.js`, if the division is new.
 
+## Images
+
+Photography lives in `assets/img/nexora/`, renamed to plain kebab-case on the way in — the supplied
+filenames carried spaces, ampersands and a `9120` typo, all of which are trouble in a URL.
+
+| On the site | Supplied as |
+|---|---|
+| `hero-01.jpg` … `hero-03.jpg` | `2400-by-1600.jpg`, `…-Slide-2.jpg`, `…-Slide-3.jpg` |
+| `tile-classroom.jpg` | `1600-By-1200 Classroom environment at Nexora Institute.jpg` |
+| `tile-materials.jpg` | `1600-By-1200-Learning-materials-and-equipment.jpg` |
+| `tile-learner.jpg` | `1600-By-1200-Learner-in-a-practical-session.jpg` |
+| `tile-group.jpg` | `1600-by-1200-Group-learning-session.jpg` |
+| `tile-instructor.jpg` | `1600-by-1200-Instructor-in-a-practical-setting.jpg` |
+| `tile-campus.jpg` | `Campus-detail.jpg` |
+| `banner-<code>.jpg` | `<Programme>-1920-by-720.jpg`, one per programme |
+
+Each programme's banner is set in `programmes.json` via `banner` and `bannerAlt`, so the detail
+template picks it up automatically — no markup change when a banner is swapped.
+
+All files were re-encoded at JPEG quality 82, progressive, which took the set from 9.1 MB to
+6.6 MB with no visible change. Re-run that if new images arrive at full export quality:
+
+```python
+from PIL import Image
+im = Image.open(path).convert("RGB")
+im.save(path, "JPEG", quality=82, optimize=True, progressive=True)
+```
+
+`proactive-safety-bg@2x.jpg` was supplied but matches no slot and is unused.
+
 ## Swap images
 
-The design needs 15 photographs in total — the index and the learning-group columns are
-typographic, not image-led. Replace the SVG placeholders in `assets/img/placeholders/` with
-approved client images using the filenames and dimensions in section 6 of
-[CLIENT-REQUIREMENTS.md](CLIENT-REQUIREMENTS.md). Keep the explicit `width`, `height`, and
-descriptive `alt` on every `<img>`, and add `<picture>` with WebP and JPEG sources.
+Photography is supplied and live; see the **Images** section above for the file mapping. To replace
+one, drop the new file in `assets/img/nexora/` under the same name and re-run the optimiser. Keep
+the explicit `width` and `height` on every `<img>` so the page does not shift while images load.
 
-Photographs are shown with no colour overlay, so natural, well-lit frames suit the paper
-background best.
+Programme banners need no markup change — set `banner` and `bannerAlt` on the programme in
+`assets/data/programmes.json` and the detail template picks it up.
 
 ## Before launch
 
-Search the project for `{{PLACEHOLDER` — every match is something the institute still needs to
-supply. Section 9 of the requirements document lists them all with their locations.
+Two sweeps, not one:
+
+```bash
+grep -rn "{{PLACEHOLDER" --include=*.html --include=*.js --include=*.txt --include=*.xml .
+grep -rn "9876543210"    --include=*.html --include=*.js .
+```
+
+The first finds anything the institute has not supplied yet. The second finds the stand-in phone
+number `+91 98765 43210`, which a placeholder sweep would sail straight past because it looks like
+real data.
+
+Note the sweep greps for the number itself rather than a `DUMMY` comment. Comments in HTML and JS
+are served to the public in view-source, and a client site should not advertise which of its
+details are fake. Any future stand-in should be tracked the same way — by its value, listed here,
+not by a marker in the shipped file.
+
+[CLIENT-REQUIREMENTS.md](CLIENT-REQUIREMENTS.md) lists every outstanding item.
+
+### Fees
+
+`assets/data/programmes.json` carries `fee`, `firstInstalment` and `feeConfirmed` for all 21
+programmes. All are confirmed by the institute, in three tiers:
+
+| Fee | At registration | Then | Programmes |
+|---:|---:|---|---|
+| ₹44,999 | ₹14,999 | 2 × ₹15,000 | Aviation, Metro Rail, Railway, Hotel, Travel & Tourism |
+| ₹35,000 | ₹11,666 | 2 × ₹11,667 | The other fifteen |
+| ₹19,999 | ₹9,999 | 2 × ₹5,000 | Pharmaceutical |
+
+Each programme carries `fee`, `durationMonths` and an `instalments` array whose entries must sum to
+`fee`. The programme page renders the array, collapsing to "2 × ₹15,000" when the later payments are
+equal. The first instalment is part of the total fee, not an additional registration charge. Keep
+`feeConfirmed` on any programme you add — it is the guard against an unsigned-off price reaching
+a live page:
+
+```bash
+python -c "import json;print([p['code'] for p in json.load(open('assets/data/programmes.json')) if not p['feeConfirmed']])"
+```
 
 ## Compliance
 

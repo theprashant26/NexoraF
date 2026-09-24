@@ -273,6 +273,49 @@
       fill("[data-detail-intro]", description);
       fill("[data-detail-practice]", "You will practise " + programme.keyAreas.join(", ") + ".");
 
+      // Indian digit grouping: 45000 reads as 45,000.
+      function rupees(amount) {
+        return "\u20B9" + Number(amount).toLocaleString("en-IN");
+      }
+
+      if (typeof programme.fee === "number") {
+        fill("[data-detail-fee]", rupees(programme.fee));
+      }
+
+      if (programme.duration) fill("[data-detail-duration]", programme.duration);
+      if (programme.eligibility) fill("[data-detail-eligibility]", programme.eligibility);
+      if (programme.learningMode) fill("[data-detail-mode]", programme.learningMode);
+      if (programme.learningHours) fill("[data-detail-hours]", programme.learningHours);
+      fill("[data-detail-fact-certificate]", programme.certificate);
+
+      // The banner differs per programme, so it is set here rather than in markup.
+      var banner = detail.querySelector("[data-detail-banner]");
+      if (banner && programme.banner) {
+        banner.src = programme.banner;
+        banner.alt = programme.bannerAlt || "";
+      }
+
+      var ogImage = document.querySelector('meta[property="og:image"]');
+      if (ogImage && programme.banner) {
+        ogImage.setAttribute("content", new URL(programme.banner, window.location.href).href);
+      }
+
+      // "₹14,999 at registration, then 2 × ₹15,000". Collapses to a count only
+      // when the later instalments are equal, which they are in every tier today.
+      if (Array.isArray(programme.instalments) && programme.instalments.length) {
+        var schedule = rupees(programme.instalments[0]) + " at registration";
+        var rest = programme.instalments.slice(1);
+
+        if (rest.length) {
+          var uniform = rest.every(function (amount) { return amount === rest[0]; });
+          schedule += uniform
+            ? ", then " + rest.length + " × " + rupees(rest[0])
+            : ", then " + rest.map(rupees).join(" and ");
+        }
+
+        fill("[data-detail-payment]", schedule);
+      }
+
       var areas = detail.querySelector("[data-detail-areas]");
       if (areas) {
         areas.innerHTML = programme.keyAreas.map(function (area, position) {

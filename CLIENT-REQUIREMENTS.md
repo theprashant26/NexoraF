@@ -1,100 +1,138 @@
-# Nexora Institute website — client requirements
+# Nexora Institute website — what we still need
 
-This is the single document to send to the institute. It covers every piece of verified content,
-legal copy, integration, and image asset the website needs before launch.
+Everything else has been supplied and is live on the site. This document lists only what is
+outstanding.
 
-Please do not send unverified claims, placeholder information, or images the institute does not
-hold usage rights for.
-
----
-
-## 1. Brand assets
-
-| Asset | Filename | Size | Format | Max size | Notes |
-|---|---|---|---|---|---|
-| Transparent logo | `nexora-logo-transparent.png` | 1200 × 1200 px | PNG | 250 KB | Replaces the supplied JPEG |
-| Master logo | `nexora-logo-master.svg` | Vector | SVG | 100 KB | Preferred for web use |
-| Horizontal lockup | `nexora-horizontal-lockup.png` | 1600 × 400 px | PNG or SVG | 300 KB | Transparent background |
-| Favicon mark | `nexora-favicon.png` | 512 × 512 px | PNG or SVG | 50 KB | Monogram only, transparent |
-
-Also needed:
-
-- Approved brand fonts, if different from the current Bricolage Grotesque / Karla / IBM Plex Mono set.
-- Approved brand colour references, if the current cobalt / charcoal / off-white palette needs to change.
-- Correct spelling, capitalization, and the final institute tagline.
+Last updated 25 September 2026.
 
 ---
 
-## 2. Institute information
+## 1. Blocking — the site cannot do its job without these
 
-- Official institute name.
-- Official registered address.
-- Branch or campus addresses, if more than one location exists.
-- Official phone number, WhatsApp number, and admissions number.
-- Official email address and admissions email address.
-- Office hours and holiday schedule.
-- Google Maps location or approved map embed URL.
-- Social media profile URLs.
-- Official website domain.
-- Copyright wording and preferred copyright year.
+### 1.1 Where enquiry submissions should go
 
----
+**The single most important item.** A student fills in the enquiry form, sees a success message, and
+nothing is sent anywhere. We need one of:
 
-## 3. Programme information
+- An email address that should receive enquiries, or
+- CRM details, if enquiries should go into a system
 
-Please verify all 21 programme records in `assets/data/programmes.json`:
+Please also confirm you want to test it end to end before launch.
 
-- Division name.
-- Programme name.
-- Certificate title.
-- Programme code.
-- Approved group or sector.
-- Key learning areas.
-- Programme introduction paragraph.
-- Duration and learning hours.
-- Learning mode: classroom, online, hybrid, or other.
-- Eligibility requirements.
-- Required documents.
-- Fees, taxes, instalments, and payment instructions.
-- Assessment and completion rules.
-- Certificate or diploma wording.
+### 1.2 Official email address
 
-Do not provide employment guarantees, salary guarantees, placement percentages, or recognition
-claims unless the applicable approval and written legal copy are supplied.
+Appears in the footer of every page, in the mobile menu, and on the Contact page. If the admissions
+email differs from the general one, send both.
+
+### 1.3 WhatsApp number
+
+Appears on the Contact page.
 
 ---
 
-## 4. Admissions content
+## 2. Visible gaps on live pages
 
-- Confirmed eligibility requirements.
-- Confirmed document checklist.
-- Enrolment process and responsible contact person.
-- Application deadlines, if applicable.
-- Fees and payment process.
-- Refund and cancellation policy.
-- Approved FAQ answers.
-- Admissions phone and email.
-- Final enquiry form destination or API endpoint.
-- Confirmation email or WhatsApp message content after submission.
+### 2.1 Real phone number
+
+The site currently shows **+91 98765 43210**, a stand-in. It looks like a real number, so it will not
+be caught by a routine placeholder check — it is tracked separately and must be replaced before
+launch.
+
+### 2.2 Social profile links
+
+Facebook, Instagram, LinkedIn, YouTube. These appear in the footer of every page. Send only the ones
+that exist; we will show those and drop the rest.
 
 ---
 
-## 5. Compliance and legal content
+## 3. Brand assets
 
-Please provide approved copy for:
+The site is currently using the supplied logo JPEG for the header, footer and icons. It works, but it
+has a solid background rather than a transparent one, which limits where it can be placed.
 
-- Recognition and affiliation statement.
-- Programme certificate wording.
-- Privacy policy.
-- Terms and conditions.
-- Refund and cancellation policy.
-- Cookie or tracking notice, if analytics are used.
-- Consent wording for enquiry forms.
-- Data retention and enquiry handling process.
-- Confirmation that all claims on the website are legally approved.
+| Asset | Filename | Size | Format | Notes |
+|---|---|---|---|---|
+| Transparent logo | `nexora-logo-transparent.png` | 1200 × 1200 px | PNG | Replaces the current JPEG |
+| Master logo | `nexora-logo-master.svg` | Vector | SVG | Preferred for the header — stays sharp at any size |
+| Horizontal lockup | `nexora-horizontal-lockup.png` | 1600 × 400 px | PNG or SVG | Transparent background |
+| Favicon mark | `nexora-favicon.png` | 512 × 512 px | PNG | Monogram only, transparent |
 
-The following two statements must remain on the site unless replaced by approved legal copy with
-the same meaning:
+A working favicon and touch icon have been generated from the existing logo in the meantime, so
+nothing is broken — these would simply be better.
+
+### Social share image — optional
+
+Pages currently share using one of the supplied photographs. A purpose-made card at **1200 × 630 px**
+carrying the logo and name would look better when a link is posted to WhatsApp, Facebook or LinkedIn.
+
+---
+
+## 4. Small confirmations
+
+These appear as gaps in the published policies.
+
+| What we need | Where it appears |
+|---|---|
+| **Enquiry data retention period** — how long enquiry details are kept | Privacy policy |
+| **Student academic record retention period** | Privacy policy |
+| **Transfer request period** — by when a student can ask to switch programme | Important information |
+| **Enquiry response target** — for example "within 1 business day" | Admissions FAQ |
+
+---
+
+## 5. One thing to verify
+
+Two programme banner images arrived with almost the same filename:
+
+- `Electrical-Management-1920-by-720.jpg`
+- `Electrical-Management-9120-by-720.jpg` — the `9120` looks like a typo for `1920`
+
+We have put the correctly named file on **Electrical Management** and the other on **Electrical
+Engineering Management**. Please confirm that is the right way round, since the filenames do not
+distinguish between the two programmes.
+
+Separately, `proactive-safety-bg@2x.jpg` was supplied but matches no slot on the site and is unused.
+Let us know if it was meant for something.
+
+---
+
+## 6. Launch
+
+The **production domain** is needed before the site can go live. It is written into `robots.txt`,
+`sitemap.xml` and the home page's search-engine data, none of which work correctly without it.
+
+---
+
+## Final approval checklist
+
+- [ ] Enquiry form destination set, and tested end to end
+- [ ] Official email address
+- [ ] WhatsApp number
+- [ ] Real phone number replacing the stand-in
+- [ ] Social profile links
+- [ ] Transparent logo and favicon mark
+- [ ] Enquiry data retention period
+- [ ] Student academic record retention period
+- [ ] Transfer request period
+- [ ] Enquiry response target
+- [ ] Electrical / Electrical Engineering banner mapping confirmed
+- [ ] Production domain
+- [ ] Institute has approved every claim published on the site
+- [ ] Client has reviewed the site on both mobile and desktop
+
+---
+
+## A standing note on what may be published
+
+Please do not ask for any of the following to be added unless the approval or recognition document
+exists and the wording has been formally approved:
+
+government approval · university affiliation · UGC recognition · AICTE approval · statutory-board
+recognition · professional licensing · guaranteed employment · guaranteed placement · guaranteed
+salary · placement percentages · industry accreditation
+
+The two statements below are published on the site and must stay unless replaced by approved wording
+with the same meaning:
 
 > Unless specifically stated otherwise, certificates and diplomas issued by Nexora Institute are
 > institute-level professional training credentials and should not be represented as government,
@@ -102,130 +140,3 @@ the same meaning:
 > applicable approval, affiliation or recognition.
 
 > Completion of a programme does not by itself guarantee employment, appointment or a specific salary.
-
----
-
-## 6. Photography
-
-Send original, high-resolution images where possible. Avoid WhatsApp-compressed images,
-screenshots, watermarked stock images, and images the institute cannot license for web and social use.
-
-Supplied photography replaces the local SVG placeholders in `assets/img/placeholders/` without any
-layout change, as long as the exact dimensions below are matched.
-
-### Image slots
-
-The design is deliberately light on photography — the programme index and the
-learning-group columns are typographic, not image-led. That means far fewer
-photographs are needed than a card-based layout would require.
-
-| Slot ID | Page | Section | Filename | Exact size (px) | Ratio | Format | Max size | What it should show |
-|---|---|---|---|---|---|---|---|---|
-| `home-hero-01`…`03` | Home | Masthead background | `nx-home-hero-01.jpg` … `-03.jpg` | 2400 × 1600 | 3:2 | WebP + JPEG | 300 KB each | Three shots of real training environments. They sit **behind** the headline and cross-fade. **Put the main subject on the right-hand side** — the left is where the headline sits and is washed out to keep it readable. Pick three that look right in sequence |
-| `home-tile-01`…`04` | Home | Inside Nexora | `nx-home-tile-01.jpg` … `-04.jpg` | 1600 × 1200 | 4:3 | WebP + JPEG | 160 KB each | Classroom, materials or equipment, a learner mid-task, a group session |
-| `programme-banner-01` | Programme detail | Banner | `nx-programme-banner-01.jpg` | 1920 × 720 | 8:3 | WebP + JPEG | 220 KB | Wide sector-relevant training environment |
-| `gallery-01`…`06` | Gallery | Tiles | `nx-gallery-01.jpg` … `-06.jpg` | 1600 × 1200 | 4:3 | WebP + JPEG | 160 KB each | Two campus, two learning, two people — these are the filter categories |
-| `about-team-01` | About | Faculty portrait | `nx-about-team-01.jpg` | 800 × 1000 | 4:5 | WebP + JPEG | 140 KB | Trainer or representative — only with approved name and role |
-| `contact-map-01` | Contact | Location image | `nx-contact-map-01.jpg` | 1400 × 700 | 2:1 | WebP + JPEG | 120 KB | Verified campus location or exterior |
-| `og-share-01` | All | Social share card | `nx-og-share-01.jpg` | 1200 × 630 | 1.91:1 | JPEG or PNG | 180 KB | Approved Nexora social-share composition |
-
-That is **15 photographs in total**, plus the social share card and the optional
-faculty portrait.
-
-**The three masthead images are a special case.** They sit behind the headline,
-under a warm off-white wash that keeps the dark text readable. Two consequences:
-
-- **Compose with the subject on the right.** The left third is washed out almost
-  completely. A face or piece of equipment placed left will disappear.
-- **Any exposure works.** The wash is strong enough that even a very dark photo
-  keeps the text readable, so there is no need to send only bright images. Mid-tone
-  shots with a clear subject show through best.
-
-Every other photograph is shown plainly, with no filter and no text over it.
-
-If only one masthead image can be supplied, send it — the slider runs happily
-with a single slide until the other two arrive.
-
-### Naming pattern
-
-`nx-[page]-[slot]-[number].jpg` — for example `nx-home-hero-01.jpg`, `nx-gallery-03.jpg`.
-
-The repository currently ships four generic SVG placeholders rather than one per slot,
-since every placeholder would otherwise look identical. Supplied photographs are saved
-under the filenames in the table above and the markup is pointed at them.
-
-### Also required with the photography
-
-- Photographer credit or usage permission confirmation.
-- Correct names and roles wherever people are identifiable.
-- Alt-text suggestions for important images.
-- Written confirmation that the institute can use the images on the website and on social media.
-
----
-
-## 7. Forms and integrations
-
-- Final enquiry form endpoint (replaces `FORM_ENDPOINT` in `assets/js/forms.js`).
-- CRM or email recipient details.
-- Required form fields, if different from name, phone, email, programme, city, and message.
-- WhatsApp integration number, if required.
-- Spam protection preference — the forms currently use a honeypot field only.
-- Success message wording.
-- Error message wording.
-- Auto-reply email content.
-- Consent and privacy wording for below the submit button.
-- Analytics or conversion tracking IDs, if required.
-
----
-
-## 8. SEO and launch
-
-- Final production domain (replaces the placeholder in `robots.txt` and `sitemap.xml`).
-- Preferred page titles and meta descriptions, if different from the current copy.
-- Official social-share image.
-- Google Business Profile URL.
-- Search Console access or sitemap submission contact.
-- Analytics platform and tracking ID.
-- Preferred redirect rules.
-- Hosting provider: Netlify, Vercel, cPanel, or other.
-- SSL confirmation.
-- Final approval contact and launch approval date.
-
----
-
-## 9. Placeholder tokens still in the code
-
-Every item below appears on the live site as `{{PLACEHOLDER: …}}` until it is supplied.
-
-| Token | Where it appears |
-|---|---|
-| `production domain` | `robots.txt`, `sitemap.xml`, `index.html` structured data |
-| `form endpoint` | `assets/js/forms.js` |
-| `institute address`, `phone`, `email` | Footer (`assets/js/nav.js`), `contact.html` |
-| `whatsapp number`, `office hours`, `verified map location` | `contact.html` |
-| `social profiles` | Footer (`assets/js/nav.js`) |
-| `eligibility requirements`, `required documents` | `admissions.html` |
-| `admissions fee and duration information` | `admissions.html` FAQ |
-| `enrolment process and responsible contact person` | `admissions.html` FAQ |
-| `consent and privacy wording` | `admissions.html`, `contact.html` |
-| `programme duration`, `programme fees`, `programme eligibility`, `learning mode` | `programme.html` |
-| `privacy policy content`, `terms and conditions content`, `refund and cancellation policy` | `disclaimer.html` |
-
----
-
-## 10. Final approval checklist
-
-- [ ] All institute information is verified.
-- [ ] All 21 programme records are approved.
-- [ ] Fees, duration, eligibility, and documents are approved.
-- [ ] Recognition and compliance copy is approved.
-- [ ] Privacy, terms, and refund copy is approved.
-- [ ] Contact details are correct.
-- [ ] Form submissions have been tested against the live endpoint.
-- [ ] Images have written usage permission.
-- [ ] Images meet the exact dimensions and file-size targets.
-- [ ] Mobile layouts have been reviewed.
-- [ ] Desktop layouts have been reviewed.
-- [ ] Reduced-motion and keyboard navigation have been checked.
-- [ ] All placeholder tokens have been removed.
-- [ ] Client has approved the final website for launch.

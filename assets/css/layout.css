@@ -214,6 +214,17 @@
 }
 
 .nx-step:first-child { padding-left: 0; border-left: 0; }
+
+/* A process longer than one row: reset the left border at each row start and
+   rule between the rows. */
+.nx-steps--wrap .nx-step:nth-child(4n + 1) { padding-left: 0; border-left: 0; }
+
+.nx-steps--wrap .nx-step:nth-child(n + 5) {
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--nx-rule);
+}
+
+.nx-surface-slab .nx-steps--wrap .nx-step:nth-child(n + 5) { border-top-color: var(--nx-rule-slab); }
 .nx-step h3 { font-size: var(--nx-step-1); }
 
 .nx-step__num {
@@ -497,18 +508,32 @@
 }
 
 .nx-map {
-  display: grid;
-  gap: 0.4rem;
-  place-items: center;
-  margin-top: 1.75rem;
-  padding: clamp(2rem, 5vw, 3.5rem);
-  color: var(--nx-ink-3);
-  background: var(--nx-paper-2);
-  border: 1px dashed var(--nx-rule-strong);
-  text-align: center;
+  margin: 1.75rem 0 0;
+  border: 1px solid var(--nx-rule-strong);
+  border-radius: var(--nx-r-sm);
+  overflow: hidden;
 }
 
-.nx-map i { font-size: 1.5rem; }
+.nx-map__frame {
+  display: block;
+  width: 100%;
+  height: clamp(16rem, 34vw, 21rem);
+  border: 0;
+  /* The embed renders in full colour; damp it slightly so it sits inside the
+     paper palette rather than shouting over it. */
+  filter: saturate(0.85) contrast(0.96);
+}
+
+.nx-map__caption {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+  padding: 0.85rem 1rem;
+  background: var(--nx-paper-2);
+  border-top: 1px solid var(--nx-rule);
+}
 
 /* --- Prose ------------------------------------------------------------------------------------------- */
 
@@ -523,6 +548,24 @@
 
 .nx-prose h2:first-child { margin-top: 0; padding-top: 0; border-top: 0; }
 .nx-prose p { margin-top: 0.9rem; color: var(--nx-ink-2); }
+
+.nx-prose h3 {
+  margin-top: 1.75rem;
+  font-size: var(--nx-step-1);
+}
+
+.nx-prose ul,
+.nx-prose ol {
+  display: grid;
+  gap: 0.45rem;
+  margin-top: 1rem;
+  padding-left: 1.3rem;
+  color: var(--nx-ink-2);
+}
+
+.nx-prose ul { list-style: disc; }
+.nx-prose ol { list-style: decimal; }
+.nx-prose li::marker { color: var(--nx-ink-3); }
 
 /* --- 404 ---------------------------------------------------------------------------------------------- */
 
