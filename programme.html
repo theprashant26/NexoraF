@@ -63,9 +63,14 @@
                 <p class="nx-detail-certificate" data-detail-certificate>Certificate title</p>
                 <p class="nx-lede nx-detail-intro" data-detail-intro>Programme introduction.</p>
               </div>
-              <a class="nx-btn nx-btn--lg" href="admissions.html#enquiry" data-detail-enquiry-link>
-                Enquire about this <i class="bi bi-arrow-right" aria-hidden="true"></i>
-              </a>
+              <div class="nx-btn-row">
+                <a class="nx-btn nx-btn--lg" href="apply.html" data-detail-apply-link>
+                  Apply for this <i class="bi bi-arrow-right" aria-hidden="true"></i>
+                </a>
+                <a class="nx-btn nx-btn--lg nx-btn--ghost" href="admissions.html#enquiry" data-detail-enquiry-link>
+                  Enquire first
+                </a>
+              </div>
             </div>
           </div>
         </section>
@@ -76,6 +81,21 @@
                  loading="eager" decoding="async" fetchpriority="high" alt="">
           </span>
         </div>
+
+        <section class="nx-section nx-divide" aria-labelledby="levels-title">
+          <div class="nx-container">
+            <div class="nx-open">
+              <span class="nx-label" data-reveal>Choose your level</span>
+              <h2 id="levels-title" data-wipe>Three durations, one field.</h2>
+            </div>
+            <p class="nx-lede nx-levels__lede" data-reveal>
+              The same programme is offered as a 3-month basic certificate, a 6-month advanced
+              certificate, or a one-year professional diploma. Longer programmes go further into
+              the field; the eligibility and learning mode are the same for all three.
+            </p>
+            <div class="nx-levels" data-detail-tiers></div>
+          </div>
+        </section>
 
         <section class="nx-section" aria-labelledby="areas-title">
           <div class="nx-container nx-detail-body">
@@ -128,14 +148,13 @@
               <div class="nx-panel nx-panel--static" data-reveal>
                 <span class="nx-label">At a glance</span>
                 <dl class="nx-detail-facts">
-                  <div><dt>Duration</dt><dd data-detail-duration>—</dd></div>
-                  <div><dt>Fee</dt><dd data-detail-fee>—</dd></div>
-                  <div><dt>Payment</dt><dd data-detail-payment>—</dd></div>
+                  <div><dt>Levels</dt><dd data-detail-levels>—</dd></div>
+                  <div><dt>Fees from</dt><dd data-detail-fee-from>—</dd></div>
                   <div><dt>Eligibility</dt><dd data-detail-eligibility>—</dd></div>
                   <div><dt>Mode</dt><dd data-detail-mode>—</dd></div>
-                  <div><dt>Hours</dt><dd data-detail-hours>—</dd></div>
                   <div><dt>Certificate</dt><dd data-detail-fact-certificate>—</dd></div>
                 </dl>
+                <a class="nx-arrow-link" href="payment.html" data-detail-pay-link>Pay an instalment <i class="bi bi-arrow-right" aria-hidden="true"></i></a>
                 <a class="nx-arrow-link" href="contact.html">Ask a question <i class="bi bi-arrow-right" aria-hidden="true"></i></a>
               </div>
             </aside>

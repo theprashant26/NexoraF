@@ -26,10 +26,23 @@
 
   function isValidField(input) {
     if (input.type === "checkbox") return input.checked;
+
     var value = input.value.trim();
     if (!value) return false;
+
     if (input.type === "email") return EMAIL.test(value);
     if (input.type === "tel") return PHONE.test(value);
+
+    // data-min-length on a password, data-match on its confirmation field.
+    var min = Number(input.getAttribute("data-min-length"));
+    if (min && value.length < min) return false;
+
+    var matchName = input.getAttribute("data-match");
+    if (matchName) {
+      var other = input.form && input.form.elements.namedItem(matchName);
+      if (other && other.value !== input.value) return false;
+    }
+
     return true;
   }
 
@@ -58,22 +71,57 @@
   /* --- Programme select ------------------------------------------------------ */
 
   function populateProgrammeSelect() {
-    var select = document.getElementById("enquiry-programme");
-    if (!select || !NX.loadProgrammes) return;
+    var selects = document.querySelectorAll("[data-programme-select]");
+    if (!selects.length || !NX.loadProgrammes) return;
 
-    var preset = new URLSearchParams(window.location.search).get("programme");
+    var params = new URLSearchParams(window.location.search);
+    var preset = params.get("programme");
+    var presetLevel = params.get("level") || "";
 
     NX.loadProgrammes().then(function (programmes) {
       var options = programmes.map(function (programme) {
         return '<option value="' + esc(programme.code) + '">' +
           esc(programme.programme) + " (" + esc(programme.code) + ")</option>";
       }).join("");
-      select.innerHTML = '<option value="">Choose a programme</option>' + options;
-      if (preset) select.value = String(preset).toUpperCase();
+
+      selects.forEach(function (select) {
+        select.innerHTML = '<option value="">Choose a programme</option>' + options;
+        if (preset) select.value = String(preset).toUpperCase();
+
+        // A level list only means something once a programme is chosen, and the
+        // fees differ per programme, so it is rebuilt on every change.
+        var levels = select.form && select.form.querySelector("[data-level-select]");
+        if (!levels) return;
+
+        function fillLevels(wanted) {
+          var programme = NX.getProgrammeByCode(programmes, select.value);
+          var tiers = (programme && programme.tiers) || [];
+
+          if (!tiers.length) {
+            levels.innerHTML = '<option value="">Choose a programme first</option>';
+            return;
+          }
+
+          levels.innerHTML = '<option value="">Choose a level</option>' +
+            tiers.map(function (tier) {
+              return '<option value="' + esc(tier.id) + '">' +
+                esc(tier.level) + " — " + esc(tier.duration) + " — " +
+                NX.rupees(tier.fee) + "</option>";
+            }).join("");
+
+          if (wanted && NX.getTier(programme, wanted)) levels.value = wanted;
+        }
+
+        fillLevels(presetLevel);
+        select.addEventListener("change", function () { fillLevels(""); });
+      });
     }).catch(function () {
-      select.innerHTML = '<option value="">Programme list unavailable</option>';
+      selects.forEach(function (select) {
+        select.innerHTML = '<option value="">Programme list unavailable</option>';
+      });
     });
   }
+
 
   /* --- Submission ------------------------------------------------------------- */
 
@@ -126,8 +174,31 @@
     });
   }
 
+  /* --- Password reveal ------------------------------------------------------
+     A visible toggle beats a masked field the person cannot check, especially
+     on a phone keyboard. */
+
+  function initPasswordToggles() {
+    document.querySelectorAll("[data-password-toggle]").forEach(function (button) {
+      if (button.dataset.nxBound === "true") return;
+      button.dataset.nxBound = "true";
+
+      var input = document.getElementById(button.getAttribute("aria-controls"));
+      if (!input) return;
+
+      button.addEventListener("click", function () {
+        var revealed = input.type === "text";
+        input.type = revealed ? "password" : "text";
+        button.textContent = revealed ? "Show" : "Hide";
+        button.setAttribute("aria-pressed", String(!revealed));
+        input.focus();
+      });
+    });
+  }
+
   function initForms() {
     populateProgrammeSelect();
+    initPasswordToggles();
 
     document.querySelectorAll("[data-contact-form]").forEach(function (form) {
       form.addEventListener("submit", function (event) { handleSubmit(form, event); });
@@ -147,6 +218,16 @@
             setFieldError(form, input.name, !isValidField(input));
           }
         });
+
+        // Typing in the original should clear a stale mismatch on its partner.
+        var mirror = form.querySelector('[data-match="' + input.name + '"]');
+        if (mirror) {
+          input.addEventListener("input", function () {
+            if (mirror.value && mirror.getAttribute("aria-invalid") === "true" && isValidField(mirror)) {
+              setFieldError(form, mirror.name, false);
+            }
+          });
+        }
       });
     });
   }

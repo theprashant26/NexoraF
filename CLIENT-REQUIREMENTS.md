@@ -1,122 +1,63 @@
 # Nexora Institute website — what we still need
 
-Everything else has been supplied and is live on the site. This document lists only what is
-outstanding.
+Everything else has been supplied and is live on the site. Nothing is outstanding from the institute
+or the graphic team — what remains is the backend work listed below.
 
 Last updated 25 September 2026.
 
 ---
 
-## 1. Blocking — the site cannot do its job without these
+## 1. Deferred to the backend phase
 
-### 1.1 Where enquiry submissions should go
+The institute has confirmed these will be handled when the backend work starts. They are listed here
+so nothing is lost, not as open questions.
 
-**The single most important item.** A student fills in the enquiry form, sees a success message, and
-nothing is sent anywhere. We need one of:
-
-- An email address that should receive enquiries, or
-- CRM details, if enquiries should go into a system
-
-Please also confirm you want to test it end to end before launch.
-
-### 1.2 Official email address
-
-Appears in the footer of every page, in the mobile menu, and on the Contact page. If the admissions
-email differs from the general one, send both.
-
-### 1.3 WhatsApp number
-
-Appears on the Contact page.
-
----
-
-## 2. Visible gaps on live pages
-
-### 2.1 Real phone number
-
-The site currently shows **+91 98765 43210**, a stand-in. It looks like a real number, so it will not
-be caught by a routine placeholder check — it is tracked separately and must be replaced before
-launch.
-
-### 2.2 Social profile links
-
-Facebook, Instagram, LinkedIn, YouTube. These appear in the footer of every page. Send only the ones
-that exist; we will show those and drop the rest.
-
----
-
-## 3. Brand assets
-
-The site is currently using the supplied logo JPEG for the header, footer and icons. It works, but it
-has a solid background rather than a transparent one, which limits where it can be placed.
-
-| Asset | Filename | Size | Format | Notes |
-|---|---|---|---|---|
-| Transparent logo | `nexora-logo-transparent.png` | 1200 × 1200 px | PNG | Replaces the current JPEG |
-| Master logo | `nexora-logo-master.svg` | Vector | SVG | Preferred for the header — stays sharp at any size |
-| Horizontal lockup | `nexora-horizontal-lockup.png` | 1600 × 400 px | PNG or SVG | Transparent background |
-| Favicon mark | `nexora-favicon.png` | 512 × 512 px | PNG | Monogram only, transparent |
-
-A working favicon and touch icon have been generated from the existing logo in the meantime, so
-nothing is broken — these would simply be better.
-
-### Social share image — optional
-
-Pages currently share using one of the supplied photographs. A purpose-made card at **1200 × 630 px**
-carrying the logo and name would look better when a link is posted to WhatsApp, Facebook or LinkedIn.
-
----
-
-## 4. Small confirmations
-
-These appear as gaps in the published policies.
-
-| What we need | Where it appears |
+| Item | Where it shows on the site today |
 |---|---|
-| **Enquiry data retention period** — how long enquiry details are kept | Privacy policy |
-| **Student academic record retention period** | Privacy policy |
-| **Transfer request period** — by when a student can ask to switch programme | Important information |
-| **Enquiry response target** — for example "within 1 business day" | Admissions FAQ |
+| Where enquiry submissions go | The enquiry and admission forms validate and confirm, but send nowhere |
+| Official email address | Footer, mobile menu, Contact page |
+| WhatsApp number | Contact page |
+| Real phone number | **+91 98765 43210** is a stand-in and is live on every page |
+| Payment provider and checkout URL | Payment page says online payment is not connected yet |
+| Student portal — wanted or not | Sign-in and register pages say the portal is not live |
+| Social profile links | Footer of every page |
+| Transparent logo and favicon mark | A working favicon has been generated from the existing JPEG |
+| Enquiry data retention period | Privacy policy |
+| Student academic record retention period | Privacy policy |
+| Transfer request period | Important information |
+| Enquiry response target | Admissions FAQ |
+| Production domain | `robots.txt`, `sitemap.xml`, home page search data |
+
+**The phone number is the one to watch.** It looks like a real number, so a routine placeholder check
+will not catch it. It must be replaced before launch.
+
+For the payment gateway, the two return URLs are already built — register these with the provider:
+
+- success → `payment-status.html?status=success&ref=<their reference>`
+- failure → `payment-status.html?status=failed&ref=<their reference>`
 
 ---
 
-## 5. One thing to verify
+## Settled — no action needed
 
-Two programme banner images arrived with almost the same filename:
+Kept here so nobody reopens them.
 
-- `Electrical-Management-1920-by-720.jpg`
-- `Electrical-Management-9120-by-720.jpg` — the `9120` looks like a typo for `1920`
-
-We have put the correctly named file on **Electrical Management** and the other on **Electrical
-Engineering Management**. Please confirm that is the right way round, since the filenames do not
-distinguish between the two programmes.
-
-Separately, `proactive-safety-bg@2x.jpg` was supplied but matches no slot on the site and is unused.
-Let us know if it was meant for something.
-
----
-
-## 6. Launch
-
-The **production domain** is needed before the site can go live. It is written into `robots.txt`,
-`sitemap.xml` and the home page's search-engine data, none of which work correctly without it.
+| | |
+|---|---|
+| **Programme list** | 24 programmes. The client's 21 divisions, plus Healthcare, Driver Services and Electrical Engineering, which were shared earlier and are staying. |
+| **Levels** | 3 months (Basic Certificate, 120 hours), 6 months (Advanced Certificate, 240 hours), 1 year (Professional Diploma, 480 hours). |
+| **Fees** | ₹45,000 / ₹85,000 / ₹1,89,000 for Metro & Rail, Railway, Aviation, Hospitality and Travel & Tourism. ₹25,000 for Pharmaceutical and ₹35,500 for Medical at 3 months, ₹35,000 for everything else; ₹65,500 and ₹1,35,500 at the longer levels. |
+| **Instalments** | 3-month programmes publish a fixed split. The 6-month and 1-year programmes are EMI on request, arranged with the Admissions Department. |
+| **Codes for the new divisions** | `INFTC`, `AGITC`, `INSTC` — confirmed. |
+| **Key learning areas for the new divisions** | Confirmed as written. |
+| **Certificate titles** | The four renamed divisions keep their existing certificate wording for now. |
+| **Photography** | All 24 programmes have their own supplied banner. |
 
 ---
 
 ## Final approval checklist
 
-- [ ] Enquiry form destination set, and tested end to end
-- [ ] Official email address
-- [ ] WhatsApp number
-- [ ] Real phone number replacing the stand-in
-- [ ] Social profile links
-- [ ] Transparent logo and favicon mark
-- [ ] Enquiry data retention period
-- [ ] Student academic record retention period
-- [ ] Transfer request period
-- [ ] Enquiry response target
-- [ ] Electrical / Electrical Engineering banner mapping confirmed
-- [ ] Production domain
+- [ ] Everything in section 1, as backend work completes
 - [ ] Institute has approved every claim published on the site
 - [ ] Client has reviewed the site on both mobile and desktop
 

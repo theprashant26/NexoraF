@@ -1,0 +1,157 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#F6F4EF">
+  <title>Fee payment | Nexora Institute of Professional Studies</title>
+  <meta name="description" content="Pay a Nexora Institute programme fee instalment online.">
+  <link rel="canonical" href="payment.html">
+  <meta property="og:title" content="Fee payment | Nexora Institute of Professional Studies">
+  <meta property="og:description" content="Pay a Nexora Institute programme fee instalment online.">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="assets/img/nexora/hero-01.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <link rel="icon" href="favicon.ico" sizes="any">
+  <link rel="apple-touch-icon" href="assets/brand/apple-touch-icon.png">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400..800&family=IBM+Plex+Mono:wght@400;500&family=Karla:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/main.css">
+  <script>document.documentElement.classList.add("nx-js");</script>
+</head>
+
+<body>
+  <a class="nx-skip-link" href="#main">Skip to content</a>
+  <div data-nx-site-header></div>
+
+  <main id="main" class="nx-page">
+    <section class="nx-phead nx-surface-slab" data-mast aria-labelledby="page-title">
+      <div class="nx-container">
+        <div class="nx-phead__kicker">
+          <span class="nx-label nx-label--blue" data-mast-kicker>Fee payment</span>
+          <span class="nx-rule" data-mast-rule></span>
+          <span class="nx-label">Step 06 of 08</span>
+        </div>
+        <h1 class="nx-phead__title" id="page-title" data-mast-title>Pay your <span class="nx-hl">instalment</span>.</h1>
+        <div class="nx-phead__sub">
+          <p class="nx-lede" data-reveal>
+            Choose your programme and level, and pay the instalment that is due. The 3-month
+            programmes are paid in three instalments, the first at registration.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="nx-section nx-divide" data-payment>
+      <div class="nx-container nx-cols--even nx-grid">
+
+        <form class="nx-form" data-payment-form novalidate>
+          <div class="nx-form__field">
+            <label class="nx-form__label" for="pay-programme">Programme</label>
+            <select class="nx-form__control" id="pay-programme" name="programme" data-payment-programme required>
+              <option value="">Loading programmes…</option>
+            </select>
+          </div>
+
+          <div class="nx-form__field" data-payment-levels-field hidden>
+            <label class="nx-form__label" for="pay-level">Level</label>
+            <select class="nx-form__control" id="pay-level" name="level" data-payment-level>
+              <option value="">Choose a level</option>
+            </select>
+            <span class="nx-form__hint">Each programme is offered over 3 months, 6 months or 1 year.</span>
+          </div>
+
+          <div class="nx-form__field" data-payment-choices-field hidden>
+            <span class="nx-form__label">Which instalment</span>
+            <div class="nx-choices" data-payment-choices role="radiogroup" aria-label="Choose an instalment"></div>
+            <p class="nx-form__hint" data-payment-no-schedule hidden>
+              EMI for this level is arranged on request. Please contact the Admissions Department to
+              set up a schedule before paying.
+            </p>
+          </div>
+
+          <div class="nx-form__field">
+            <label class="nx-form__label" for="pay-name">Student name</label>
+            <input class="nx-form__control" id="pay-name" name="name" type="text" required autocomplete="name">
+          </div>
+
+          <div class="nx-grid nx-grid--2">
+            <div class="nx-form__field">
+              <label class="nx-form__label" for="pay-ref">Application or enrolment number</label>
+              <input class="nx-form__control" id="pay-ref" name="reference" type="text">
+              <span class="nx-form__hint">If you have one. Leave blank if not.</span>
+            </div>
+            <div class="nx-form__field">
+              <label class="nx-form__label" for="pay-phone">Phone</label>
+              <input class="nx-form__control" id="pay-phone" name="phone" type="tel" required autocomplete="tel">
+            </div>
+          </div>
+
+          <div class="nx-form__field">
+            <label class="nx-form__label" for="pay-email">Email</label>
+            <input class="nx-form__control" id="pay-email" name="email" type="email" required autocomplete="email">
+            <span class="nx-form__hint">Your receipt is sent here.</span>
+          </div>
+
+          <div class="nx-notice" data-payment-notice hidden role="status" tabindex="-1">
+            <i class="bi bi-info-circle" aria-hidden="true"></i>
+            <span>Online payment is not connected yet. Please contact the Admissions Department to
+            pay through an authorised channel, and keep your receipt.</span>
+          </div>
+
+          <button class="nx-btn nx-btn--lg" type="submit" data-payment-submit disabled>
+            Proceed to secure payment <i class="bi bi-arrow-right" aria-hidden="true"></i>
+          </button>
+
+          <p class="nx-form__note">
+            You will be taken to the payment provider to complete this transaction.
+            <strong>No card or UPI details are entered on this website.</strong>
+          </p>
+        </form>
+
+        <aside class="nx-summary" data-payment-summary hidden>
+          <span class="nx-label nx-label--blue">Summary</span>
+          <dl class="nx-summary__rows" data-payment-rows></dl>
+          <div class="nx-summary__total">
+            <span class="nx-label">Due now</span>
+            <span class="nx-summary__amount" data-payment-amount>—</span>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <section class="nx-section nx-surface-paper2" aria-labelledby="pay-help">
+      <div class="nx-container nx-cols">
+        <div class="nx-stack">
+          <span class="nx-label" data-reveal>Before you pay</span>
+          <span class="nx-rule" data-draw></span>
+        </div>
+        <div class="nx-stack">
+          <h2 id="pay-help" data-wipe>A few things worth knowing.</h2>
+          <ul class="nx-checklist" data-reveal>
+            <li><span>01</span><span>The first instalment is part of the total fee, not an extra registration charge.</span></li>
+            <li><span>02</span><span>The 6-month and one-year programmes are paid by EMI on request — the Admissions Department will set up a schedule for you.</span></li>
+            <li><span>03</span><span>Pay only through channels authorised by Nexora Institute, and keep the receipt.</span></li>
+            <li><span>04</span><span>Refunds, where approved, are processed within 5–7 working days. See the <a href="disclaimer.html#refunds">refund policy</a>.</span></li>
+            <li><span>05</span><span>Fees exclude travel, accommodation, personal expenses and any third-party examination charges.</span></li>
+          </ul>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <div data-nx-site-footer></div>
+
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/gsap.min.js" defer></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/ScrollTrigger.min.js" defer></script>
+  <script src="assets/js/nav.js" defer></script>
+  <script src="assets/js/data.js" defer></script>
+  <script src="assets/js/payment.js" defer></script>
+  <script src="assets/js/motion.js" defer></script>
+  <script src="assets/js/seo.js" defer></script>
+</body>
+</html>

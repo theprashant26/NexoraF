@@ -1,0 +1,121 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#F6F4EF">
+  <title>Student login | Nexora Institute of Professional Studies</title>
+  <meta name="description" content="Sign in to the Nexora Institute student portal.">
+  <link rel="canonical" href="login.html">
+  <meta name="robots" content="noindex">
+  <meta property="og:title" content="Student login | Nexora Institute of Professional Studies">
+  <meta property="og:description" content="Sign in to the Nexora Institute student portal.">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="assets/img/nexora/hero-01.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <link rel="icon" href="favicon.ico" sizes="any">
+  <link rel="apple-touch-icon" href="assets/brand/apple-touch-icon.png">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400..800&family=IBM+Plex+Mono:wght@400;500&family=Karla:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/main.css">
+  <script>document.documentElement.classList.add("nx-js");</script>
+</head>
+
+<body>
+  <a class="nx-skip-link" href="#main">Skip to content</a>
+  <div data-nx-site-header></div>
+
+  <main id="main" class="nx-page">
+    <section class="nx-phead nx-surface-slab" data-mast aria-labelledby="page-title">
+      <div class="nx-container">
+        <div class="nx-phead__kicker">
+          <span class="nx-label nx-label--blue" data-mast-kicker>Student portal</span>
+          <span class="nx-rule" data-mast-rule></span>
+          <span class="nx-label">Sign in</span>
+        </div>
+        <h1 class="nx-phead__title" id="page-title" data-mast-title>Welcome back.</h1>
+        <div class="nx-phead__sub">
+          <p class="nx-lede" data-reveal>Sign in to see your programme, instalments and certificate status.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="nx-section nx-divide">
+      <div class="nx-container nx-auth">
+          <p class="nx-notice" data-reveal>
+            <i class="bi bi-info-circle" aria-hidden="true"></i>
+            <span>The student portal is not live yet. This page is ready for the sign-in
+            service to be connected — until then, please contact admissions directly.</span>
+          </p>
+
+        <div class="nx-auth__panel" data-reveal>
+          <span class="nx-label nx-label--blue">Sign in</span>
+          <h2>Access your account.</h2>
+
+          <form class="nx-form" data-contact-form novalidate>
+            <div class="nx-form__field">
+              <label class="nx-form__label" for="login-id">Email or phone</label>
+              <input class="nx-form__control" id="login-id" name="identifier" type="text"
+                     required autocomplete="username" inputmode="email">
+              <span class="nx-form__message nx-form__message--error" data-error-for="identifier" hidden>Enter your registered email or phone number.</span>
+            </div>
+
+            <div class="nx-form__field">
+              <label class="nx-form__label" for="login-password">Password</label>
+              <span class="nx-password">
+                <input class="nx-form__control" id="login-password" name="password" type="password"
+                       required autocomplete="current-password">
+                <button class="nx-password__toggle" type="button" data-password-toggle
+                        aria-controls="login-password" aria-pressed="false">Show</button>
+              </span>
+              <span class="nx-form__message nx-form__message--error" data-error-for="password" hidden>Enter your password.</span>
+            </div>
+
+            <div class="nx-auth__row">
+              <label class="nx-form__check">
+                <input type="checkbox" name="remember">
+                <span>Keep me signed in</span>
+              </label>
+              <a class="nx-arrow-link" href="contact.html">Forgot password?</a>
+            </div>
+
+            <!-- Honeypot: hidden from people, tempting to bots. -->
+            <div class="nx-visually-hidden" aria-hidden="true">
+              <label for="login-company">Company</label>
+              <input id="login-company" name="company" type="text" tabindex="-1" autocomplete="off">
+            </div>
+
+            <div class="nx-form__message nx-form__message--success" data-form-success hidden tabindex="-1">
+              Your details look correct. Sign-in will work once the student portal is connected.
+            </div>
+            <div class="nx-form__message nx-form__message--error" data-form-error hidden>
+              That did not work. Please try again, or contact the institute directly.
+            </div>
+
+            <button class="nx-btn" type="submit">Sign in <i class="bi bi-arrow-right" aria-hidden="true"></i></button>
+          </form>
+
+          <p class="nx-auth__foot">
+            No account yet? <a href="register.html">Create one</a>, or
+            <a href="admissions.html#enquiry">send an enquiry</a>.
+          </p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <div data-nx-site-footer></div>
+
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/gsap.min.js" defer></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/ScrollTrigger.min.js" defer></script>
+  <script src="assets/js/nav.js" defer></script>
+  <script src="assets/js/data.js" defer></script>
+  <script src="assets/js/forms.js" defer></script>
+  <script src="assets/js/motion.js" defer></script>
+  <script src="assets/js/seo.js" defer></script>
+</body>
+</html>

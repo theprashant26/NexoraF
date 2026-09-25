@@ -102,6 +102,16 @@
         { opacity: 1, scale: 1, duration: 1.4, ease: "power2.out" },
         0);
     }
+
+    // The timeline runs on rAF, which stops in a background tab and crawls on a
+    // loaded device. This is the first thing anyone sees, so it gets the same
+    // wall-clock backstop as enter(): finish, then hand the styles back to CSS.
+    window.setTimeout(function () {
+      if (timeline.progress() < 1) timeline.progress(1);
+      gsap.set(mast.querySelectorAll(
+        "[data-mast-kicker],[data-mast-rule],[data-mast-title],[data-mast-fade],[data-mast-bg]"
+      ), { clearProps: "opacity,transform,clipPath" });
+    }, 2600);
   }
 
   /* --- Heading wipes ------------------------------------------------------
@@ -172,8 +182,32 @@
     ScrollTrigger.refresh();
   }
 
+  /* Anything already on screen must end up visible even if its trigger never
+     fires — a late web font reflowing the page, or a throttled frame loop, can
+     otherwise leave content parked at opacity 0 with no second chance. */
+  function releaseVisible(gsap) {
+    var stuck = Array.prototype.filter.call(
+      document.querySelectorAll("[data-reveal]:not([data-nx-seen])"),
+      function (el) {
+        var rect = el.getBoundingClientRect();
+        return rect.top < window.innerHeight && rect.bottom > -1;
+      });
+
+    if (!stuck.length) return;
+    stuck.forEach(function (el) { el.setAttribute("data-nx-seen", ""); });
+    gsap.set(stuck, { clearProps: "opacity,transform" });
+  }
+
   function initReveals(gsap, ScrollTrigger) {
     revealBatch(gsap, ScrollTrigger, document);
+
+    // Re-measure once the display face has actually landed; text set in the
+    // fallback font is a different height, and ScrollTrigger measured that one.
+    if (document.fonts && document.fonts.ready) {
+      document.fonts.ready.then(function () { ScrollTrigger.refresh(); });
+    }
+
+    window.setTimeout(function () { releaseVisible(gsap); }, 1500);
   }
 
   /* --- Ruled rows deal in from the left --------------------------------------
@@ -226,7 +260,7 @@
       var state = { value: 0 };
       el.textContent = "0";
 
-      gsap.to(state, {
+      var tween = gsap.to(state, {
         value: target,
         duration: 1.1,
         ease: "power2.out",
@@ -234,6 +268,13 @@
         scrollTrigger: { trigger: el, start: "top 92%", once: true },
         onUpdate: function () { el.textContent = String(Math.round(state.value)); }
       });
+
+      // A counter stalled by a throttled frame loop states a wrong number, which
+      // is worse than not animating. Land on the real figure regardless.
+      window.setTimeout(function () {
+        if (el.textContent !== String(target)) el.textContent = String(target);
+        tween.kill();
+      }, 3000);
     });
   }
 

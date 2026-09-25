@@ -5,7 +5,7 @@
     "division": "Metro & Rail",
     "code": "MIRTC",
     "certificate": "Metro Industrial & Rail Technical Certificate",
-    "programme": "Diploma in Metro Rail Management",
+    "programme": "Metro & Rail Training Programme",
     "group": "Transport & Aviation",
     "keyAreas": [
       "Metro Rail Operations",
@@ -15,20 +15,52 @@
       "Customer Service",
       "Basic Rail/Metro Management"
     ],
-    "slug": "metro-rail-management",
-    "fee": 44999,
-    "feeConfirmed": true,
-    "instalments": [
-      14999,
-      15000,
-      15000
+    "slug": "metro-rail-training-programme",
+    "tiers": [
+      {
+        "id": "basic",
+        "level": "Basic Certificate",
+        "course": "Basic Certificate Course",
+        "duration": "3 months",
+        "learningHours": "120 hours",
+        "fee": 45000,
+        "instalments": [
+          15000,
+          15000,
+          15000
+        ],
+        "instalmentsConfirmed": true,
+        "emiOnRequest": false
+      },
+      {
+        "id": "advanced",
+        "level": "Advanced Certificate",
+        "course": "Advanced Certificate Course",
+        "duration": "6 months",
+        "learningHours": "240 hours",
+        "fee": 85000,
+        "instalments": null,
+        "instalmentsConfirmed": false,
+        "emiOnRequest": true
+      },
+      {
+        "id": "diploma",
+        "level": "Professional Diploma",
+        "course": "Professional Diploma Course",
+        "duration": "1 year",
+        "learningHours": "480 hours",
+        "fee": 189000,
+        "instalments": null,
+        "instalmentsConfirmed": false,
+        "emiOnRequest": true
+      }
     ],
-    "duration": "3 months",
+    "feeConfirmed": true,
     "eligibility": "Intermediate (Class 12) or above",
     "learningMode": "Online",
     "banner": "assets/img/nexora/banner-mirtc.jpg",
     "bannerAlt": "Metro & Rail training environment at Nexora Institute",
-    "learningHours": "120 hours"
+    "contentConfirmed": true
   },
   {
     "id": 2,
@@ -36,7 +68,7 @@
     "division": "Railway",
     "code": "RIATC",
     "certificate": "Railway Industrial & Training Certificate",
-    "programme": "Diploma in Railway Management",
+    "programme": "Railway Training Programme",
     "group": "Transport & Aviation",
     "keyAreas": [
       "Railway Operations",
@@ -46,20 +78,52 @@
       "Railway Safety & Procedures",
       "Basic Railway Administration"
     ],
-    "slug": "railway-management",
-    "fee": 44999,
-    "feeConfirmed": true,
-    "instalments": [
-      14999,
-      15000,
-      15000
+    "slug": "railway-training-programme",
+    "tiers": [
+      {
+        "id": "basic",
+        "level": "Basic Certificate",
+        "course": "Basic Certificate Course",
+        "duration": "3 months",
+        "learningHours": "120 hours",
+        "fee": 45000,
+        "instalments": [
+          15000,
+          15000,
+          15000
+        ],
+        "instalmentsConfirmed": true,
+        "emiOnRequest": false
+      },
+      {
+        "id": "advanced",
+        "level": "Advanced Certificate",
+        "course": "Advanced Certificate Course",
+        "duration": "6 months",
+        "learningHours": "240 hours",
+        "fee": 85000,
+        "instalments": null,
+        "instalmentsConfirmed": false,
+        "emiOnRequest": true
+      },
+      {
+        "id": "diploma",
+        "level": "Professional Diploma",
+        "course": "Professional Diploma Course",
+        "duration": "1 year",
+        "learningHours": "480 hours",
+        "fee": 189000,
+        "instalments": null,
+        "instalmentsConfirmed": false,
+        "emiOnRequest": true
+      }
     ],
-    "duration": "3 months",
+    "feeConfirmed": true,
     "eligibility": "Intermediate (Class 12) or above",
     "learningMode": "Online",
     "banner": "assets/img/nexora/banner-riatc.jpg",
     "bannerAlt": "Railway training environment at Nexora Institute",
-    "learningHours": "120 hours"
+    "contentConfirmed": true
   },
   {
     "id": 3,
@@ -67,7 +131,7 @@
     "division": "Aviation",
     "code": "AATC",
     "certificate": "Airline & Aviation Training Certificate",
-    "programme": "Diploma in Aviation Management",
+    "programme": "Aviation Training Programme",
     "group": "Transport & Aviation",
     "keyAreas": [
       "Airport Operations",
@@ -77,20 +141,52 @@
       "Aviation Administration",
       "Ground Operations"
     ],
-    "slug": "aviation-management",
-    "fee": 44999,
-    "feeConfirmed": true,
-    "instalments": [
-      14999,
-      15000,
-      15000
+    "slug": "aviation-training-programme",
+    "tiers": [
+      {
+        "id": "basic",
+        "level": "Basic Certificate",
+        "course": "Basic Certificate Course",
+        "duration": "3 months",
+        "learningHours": "120 hours",
+        "fee": 45000,
+        "instalments": [
+          15000,
+          15000,
+          15000
+        ],
+        "instalmentsConfirmed": true,
+        "emiOnRequest": false
+      },
+      {
+        "id": "advanced",
+        "level": "Advanced Certificate",
+        "course": "Advanced Certificate Course",
+        "duration": "6 months",
+        "learningHours": "240 hours",
+        "fee": 85000,
+        "instalments": null,
+        "instalmentsConfirmed": false,
+        "emiOnRequest": true
+      },
+      {
+        "id": "diploma",
+        "level": "Professional Diploma",
+        "course": "Professional Diploma Course",
+        "duration": "1 year",
+        "learningHours": "480 hours",
+        "fee": 189000,
+        "instalments": null,
+        "instalmentsConfirmed": false,
+        "emiOnRequest": true
+      }
     ],
-    "duration": "3 months",
+    "feeConfirmed": true,
     "eligibility": "Intermediate (Class 12) or above",
     "learningMode": "Online",
     "banner": "assets/img/nexora/banner-aatc.jpg",
     "bannerAlt": "Aviation training environment at Nexora Institute",
-    "learningHours": "120 hours"
+    "contentConfirmed": true
   },
   {
     "id": 4,
@@ -98,7 +194,7 @@
     "division": "Hospitality",
     "code": "HITC",
     "certificate": "Hotel Industry Training Certificate",
-    "programme": "Diploma in Hotel Management",
+    "programme": "Hospitality Training Programme",
     "group": "Service & Hospitality",
     "keyAreas": [
       "Front Office Operations",
@@ -108,20 +204,52 @@
       "Guest Relations",
       "Hotel Administration"
     ],
-    "slug": "hotel-management",
-    "fee": 44999,
-    "feeConfirmed": true,
-    "instalments": [
-      14999,
-      15000,
-      15000
+    "slug": "hospitality-training-programme",
+    "tiers": [
+      {
+        "id": "basic",
+        "level": "Basic Certificate",
+        "course": "Basic Certificate Course",
+        "duration": "3 months",
+        "learningHours": "120 hours",
+        "fee": 45000,
+        "instalments": [
+          15000,
+          15000,
+          15000
+        ],
+        "instalmentsConfirmed": true,
+        "emiOnRequest": false
+      },
+      {
+        "id": "advanced",
+        "level": "Advanced Certificate",
+        "course": "Advanced Certificate Course",
+        "duration": "6 months",
+        "learningHours": "240 hours",
+        "fee": 85000,
+        "instalments": null,
+        "instalmentsConfirmed": false,
+        "emiOnRequest": true
+      },
+      {
+        "id": "diploma",
+        "level": "Professional Diploma",
+        "course": "Professional Diploma Course",
+        "duration": "1 year",
+        "learningHours": "480 hours",
+        "fee": 189000,
+        "instalments": null,
+        "instalmentsConfirmed": false,
+        "emiOnRequest": true
+      }
     ],
-    "duration": "3 months",
+    "feeConfirmed": true,
     "eligibility": "Intermediate (Class 12) or above",
     "learningMode": "Online",
     "banner": "assets/img/nexora/banner-hitc.jpg",
     "bannerAlt": "Hospitality training environment at Nexora Institute",
-    "learningHours": "120 hours"
+    "contentConfirmed": true
   },
   {
     "id": 5,
@@ -129,7 +257,7 @@
     "division": "Travel & Tourism",
     "code": "TTMC",
     "certificate": "Travel & Tourism Management Certificate",
-    "programme": "Diploma in Travel & Tourism Management",
+    "programme": "Travel & Tourism Training Programme",
     "group": "Service & Hospitality",
     "keyAreas": [
       "Travel Agency Operations",
@@ -139,20 +267,52 @@
       "Customer Relationship Management",
       "Travel Documentation"
     ],
-    "slug": "travel-tourism-management",
-    "fee": 44999,
-    "feeConfirmed": true,
-    "instalments": [
-      14999,
-      15000,
-      15000
+    "slug": "travel-tourism-training-programme",
+    "tiers": [
+      {
+        "id": "basic",
+        "level": "Basic Certificate",
+        "course": "Basic Certificate Course",
+        "duration": "3 months",
+        "learningHours": "120 hours",
+        "fee": 45000,
+        "instalments": [
+          15000,
+          15000,
+          15000
+        ],
+        "instalmentsConfirmed": true,
+        "emiOnRequest": false
+      },
+      {
+        "id": "advanced",
+        "level": "Advanced Certificate",
+        "course": "Advanced Certificate Course",
+        "duration": "6 months",
+        "learningHours": "240 hours",
+        "fee": 85000,
+        "instalments": null,
+        "instalmentsConfirmed": false,
+        "emiOnRequest": true
+      },
+      {
+        "id": "diploma",
+        "level": "Professional Diploma",
+        "course": "Professional Diploma Course",
+        "duration": "1 year",
+        "learningHours": "480 hours",
+        "fee": 189000,
+        "instalments": null,
+        "instalmentsConfirmed": false,
+        "emiOnRequest": true
+      }
     ],
-    "duration": "3 months",
+    "feeConfirmed": true,
     "eligibility": "Intermediate (Class 12) or above",
     "learningMode": "Online",
     "banner": "assets/img/nexora/banner-ttmc.jpg",
     "bannerAlt": "Travel & Tourism training environment at Nexora Institute",
-    "learningHours": "120 hours"
+    "contentConfirmed": true
   },
   {
     "id": 6,
@@ -160,7 +320,7 @@
     "division": "Medical",
     "code": "MITC",
     "certificate": "Medical Industry Training Certificate",
-    "programme": "Diploma in Medical Management",
+    "programme": "Medical Training Programme",
     "group": "Health & Sciences",
     "keyAreas": [
       "Healthcare Administration",
@@ -170,20 +330,52 @@
       "Healthcare Operations",
       "Hospital Administration"
     ],
-    "slug": "medical-management",
-    "fee": 35000,
-    "feeConfirmed": true,
-    "instalments": [
-      11666,
-      11667,
-      11667
+    "slug": "medical-training-programme",
+    "tiers": [
+      {
+        "id": "basic",
+        "level": "Basic Certificate",
+        "course": "Basic Certificate Course",
+        "duration": "3 months",
+        "learningHours": "120 hours",
+        "fee": 35500,
+        "instalments": [
+          15500,
+          10000,
+          10000
+        ],
+        "instalmentsConfirmed": true,
+        "emiOnRequest": false
+      },
+      {
+        "id": "advanced",
+        "level": "Advanced Certificate",
+        "course": "Advanced Certificate Course",
+        "duration": "6 months",
+        "learningHours": "240 hours",
+        "fee": 65500,
+        "instalments": null,
+        "instalmentsConfirmed": false,
+        "emiOnRequest": true
+      },
+      {
+        "id": "diploma",
+        "level": "Professional Diploma",
+        "course": "Professional Diploma Course",
+        "duration": "1 year",
+        "learningHours": "480 hours",
+        "fee": 135500,
+        "instalments": null,
+        "instalmentsConfirmed": false,
+        "emiOnRequest": true
+      }
     ],
-    "duration": "3 months",
+    "feeConfirmed": true,
     "eligibility": "Intermediate (Class 12) or above",
     "learningMode": "Online",
     "banner": "assets/img/nexora/banner-mitc.jpg",
     "bannerAlt": "Medical training environment at Nexora Institute",
-    "learningHours": "120 hours"
+    "contentConfirmed": true
   },
   {
     "id": 7,
@@ -191,7 +383,7 @@
     "division": "Pharmaceutical",
     "code": "PITC",
     "certificate": "Pharmaceutical Industry Training Certificate",
-    "programme": "Diploma in Pharmaceutical Management",
+    "programme": "Pharmaceutical Training Programme",
     "group": "Health & Sciences",
     "keyAreas": [
       "Pharmaceutical Industry Operations",
@@ -201,245 +393,60 @@
       "Pharmaceutical Sales & Marketing",
       "Basic Pharmaceutical Documentation"
     ],
-    "slug": "pharmaceutical-management",
-    "fee": 19999,
-    "feeConfirmed": true,
-    "instalments": [
-      9999,
-      5000,
-      5000
+    "slug": "pharmaceutical-training-programme",
+    "tiers": [
+      {
+        "id": "basic",
+        "level": "Basic Certificate",
+        "course": "Basic Certificate Course",
+        "duration": "3 months",
+        "learningHours": "120 hours",
+        "fee": 25000,
+        "instalments": [
+          10500,
+          7250,
+          7250
+        ],
+        "instalmentsConfirmed": true,
+        "emiOnRequest": false
+      },
+      {
+        "id": "advanced",
+        "level": "Advanced Certificate",
+        "course": "Advanced Certificate Course",
+        "duration": "6 months",
+        "learningHours": "240 hours",
+        "fee": 65500,
+        "instalments": null,
+        "instalmentsConfirmed": false,
+        "emiOnRequest": true
+      },
+      {
+        "id": "diploma",
+        "level": "Professional Diploma",
+        "course": "Professional Diploma Course",
+        "duration": "1 year",
+        "learningHours": "480 hours",
+        "fee": 135500,
+        "instalments": null,
+        "instalmentsConfirmed": false,
+        "emiOnRequest": true
+      }
     ],
-    "duration": "3 months",
+    "feeConfirmed": true,
     "eligibility": "Intermediate (Class 12) or above",
     "learningMode": "Online",
     "banner": "assets/img/nexora/banner-pitc.jpg",
     "bannerAlt": "Pharmaceutical training environment at Nexora Institute",
-    "learningHours": "120 hours"
+    "contentConfirmed": true
   },
   {
     "id": 8,
     "number": "08",
-    "division": "Electrical",
-    "code": "EITC",
-    "certificate": "Electrical Industrial Training Certificate",
-    "programme": "Diploma in Electrical Management",
-    "group": "Business & Technical",
-    "keyAreas": [
-      "Electrical Safety",
-      "Basic Electrical Systems",
-      "Maintenance Management",
-      "Electrical Operations",
-      "Workplace Safety",
-      "Technical Documentation"
-    ],
-    "slug": "electrical-management",
-    "fee": 35000,
-    "feeConfirmed": true,
-    "instalments": [
-      11666,
-      11667,
-      11667
-    ],
-    "duration": "3 months",
-    "eligibility": "Intermediate (Class 12) or above",
-    "learningMode": "Online",
-    "banner": "assets/img/nexora/banner-eitc.jpg",
-    "bannerAlt": "Electrical training environment at Nexora Institute",
-    "learningHours": "120 hours"
-  },
-  {
-    "id": 9,
-    "number": "09",
-    "division": "Security",
-    "code": "SITC",
-    "certificate": "Security Industry Training Certificate",
-    "programme": "Diploma in Security Management",
-    "group": "Service & Hospitality",
-    "keyAreas": [
-      "Security Operations",
-      "Access Control",
-      "Security Supervision",
-      "Incident Reporting",
-      "Crowd Management",
-      "Emergency & Safety Procedures"
-    ],
-    "slug": "security-management",
-    "fee": 35000,
-    "feeConfirmed": true,
-    "instalments": [
-      11666,
-      11667,
-      11667
-    ],
-    "duration": "3 months",
-    "eligibility": "Intermediate (Class 12) or above",
-    "learningMode": "Online",
-    "banner": "assets/img/nexora/banner-sitc.jpg",
-    "bannerAlt": "Security training environment at Nexora Institute",
-    "learningHours": "120 hours"
-  },
-  {
-    "id": 10,
-    "number": "10",
-    "division": "Education",
-    "code": "TITC",
-    "certificate": "Teaching Industry Training Certificate",
-    "programme": "Diploma in Education & Teaching Management",
-    "group": "Business & Technical",
-    "keyAreas": [
-      "Teaching Fundamentals",
-      "Classroom Management",
-      "Student Support",
-      "Educational Administration",
-      "Communication Skills",
-      "Basic Academic Management"
-    ],
-    "slug": "education-teaching-management",
-    "fee": 35000,
-    "feeConfirmed": true,
-    "instalments": [
-      11666,
-      11667,
-      11667
-    ],
-    "duration": "3 months",
-    "eligibility": "Intermediate (Class 12) or above",
-    "learningMode": "Online",
-    "banner": "assets/img/nexora/banner-titc.jpg",
-    "bannerAlt": "Education training environment at Nexora Institute",
-    "learningHours": "120 hours"
-  },
-  {
-    "id": 11,
-    "number": "11",
-    "division": "Banking",
-    "code": "BITC",
-    "certificate": "Banking Industry Training Certificate",
-    "programme": "Diploma in Banking Management",
-    "group": "Business & Technical",
-    "keyAreas": [
-      "Banking Operations",
-      "Customer Service",
-      "Account & Documentation Basics",
-      "Financial Services",
-      "Banking Administration",
-      "Digital Banking Basics"
-    ],
-    "slug": "banking-management",
-    "fee": 35000,
-    "feeConfirmed": true,
-    "instalments": [
-      11666,
-      11667,
-      11667
-    ],
-    "duration": "3 months",
-    "eligibility": "Intermediate (Class 12) or above",
-    "learningMode": "Online",
-    "banner": "assets/img/nexora/banner-bitc.jpg",
-    "bannerAlt": "Banking training environment at Nexora Institute",
-    "learningHours": "120 hours"
-  },
-  {
-    "id": 12,
-    "number": "12",
-    "division": "Finance & Accounting",
-    "code": "FITC",
-    "certificate": "Finance & Accounting Industry Training Certificate",
-    "programme": "Diploma in Finance & Accounting Management",
-    "group": "Business & Technical",
-    "keyAreas": [
-      "Accounting Fundamentals",
-      "Bookkeeping",
-      "Financial Documentation",
-      "Billing & Invoicing",
-      "Basic Financial Management",
-      "Office & Accounting Software"
-    ],
-    "slug": "finance-accounting-management",
-    "fee": 35000,
-    "feeConfirmed": true,
-    "instalments": [
-      11666,
-      11667,
-      11667
-    ],
-    "duration": "3 months",
-    "eligibility": "Intermediate (Class 12) or above",
-    "learningMode": "Online",
-    "banner": "assets/img/nexora/banner-fitc.jpg",
-    "bannerAlt": "Finance & Accounting training environment at Nexora Institute",
-    "learningHours": "120 hours"
-  },
-  {
-    "id": 13,
-    "number": "13",
-    "division": "Professional Skill Development",
-    "code": "PSDC",
-    "certificate": "Professional Skill Development Certificate",
-    "programme": "Diploma in Professional Skill Development",
-    "group": "Business & Technical",
-    "keyAreas": [
-      "Communication Skills",
-      "Computer Skills",
-      "Workplace Skills",
-      "Interview Preparation",
-      "Professional Behaviour",
-      "Career Development"
-    ],
-    "slug": "professional-skill-development",
-    "fee": 35000,
-    "feeConfirmed": true,
-    "instalments": [
-      11666,
-      11667,
-      11667
-    ],
-    "duration": "3 months",
-    "eligibility": "Intermediate (Class 12) or above",
-    "learningMode": "Online",
-    "banner": "assets/img/nexora/banner-psdc.jpg",
-    "bannerAlt": "Professional Skill Development training environment at Nexora Institute",
-    "learningHours": "120 hours"
-  },
-  {
-    "id": 14,
-    "number": "14",
-    "division": "Logistics",
-    "code": "LITC",
-    "certificate": "Logistics Industry Training Certificate",
-    "programme": "Diploma in Logistics Management",
-    "group": "Transport & Aviation",
-    "keyAreas": [
-      "Logistics Operations",
-      "Warehouse Management",
-      "Inventory Control",
-      "Transportation Management",
-      "Supply Chain Basics",
-      "Documentation & Dispatch"
-    ],
-    "slug": "logistics-management",
-    "fee": 35000,
-    "feeConfirmed": true,
-    "instalments": [
-      11666,
-      11667,
-      11667
-    ],
-    "duration": "3 months",
-    "eligibility": "Intermediate (Class 12) or above",
-    "learningMode": "Online",
-    "banner": "assets/img/nexora/banner-litc.jpg",
-    "bannerAlt": "Logistics training environment at Nexora Institute",
-    "learningHours": "120 hours"
-  },
-  {
-    "id": 15,
-    "number": "15",
     "division": "Healthcare",
     "code": "HIMTC",
     "certificate": "Healthcare Industry Management Training Certificate",
-    "programme": "Diploma in Healthcare Management",
+    "programme": "Healthcare Training Programme",
     "group": "Health & Sciences",
     "keyAreas": [
       "Hospital Administration",
@@ -449,183 +456,123 @@
       "Hospital Front Office",
       "Healthcare Facility Management"
     ],
-    "slug": "healthcare-management",
-    "fee": 35000,
-    "feeConfirmed": true,
-    "instalments": [
-      11666,
-      11667,
-      11667
+    "slug": "healthcare-training-programme",
+    "tiers": [
+      {
+        "id": "basic",
+        "level": "Basic Certificate",
+        "course": "Basic Certificate Course",
+        "duration": "3 months",
+        "learningHours": "120 hours",
+        "fee": 35000,
+        "instalments": [
+          11666,
+          11667,
+          11667
+        ],
+        "instalmentsConfirmed": true,
+        "emiOnRequest": false
+      },
+      {
+        "id": "advanced",
+        "level": "Advanced Certificate",
+        "course": "Advanced Certificate Course",
+        "duration": "6 months",
+        "learningHours": "240 hours",
+        "fee": 65500,
+        "instalments": null,
+        "instalmentsConfirmed": false,
+        "emiOnRequest": true
+      },
+      {
+        "id": "diploma",
+        "level": "Professional Diploma",
+        "course": "Professional Diploma Course",
+        "duration": "1 year",
+        "learningHours": "480 hours",
+        "fee": 135500,
+        "instalments": null,
+        "instalmentsConfirmed": false,
+        "emiOnRequest": true
+      }
     ],
-    "duration": "3 months",
+    "feeConfirmed": true,
+    "contentConfirmed": true,
     "eligibility": "Intermediate (Class 12) or above",
     "learningMode": "Online",
     "banner": "assets/img/nexora/banner-himtc.jpg",
-    "bannerAlt": "Healthcare training environment at Nexora Institute",
-    "learningHours": "120 hours"
+    "bannerAlt": "Healthcare training environment at Nexora Institute"
   },
   {
-    "id": 16,
-    "number": "16",
-    "division": "Manufacturing",
-    "code": "MIMC",
-    "certificate": "Manufacturing Industry Management Certificate",
-    "programme": "Diploma in Manufacturing Management",
+    "id": 9,
+    "number": "09",
+    "division": "Electrical",
+    "code": "EITC",
+    "certificate": "Electrical Industrial Training Certificate",
+    "programme": "Electrical Training Programme",
     "group": "Business & Technical",
     "keyAreas": [
-      "Production Management",
-      "Manufacturing Operations",
-      "Quality Basics",
-      "Inventory Management",
+      "Electrical Safety",
+      "Basic Electrical Systems",
+      "Maintenance Management",
+      "Electrical Operations",
       "Workplace Safety",
-      "Production Planning"
+      "Technical Documentation"
     ],
-    "slug": "manufacturing-management",
-    "fee": 35000,
+    "slug": "electrical-training-programme",
+    "tiers": [
+      {
+        "id": "basic",
+        "level": "Basic Certificate",
+        "course": "Basic Certificate Course",
+        "duration": "3 months",
+        "learningHours": "120 hours",
+        "fee": 35000,
+        "instalments": [
+          11666,
+          11667,
+          11667
+        ],
+        "instalmentsConfirmed": true,
+        "emiOnRequest": false
+      },
+      {
+        "id": "advanced",
+        "level": "Advanced Certificate",
+        "course": "Advanced Certificate Course",
+        "duration": "6 months",
+        "learningHours": "240 hours",
+        "fee": 65500,
+        "instalments": null,
+        "instalmentsConfirmed": false,
+        "emiOnRequest": true
+      },
+      {
+        "id": "diploma",
+        "level": "Professional Diploma",
+        "course": "Professional Diploma Course",
+        "duration": "1 year",
+        "learningHours": "480 hours",
+        "fee": 135500,
+        "instalments": null,
+        "instalmentsConfirmed": false,
+        "emiOnRequest": true
+      }
+    ],
     "feeConfirmed": true,
-    "instalments": [
-      11666,
-      11667,
-      11667
-    ],
-    "duration": "3 months",
     "eligibility": "Intermediate (Class 12) or above",
     "learningMode": "Online",
-    "banner": "assets/img/nexora/banner-mimc.jpg",
-    "bannerAlt": "Manufacturing training environment at Nexora Institute",
-    "learningHours": "120 hours"
+    "banner": "assets/img/nexora/banner-eitc.jpg",
+    "bannerAlt": "Electrical training environment at Nexora Institute",
+    "contentConfirmed": true
   },
   {
-    "id": 17,
-    "number": "17",
-    "division": "Driver Services",
-    "code": "DITC",
-    "certificate": "Driver Industry Training Certificate",
-    "programme": "Diploma in Driver Management",
-    "group": "Transport & Aviation",
-    "keyAreas": [
-      "Professional Driving Practices",
-      "Road Safety",
-      "Vehicle Safety",
-      "Fleet Operations",
-      "Driver Responsibilities",
-      "Basic Vehicle Maintenance"
-    ],
-    "slug": "driver-management",
-    "fee": 35000,
-    "feeConfirmed": true,
-    "instalments": [
-      11666,
-      11667,
-      11667
-    ],
-    "duration": "3 months",
-    "eligibility": "Intermediate (Class 12) or above",
-    "learningMode": "Online",
-    "banner": "assets/img/nexora/banner-ditc.jpg",
-    "bannerAlt": "Driver Services training environment at Nexora Institute",
-    "learningHours": "120 hours"
-  },
-  {
-    "id": 18,
-    "number": "18",
-    "division": "Retail",
-    "code": "RIMC",
-    "certificate": "Retail Industry Management Certificate",
-    "programme": "Diploma in Retail Management",
-    "group": "Service & Hospitality",
-    "keyAreas": [
-      "Retail Operations",
-      "Store Management",
-      "Customer Service",
-      "Sales Management",
-      "Inventory Management",
-      "Retail Administration"
-    ],
-    "slug": "retail-management",
-    "fee": 35000,
-    "feeConfirmed": true,
-    "instalments": [
-      11666,
-      11667,
-      11667
-    ],
-    "duration": "3 months",
-    "eligibility": "Intermediate (Class 12) or above",
-    "learningMode": "Online",
-    "banner": "assets/img/nexora/banner-rimc.jpg",
-    "bannerAlt": "Retail training environment at Nexora Institute",
-    "learningHours": "120 hours"
-  },
-  {
-    "id": 19,
-    "number": "19",
-    "division": "IT & Technology",
-    "code": "ITITC",
-    "certificate": "IT Industry Technical Certificate",
-    "programme": "Diploma in IT Management",
-    "group": "Business & Technical",
-    "keyAreas": [
-      "IT Fundamentals",
-      "Computer Applications",
-      "IT Support",
-      "Digital Operations",
-      "Basic Networking",
-      "Technology Management"
-    ],
-    "slug": "it-management",
-    "fee": 35000,
-    "feeConfirmed": true,
-    "instalments": [
-      11666,
-      11667,
-      11667
-    ],
-    "duration": "3 months",
-    "eligibility": "Intermediate (Class 12) or above",
-    "learningMode": "Online",
-    "banner": "assets/img/nexora/banner-ititc.jpg",
-    "bannerAlt": "IT & Technology training environment at Nexora Institute",
-    "learningHours": "120 hours"
-  },
-  {
-    "id": 20,
-    "number": "20",
-    "division": "Civil Engineering",
-    "code": "CETC",
-    "certificate": "Civil Engineering Training Certificate",
-    "programme": "Diploma in Civil Management",
-    "group": "Business & Technical",
-    "keyAreas": [
-      "Construction Management",
-      "Site Management",
-      "Basic Estimation",
-      "Construction Safety",
-      "Project Documentation",
-      "Infrastructure Operations"
-    ],
-    "slug": "civil-management",
-    "fee": 35000,
-    "feeConfirmed": true,
-    "instalments": [
-      11666,
-      11667,
-      11667
-    ],
-    "duration": "3 months",
-    "eligibility": "Intermediate (Class 12) or above",
-    "learningMode": "Online",
-    "banner": "assets/img/nexora/banner-cetc.jpg",
-    "bannerAlt": "Civil Engineering training environment at Nexora Institute",
-    "learningHours": "120 hours"
-  },
-  {
-    "id": 21,
-    "number": "21",
+    "id": 10,
+    "number": "10",
     "division": "Electrical Engineering",
     "code": "EETC",
     "certificate": "Electrical Engineering Training Certificate",
-    "programme": "Diploma in Electrical Engineering Management",
+    "programme": "Electrical Engineering Training Programme",
     "group": "Business & Technical",
     "keyAreas": [
       "Electrical Engineering Basics",
@@ -635,19 +582,933 @@
       "Technical Documentation",
       "Maintenance Management"
     ],
-    "slug": "electrical-engineering-management",
-    "fee": 35000,
-    "feeConfirmed": true,
-    "instalments": [
-      11666,
-      11667,
-      11667
+    "slug": "electrical-engineering-training-programme",
+    "tiers": [
+      {
+        "id": "basic",
+        "level": "Basic Certificate",
+        "course": "Basic Certificate Course",
+        "duration": "3 months",
+        "learningHours": "120 hours",
+        "fee": 35000,
+        "instalments": [
+          11666,
+          11667,
+          11667
+        ],
+        "instalmentsConfirmed": true,
+        "emiOnRequest": false
+      },
+      {
+        "id": "advanced",
+        "level": "Advanced Certificate",
+        "course": "Advanced Certificate Course",
+        "duration": "6 months",
+        "learningHours": "240 hours",
+        "fee": 65500,
+        "instalments": null,
+        "instalmentsConfirmed": false,
+        "emiOnRequest": true
+      },
+      {
+        "id": "diploma",
+        "level": "Professional Diploma",
+        "course": "Professional Diploma Course",
+        "duration": "1 year",
+        "learningHours": "480 hours",
+        "fee": 135500,
+        "instalments": null,
+        "instalmentsConfirmed": false,
+        "emiOnRequest": true
+      }
     ],
-    "duration": "3 months",
+    "feeConfirmed": true,
+    "contentConfirmed": true,
     "eligibility": "Intermediate (Class 12) or above",
     "learningMode": "Online",
     "banner": "assets/img/nexora/banner-eetc.jpg",
-    "bannerAlt": "Electrical Engineering training environment at Nexora Institute",
-    "learningHours": "120 hours"
+    "bannerAlt": "Electrical Engineering training environment at Nexora Institute"
+  },
+  {
+    "id": 11,
+    "number": "11",
+    "division": "Security",
+    "code": "SITC",
+    "certificate": "Security Industry Training Certificate",
+    "programme": "Security Training Programme",
+    "group": "Service & Hospitality",
+    "keyAreas": [
+      "Security Operations",
+      "Access Control",
+      "Security Supervision",
+      "Incident Reporting",
+      "Crowd Management",
+      "Emergency & Safety Procedures"
+    ],
+    "slug": "security-training-programme",
+    "tiers": [
+      {
+        "id": "basic",
+        "level": "Basic Certificate",
+        "course": "Basic Certificate Course",
+        "duration": "3 months",
+        "learningHours": "120 hours",
+        "fee": 35000,
+        "instalments": [
+          11666,
+          11667,
+          11667
+        ],
+        "instalmentsConfirmed": true,
+        "emiOnRequest": false
+      },
+      {
+        "id": "advanced",
+        "level": "Advanced Certificate",
+        "course": "Advanced Certificate Course",
+        "duration": "6 months",
+        "learningHours": "240 hours",
+        "fee": 65500,
+        "instalments": null,
+        "instalmentsConfirmed": false,
+        "emiOnRequest": true
+      },
+      {
+        "id": "diploma",
+        "level": "Professional Diploma",
+        "course": "Professional Diploma Course",
+        "duration": "1 year",
+        "learningHours": "480 hours",
+        "fee": 135500,
+        "instalments": null,
+        "instalmentsConfirmed": false,
+        "emiOnRequest": true
+      }
+    ],
+    "feeConfirmed": true,
+    "eligibility": "Intermediate (Class 12) or above",
+    "learningMode": "Online",
+    "banner": "assets/img/nexora/banner-sitc.jpg",
+    "bannerAlt": "Security training environment at Nexora Institute",
+    "contentConfirmed": true
+  },
+  {
+    "id": 12,
+    "number": "12",
+    "division": "Teaching & Education",
+    "code": "TITC",
+    "certificate": "Teaching Industry Training Certificate",
+    "programme": "Teaching & Education Training Programme",
+    "group": "Business & Technical",
+    "keyAreas": [
+      "Teaching Fundamentals",
+      "Classroom Management",
+      "Student Support",
+      "Educational Administration",
+      "Communication Skills",
+      "Basic Academic Management"
+    ],
+    "slug": "teaching-education-training-programme",
+    "tiers": [
+      {
+        "id": "basic",
+        "level": "Basic Certificate",
+        "course": "Basic Certificate Course",
+        "duration": "3 months",
+        "learningHours": "120 hours",
+        "fee": 35000,
+        "instalments": [
+          11666,
+          11667,
+          11667
+        ],
+        "instalmentsConfirmed": true,
+        "emiOnRequest": false
+      },
+      {
+        "id": "advanced",
+        "level": "Advanced Certificate",
+        "course": "Advanced Certificate Course",
+        "duration": "6 months",
+        "learningHours": "240 hours",
+        "fee": 65500,
+        "instalments": null,
+        "instalmentsConfirmed": false,
+        "emiOnRequest": true
+      },
+      {
+        "id": "diploma",
+        "level": "Professional Diploma",
+        "course": "Professional Diploma Course",
+        "duration": "1 year",
+        "learningHours": "480 hours",
+        "fee": 135500,
+        "instalments": null,
+        "instalmentsConfirmed": false,
+        "emiOnRequest": true
+      }
+    ],
+    "feeConfirmed": true,
+    "eligibility": "Intermediate (Class 12) or above",
+    "learningMode": "Online",
+    "banner": "assets/img/nexora/banner-titc.jpg",
+    "bannerAlt": "Teaching & Education training environment at Nexora Institute",
+    "contentConfirmed": true
+  },
+  {
+    "id": 13,
+    "number": "13",
+    "division": "Banking",
+    "code": "BITC",
+    "certificate": "Banking Industry Training Certificate",
+    "programme": "Banking Training Programme",
+    "group": "Business & Technical",
+    "keyAreas": [
+      "Banking Operations",
+      "Customer Service",
+      "Account & Documentation Basics",
+      "Financial Services",
+      "Banking Administration",
+      "Digital Banking Basics"
+    ],
+    "slug": "banking-training-programme",
+    "tiers": [
+      {
+        "id": "basic",
+        "level": "Basic Certificate",
+        "course": "Basic Certificate Course",
+        "duration": "3 months",
+        "learningHours": "120 hours",
+        "fee": 35000,
+        "instalments": [
+          11666,
+          11667,
+          11667
+        ],
+        "instalmentsConfirmed": true,
+        "emiOnRequest": false
+      },
+      {
+        "id": "advanced",
+        "level": "Advanced Certificate",
+        "course": "Advanced Certificate Course",
+        "duration": "6 months",
+        "learningHours": "240 hours",
+        "fee": 65500,
+        "instalments": null,
+        "instalmentsConfirmed": false,
+        "emiOnRequest": true
+      },
+      {
+        "id": "diploma",
+        "level": "Professional Diploma",
+        "course": "Professional Diploma Course",
+        "duration": "1 year",
+        "learningHours": "480 hours",
+        "fee": 135500,
+        "instalments": null,
+        "instalmentsConfirmed": false,
+        "emiOnRequest": true
+      }
+    ],
+    "feeConfirmed": true,
+    "eligibility": "Intermediate (Class 12) or above",
+    "learningMode": "Online",
+    "banner": "assets/img/nexora/banner-bitc.jpg",
+    "bannerAlt": "Banking training environment at Nexora Institute",
+    "contentConfirmed": true
+  },
+  {
+    "id": 14,
+    "number": "14",
+    "division": "Logistics",
+    "code": "LITC",
+    "certificate": "Logistics Industry Training Certificate",
+    "programme": "Logistics Training Programme",
+    "group": "Transport & Aviation",
+    "keyAreas": [
+      "Logistics Operations",
+      "Warehouse Management",
+      "Inventory Control",
+      "Transportation Management",
+      "Supply Chain Basics",
+      "Documentation & Dispatch"
+    ],
+    "slug": "logistics-training-programme",
+    "tiers": [
+      {
+        "id": "basic",
+        "level": "Basic Certificate",
+        "course": "Basic Certificate Course",
+        "duration": "3 months",
+        "learningHours": "120 hours",
+        "fee": 35000,
+        "instalments": [
+          11666,
+          11667,
+          11667
+        ],
+        "instalmentsConfirmed": true,
+        "emiOnRequest": false
+      },
+      {
+        "id": "advanced",
+        "level": "Advanced Certificate",
+        "course": "Advanced Certificate Course",
+        "duration": "6 months",
+        "learningHours": "240 hours",
+        "fee": 65500,
+        "instalments": null,
+        "instalmentsConfirmed": false,
+        "emiOnRequest": true
+      },
+      {
+        "id": "diploma",
+        "level": "Professional Diploma",
+        "course": "Professional Diploma Course",
+        "duration": "1 year",
+        "learningHours": "480 hours",
+        "fee": 135500,
+        "instalments": null,
+        "instalmentsConfirmed": false,
+        "emiOnRequest": true
+      }
+    ],
+    "feeConfirmed": true,
+    "eligibility": "Intermediate (Class 12) or above",
+    "learningMode": "Online",
+    "banner": "assets/img/nexora/banner-litc.jpg",
+    "bannerAlt": "Logistics training environment at Nexora Institute",
+    "contentConfirmed": true
+  },
+  {
+    "id": 15,
+    "number": "15",
+    "division": "Driver Services",
+    "code": "DITC",
+    "certificate": "Driver Industry Training Certificate",
+    "programme": "Driver Services Training Programme",
+    "group": "Transport & Aviation",
+    "keyAreas": [
+      "Professional Driving Practices",
+      "Road Safety",
+      "Vehicle Safety",
+      "Fleet Operations",
+      "Driver Responsibilities",
+      "Basic Vehicle Maintenance"
+    ],
+    "slug": "driver-services-training-programme",
+    "tiers": [
+      {
+        "id": "basic",
+        "level": "Basic Certificate",
+        "course": "Basic Certificate Course",
+        "duration": "3 months",
+        "learningHours": "120 hours",
+        "fee": 35000,
+        "instalments": [
+          11666,
+          11667,
+          11667
+        ],
+        "instalmentsConfirmed": true,
+        "emiOnRequest": false
+      },
+      {
+        "id": "advanced",
+        "level": "Advanced Certificate",
+        "course": "Advanced Certificate Course",
+        "duration": "6 months",
+        "learningHours": "240 hours",
+        "fee": 65500,
+        "instalments": null,
+        "instalmentsConfirmed": false,
+        "emiOnRequest": true
+      },
+      {
+        "id": "diploma",
+        "level": "Professional Diploma",
+        "course": "Professional Diploma Course",
+        "duration": "1 year",
+        "learningHours": "480 hours",
+        "fee": 135500,
+        "instalments": null,
+        "instalmentsConfirmed": false,
+        "emiOnRequest": true
+      }
+    ],
+    "feeConfirmed": true,
+    "contentConfirmed": true,
+    "eligibility": "Intermediate (Class 12) or above",
+    "learningMode": "Online",
+    "banner": "assets/img/nexora/banner-ditc.jpg",
+    "bannerAlt": "Driver Services training environment at Nexora Institute"
+  },
+  {
+    "id": 16,
+    "number": "16",
+    "division": "Manufacturing",
+    "code": "MIMC",
+    "certificate": "Manufacturing Industry Management Certificate",
+    "programme": "Manufacturing Training Programme",
+    "group": "Business & Technical",
+    "keyAreas": [
+      "Production Management",
+      "Manufacturing Operations",
+      "Quality Basics",
+      "Inventory Management",
+      "Workplace Safety",
+      "Production Planning"
+    ],
+    "slug": "manufacturing-training-programme",
+    "tiers": [
+      {
+        "id": "basic",
+        "level": "Basic Certificate",
+        "course": "Basic Certificate Course",
+        "duration": "3 months",
+        "learningHours": "120 hours",
+        "fee": 35000,
+        "instalments": [
+          11666,
+          11667,
+          11667
+        ],
+        "instalmentsConfirmed": true,
+        "emiOnRequest": false
+      },
+      {
+        "id": "advanced",
+        "level": "Advanced Certificate",
+        "course": "Advanced Certificate Course",
+        "duration": "6 months",
+        "learningHours": "240 hours",
+        "fee": 65500,
+        "instalments": null,
+        "instalmentsConfirmed": false,
+        "emiOnRequest": true
+      },
+      {
+        "id": "diploma",
+        "level": "Professional Diploma",
+        "course": "Professional Diploma Course",
+        "duration": "1 year",
+        "learningHours": "480 hours",
+        "fee": 135500,
+        "instalments": null,
+        "instalmentsConfirmed": false,
+        "emiOnRequest": true
+      }
+    ],
+    "feeConfirmed": true,
+    "eligibility": "Intermediate (Class 12) or above",
+    "learningMode": "Online",
+    "banner": "assets/img/nexora/banner-mimc.jpg",
+    "bannerAlt": "Manufacturing training environment at Nexora Institute",
+    "contentConfirmed": true
+  },
+  {
+    "id": 17,
+    "number": "17",
+    "division": "Information Technology",
+    "code": "ITITC",
+    "certificate": "IT Industry Technical Certificate",
+    "programme": "Information Technology Training Programme",
+    "group": "Business & Technical",
+    "keyAreas": [
+      "IT Fundamentals",
+      "Computer Applications",
+      "IT Support",
+      "Digital Operations",
+      "Basic Networking",
+      "Technology Management"
+    ],
+    "slug": "information-technology-training-programme",
+    "tiers": [
+      {
+        "id": "basic",
+        "level": "Basic Certificate",
+        "course": "Basic Certificate Course",
+        "duration": "3 months",
+        "learningHours": "120 hours",
+        "fee": 35000,
+        "instalments": [
+          11666,
+          11667,
+          11667
+        ],
+        "instalmentsConfirmed": true,
+        "emiOnRequest": false
+      },
+      {
+        "id": "advanced",
+        "level": "Advanced Certificate",
+        "course": "Advanced Certificate Course",
+        "duration": "6 months",
+        "learningHours": "240 hours",
+        "fee": 65500,
+        "instalments": null,
+        "instalmentsConfirmed": false,
+        "emiOnRequest": true
+      },
+      {
+        "id": "diploma",
+        "level": "Professional Diploma",
+        "course": "Professional Diploma Course",
+        "duration": "1 year",
+        "learningHours": "480 hours",
+        "fee": 135500,
+        "instalments": null,
+        "instalmentsConfirmed": false,
+        "emiOnRequest": true
+      }
+    ],
+    "feeConfirmed": true,
+    "eligibility": "Intermediate (Class 12) or above",
+    "learningMode": "Online",
+    "banner": "assets/img/nexora/banner-ititc.jpg",
+    "bannerAlt": "Information Technology training environment at Nexora Institute",
+    "contentConfirmed": true
+  },
+  {
+    "id": 18,
+    "number": "18",
+    "division": "Construction",
+    "code": "CETC",
+    "certificate": "Civil Engineering Training Certificate",
+    "programme": "Construction Training Programme",
+    "group": "Business & Technical",
+    "keyAreas": [
+      "Construction Management",
+      "Site Management",
+      "Basic Estimation",
+      "Construction Safety",
+      "Project Documentation",
+      "Infrastructure Operations"
+    ],
+    "slug": "construction-training-programme",
+    "tiers": [
+      {
+        "id": "basic",
+        "level": "Basic Certificate",
+        "course": "Basic Certificate Course",
+        "duration": "3 months",
+        "learningHours": "120 hours",
+        "fee": 35000,
+        "instalments": [
+          11666,
+          11667,
+          11667
+        ],
+        "instalmentsConfirmed": true,
+        "emiOnRequest": false
+      },
+      {
+        "id": "advanced",
+        "level": "Advanced Certificate",
+        "course": "Advanced Certificate Course",
+        "duration": "6 months",
+        "learningHours": "240 hours",
+        "fee": 65500,
+        "instalments": null,
+        "instalmentsConfirmed": false,
+        "emiOnRequest": true
+      },
+      {
+        "id": "diploma",
+        "level": "Professional Diploma",
+        "course": "Professional Diploma Course",
+        "duration": "1 year",
+        "learningHours": "480 hours",
+        "fee": 135500,
+        "instalments": null,
+        "instalmentsConfirmed": false,
+        "emiOnRequest": true
+      }
+    ],
+    "feeConfirmed": true,
+    "eligibility": "Intermediate (Class 12) or above",
+    "learningMode": "Online",
+    "banner": "assets/img/nexora/banner-cetc.jpg",
+    "bannerAlt": "Construction training environment at Nexora Institute",
+    "contentConfirmed": true
+  },
+  {
+    "id": 19,
+    "number": "19",
+    "division": "Infrastructure",
+    "code": "INFTC",
+    "certificate": "Infrastructure Industry Training Certificate",
+    "programme": "Infrastructure Training Programme",
+    "group": "Business & Technical",
+    "keyAreas": [
+      "Project Planning",
+      "Site Coordination",
+      "Quality & Safety Compliance",
+      "Materials Management",
+      "Contract Administration",
+      "Infrastructure Maintenance"
+    ],
+    "slug": "infrastructure-training-programme",
+    "tiers": [
+      {
+        "id": "basic",
+        "level": "Basic Certificate",
+        "course": "Basic Certificate Course",
+        "duration": "3 months",
+        "learningHours": "120 hours",
+        "fee": 35000,
+        "instalments": [
+          11666,
+          11667,
+          11667
+        ],
+        "instalmentsConfirmed": true,
+        "emiOnRequest": false
+      },
+      {
+        "id": "advanced",
+        "level": "Advanced Certificate",
+        "course": "Advanced Certificate Course",
+        "duration": "6 months",
+        "learningHours": "240 hours",
+        "fee": 65500,
+        "instalments": null,
+        "instalmentsConfirmed": false,
+        "emiOnRequest": true
+      },
+      {
+        "id": "diploma",
+        "level": "Professional Diploma",
+        "course": "Professional Diploma Course",
+        "duration": "1 year",
+        "learningHours": "480 hours",
+        "fee": 135500,
+        "instalments": null,
+        "instalmentsConfirmed": false,
+        "emiOnRequest": true
+      }
+    ],
+    "feeConfirmed": true,
+    "contentConfirmed": true,
+    "eligibility": "Intermediate (Class 12) or above",
+    "learningMode": "Online",
+    "banner": "assets/img/nexora/banner-infrastructure.jpg",
+    "bannerAlt": "High-rise towers under construction against a city skyline at sunset"
+  },
+  {
+    "id": 20,
+    "number": "20",
+    "division": "Agriculture",
+    "code": "AGITC",
+    "certificate": "Agriculture Industry Training Certificate",
+    "programme": "Agriculture Training Programme",
+    "group": "Business & Technical",
+    "keyAreas": [
+      "Crop Production Practices",
+      "Soil & Irrigation Management",
+      "Farm Equipment Handling",
+      "Agricultural Supply Chain",
+      "Post-Harvest Handling",
+      "Agri-Business Administration"
+    ],
+    "slug": "agriculture-training-programme",
+    "tiers": [
+      {
+        "id": "basic",
+        "level": "Basic Certificate",
+        "course": "Basic Certificate Course",
+        "duration": "3 months",
+        "learningHours": "120 hours",
+        "fee": 35000,
+        "instalments": [
+          11666,
+          11667,
+          11667
+        ],
+        "instalmentsConfirmed": true,
+        "emiOnRequest": false
+      },
+      {
+        "id": "advanced",
+        "level": "Advanced Certificate",
+        "course": "Advanced Certificate Course",
+        "duration": "6 months",
+        "learningHours": "240 hours",
+        "fee": 65500,
+        "instalments": null,
+        "instalmentsConfirmed": false,
+        "emiOnRequest": true
+      },
+      {
+        "id": "diploma",
+        "level": "Professional Diploma",
+        "course": "Professional Diploma Course",
+        "duration": "1 year",
+        "learningHours": "480 hours",
+        "fee": 135500,
+        "instalments": null,
+        "instalmentsConfirmed": false,
+        "emiOnRequest": true
+      }
+    ],
+    "feeConfirmed": true,
+    "contentConfirmed": true,
+    "eligibility": "Intermediate (Class 12) or above",
+    "learningMode": "Online",
+    "banner": "assets/img/nexora/banner-agriculture.jpg",
+    "bannerAlt": "A farmer ploughing a field behind a pair of bullocks"
+  },
+  {
+    "id": 21,
+    "number": "21",
+    "division": "Retail",
+    "code": "RIMC",
+    "certificate": "Retail Industry Management Certificate",
+    "programme": "Retail Training Programme",
+    "group": "Service & Hospitality",
+    "keyAreas": [
+      "Retail Operations",
+      "Store Management",
+      "Customer Service",
+      "Sales Management",
+      "Inventory Management",
+      "Retail Administration"
+    ],
+    "slug": "retail-training-programme",
+    "tiers": [
+      {
+        "id": "basic",
+        "level": "Basic Certificate",
+        "course": "Basic Certificate Course",
+        "duration": "3 months",
+        "learningHours": "120 hours",
+        "fee": 35000,
+        "instalments": [
+          11666,
+          11667,
+          11667
+        ],
+        "instalmentsConfirmed": true,
+        "emiOnRequest": false
+      },
+      {
+        "id": "advanced",
+        "level": "Advanced Certificate",
+        "course": "Advanced Certificate Course",
+        "duration": "6 months",
+        "learningHours": "240 hours",
+        "fee": 65500,
+        "instalments": null,
+        "instalmentsConfirmed": false,
+        "emiOnRequest": true
+      },
+      {
+        "id": "diploma",
+        "level": "Professional Diploma",
+        "course": "Professional Diploma Course",
+        "duration": "1 year",
+        "learningHours": "480 hours",
+        "fee": 135500,
+        "instalments": null,
+        "instalmentsConfirmed": false,
+        "emiOnRequest": true
+      }
+    ],
+    "feeConfirmed": true,
+    "eligibility": "Intermediate (Class 12) or above",
+    "learningMode": "Online",
+    "banner": "assets/img/nexora/banner-rimc.jpg",
+    "bannerAlt": "Retail training environment at Nexora Institute",
+    "contentConfirmed": true
+  },
+  {
+    "id": 22,
+    "number": "22",
+    "division": "Finance",
+    "code": "FITC",
+    "certificate": "Finance & Accounting Industry Training Certificate",
+    "programme": "Finance Training Programme",
+    "group": "Business & Technical",
+    "keyAreas": [
+      "Accounting Fundamentals",
+      "Bookkeeping",
+      "Financial Documentation",
+      "Billing & Invoicing",
+      "Basic Financial Management",
+      "Office & Accounting Software"
+    ],
+    "slug": "finance-training-programme",
+    "tiers": [
+      {
+        "id": "basic",
+        "level": "Basic Certificate",
+        "course": "Basic Certificate Course",
+        "duration": "3 months",
+        "learningHours": "120 hours",
+        "fee": 35000,
+        "instalments": [
+          11666,
+          11667,
+          11667
+        ],
+        "instalmentsConfirmed": true,
+        "emiOnRequest": false
+      },
+      {
+        "id": "advanced",
+        "level": "Advanced Certificate",
+        "course": "Advanced Certificate Course",
+        "duration": "6 months",
+        "learningHours": "240 hours",
+        "fee": 65500,
+        "instalments": null,
+        "instalmentsConfirmed": false,
+        "emiOnRequest": true
+      },
+      {
+        "id": "diploma",
+        "level": "Professional Diploma",
+        "course": "Professional Diploma Course",
+        "duration": "1 year",
+        "learningHours": "480 hours",
+        "fee": 135500,
+        "instalments": null,
+        "instalmentsConfirmed": false,
+        "emiOnRequest": true
+      }
+    ],
+    "feeConfirmed": true,
+    "eligibility": "Intermediate (Class 12) or above",
+    "learningMode": "Online",
+    "banner": "assets/img/nexora/banner-fitc.jpg",
+    "bannerAlt": "Finance training environment at Nexora Institute",
+    "contentConfirmed": true
+  },
+  {
+    "id": 23,
+    "number": "23",
+    "division": "Insurance",
+    "code": "INSTC",
+    "certificate": "Insurance Industry Training Certificate",
+    "programme": "Insurance Training Programme",
+    "group": "Business & Technical",
+    "keyAreas": [
+      "Insurance Products & Policies",
+      "Underwriting Fundamentals",
+      "Claims Processing",
+      "Customer Advisory",
+      "Regulatory Compliance",
+      "Insurance Administration"
+    ],
+    "slug": "insurance-training-programme",
+    "tiers": [
+      {
+        "id": "basic",
+        "level": "Basic Certificate",
+        "course": "Basic Certificate Course",
+        "duration": "3 months",
+        "learningHours": "120 hours",
+        "fee": 35000,
+        "instalments": [
+          11666,
+          11667,
+          11667
+        ],
+        "instalmentsConfirmed": true,
+        "emiOnRequest": false
+      },
+      {
+        "id": "advanced",
+        "level": "Advanced Certificate",
+        "course": "Advanced Certificate Course",
+        "duration": "6 months",
+        "learningHours": "240 hours",
+        "fee": 65500,
+        "instalments": null,
+        "instalmentsConfirmed": false,
+        "emiOnRequest": true
+      },
+      {
+        "id": "diploma",
+        "level": "Professional Diploma",
+        "course": "Professional Diploma Course",
+        "duration": "1 year",
+        "learningHours": "480 hours",
+        "fee": 135500,
+        "instalments": null,
+        "instalmentsConfirmed": false,
+        "emiOnRequest": true
+      }
+    ],
+    "feeConfirmed": true,
+    "contentConfirmed": true,
+    "eligibility": "Intermediate (Class 12) or above",
+    "learningMode": "Online",
+    "banner": "assets/img/nexora/banner-insurance.jpg",
+    "bannerAlt": "A family seated together beneath a symbolic roof"
+  },
+  {
+    "id": 24,
+    "number": "24",
+    "division": "Professional Skill Development",
+    "code": "PSDC",
+    "certificate": "Professional Skill Development Certificate",
+    "programme": "Professional Skill Development Programme",
+    "group": "Business & Technical",
+    "keyAreas": [
+      "Communication Skills",
+      "Computer Skills",
+      "Workplace Skills",
+      "Interview Preparation",
+      "Professional Behaviour",
+      "Career Development"
+    ],
+    "slug": "professional-skill-development-programme",
+    "tiers": [
+      {
+        "id": "basic",
+        "level": "Basic Certificate",
+        "course": "Basic Certificate Course",
+        "duration": "3 months",
+        "learningHours": "120 hours",
+        "fee": 35000,
+        "instalments": [
+          11666,
+          11667,
+          11667
+        ],
+        "instalmentsConfirmed": true,
+        "emiOnRequest": false
+      },
+      {
+        "id": "advanced",
+        "level": "Advanced Certificate",
+        "course": "Advanced Certificate Course",
+        "duration": "6 months",
+        "learningHours": "240 hours",
+        "fee": 65500,
+        "instalments": null,
+        "instalmentsConfirmed": false,
+        "emiOnRequest": true
+      },
+      {
+        "id": "diploma",
+        "level": "Professional Diploma",
+        "course": "Professional Diploma Course",
+        "duration": "1 year",
+        "learningHours": "480 hours",
+        "fee": 135500,
+        "instalments": null,
+        "instalmentsConfirmed": false,
+        "emiOnRequest": true
+      }
+    ],
+    "feeConfirmed": true,
+    "eligibility": "Intermediate (Class 12) or above",
+    "learningMode": "Online",
+    "banner": "assets/img/nexora/banner-psdc.jpg",
+    "bannerAlt": "Professional Skill Development training environment at Nexora Institute",
+    "contentConfirmed": true
   }
 ]

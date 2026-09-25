@@ -371,6 +371,72 @@
 
 .nx-crawlable { display: grid; gap: 0.5rem; padding: 1.5rem 0; }
 
+/* --- Programme levels (3 / 6 / 12 months) ---------------------------------------
+   Three fee tiers, compared side by side. The middle card is not "recommended" —
+   the institute has not said one is, so none of them is styled as a default. */
+
+.nx-levels__lede { max-width: 62ch; margin-bottom: clamp(1.5rem, 3vw, 2.25rem); }
+
+.nx-levels {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.nx-level {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.45rem;
+  padding: clamp(1.25rem, 2.5vw, 1.75rem);
+  background: var(--nx-white);
+  border: 1px solid var(--nx-rule);
+  border-radius: var(--nx-r-sm);
+  transition: border-color var(--nx-dur) var(--nx-ease), box-shadow var(--nx-dur) var(--nx-ease),
+    transform var(--nx-dur) var(--nx-ease);
+}
+
+.nx-level:hover {
+  border-color: var(--nx-ink);
+  box-shadow: var(--nx-offset-blue);
+  transform: translate(-3px, -3px);
+}
+
+.nx-level__duration {
+  color: var(--nx-blue);
+  font-family: var(--nx-font-mono);
+  font-size: var(--nx-step--2);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.nx-level h3 { font-size: var(--nx-step-1); line-height: 1.15; }
+
+.nx-level__course,
+.nx-level__terms,
+.nx-level__hours {
+  color: var(--nx-ink-2);
+  font-size: var(--nx-step--1);
+}
+
+.nx-level__terms,
+.nx-level__hours { color: var(--nx-ink-3); }
+
+.nx-level__fee {
+  margin-top: 0.35rem;
+  font-family: var(--nx-font-display);
+  font-size: var(--nx-step-3);
+  font-weight: 700;
+  letter-spacing: -0.03em;
+  line-height: 1;
+}
+
+.nx-level .nx-arrow-link { margin-top: auto; padding-top: 0.9rem; }
+
+@media (max-width: 980px) {
+  .nx-levels { grid-template-columns: 1fr; }
+}
+
 /* --- Programme detail ----------------------------------------------------------------------- */
 
 .nx-detail-head { padding-block: clamp(1.5rem, 3vw, 2.5rem) clamp(2rem, 4vw, 3rem); }
@@ -619,9 +685,162 @@
 
 /* The listing bar sits under a charcoal header, so it stays on paper. */
 
+/* --- Account pages -----------------------------------------------------------
+   Login and registration sit in a single narrow column rather than the split
+   used elsewhere — there is nothing to put beside them. */
+
+.nx-auth {
+  display: grid;
+  gap: 1.5rem;
+  width: 100%;
+  max-width: 30rem;
+  margin-inline: auto;
+}
+
+.nx-auth__panel {
+  padding: clamp(1.5rem, 3vw, 2.25rem);
+  background: var(--nx-white);
+  border: 1px solid var(--nx-ink);
+  border-radius: var(--nx-r-sm);
+  box-shadow: var(--nx-offset-blue);
+}
+
+.nx-auth__panel > h2 { margin: 0.6rem 0 1.5rem; font-size: var(--nx-step-2); }
+
+.nx-auth__foot {
+  margin-top: 1.5rem;
+  padding-top: 1.25rem;
+  border-top: 1px solid var(--nx-rule);
+  color: var(--nx-ink-2);
+  font-size: var(--nx-step--1);
+  text-align: center;
+}
+
+.nx-auth__row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+}
+
+/* --- Application form --------------------------------------------------------
+   Long enough to need sectioning; each fieldset is numbered so a learner can
+   tell how much is left. */
+
+.nx-apply { display: grid; gap: clamp(1.75rem, 3vw, 2.5rem); }
+
+.nx-fieldset {
+  padding: 0;
+  margin: 0;
+  border: 0;
+  border-top: 1px solid var(--nx-rule-strong);
+}
+
+.nx-fieldset > legend {
+  display: flex;
+  align-items: baseline;
+  gap: 0.9rem;
+  padding: 0;
+  margin-bottom: 1.25rem;
+  padding-top: 1.25rem;
+}
+
+.nx-fieldset__num {
+  color: var(--nx-blue);
+  font-family: var(--nx-font-mono);
+  font-size: var(--nx-step--2);
+  letter-spacing: 0.08em;
+}
+
+.nx-fieldset__title {
+  font-family: var(--nx-font-display);
+  font-size: var(--nx-step-2);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}
+
+.nx-fieldset__body { display: grid; gap: 1rem; }
+
+/* --- Fee summary ---------------------------------------------------------------- */
+
+.nx-summary {
+  position: sticky;
+  top: 6rem;
+  align-self: start;
+  padding: clamp(1.25rem, 2.5vw, 1.75rem);
+  background: var(--nx-sand);
+  border-radius: var(--nx-r-sm);
+}
+
+.nx-summary__rows { display: grid; margin: 1rem 0; border-top: 1px solid var(--nx-rule-strong); }
+
+.nx-summary__rows > div {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  padding-block: 0.7rem;
+  border-bottom: 1px solid var(--nx-rule);
+  font-size: var(--nx-step--1);
+}
+
+.nx-summary__rows dt { color: var(--nx-ink-2); }
+.nx-summary__rows dd { font-family: var(--nx-font-mono); text-align: right; }
+
+.nx-summary__rows > div.is-due dt,
+.nx-summary__rows > div.is-due dd {
+  color: var(--nx-ink);
+  font-weight: 700;
+}
+
+/* Sand is darker than paper, so the muted label colour falls under 4.5:1 here. */
+.nx-summary .nx-label { color: var(--nx-ink-2); }
+
+.nx-summary__total {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 1rem;
+  padding-top: 0.5rem;
+}
+
+.nx-summary__amount {
+  font-family: var(--nx-font-display);
+  font-size: var(--nx-step-3);
+  font-weight: 700;
+  letter-spacing: -0.03em;
+}
+
+/* --- Payment result ------------------------------------------------------------- */
+
+.nx-result { display: grid; gap: 1.25rem; max-width: 34rem; margin-inline: auto; text-align: center; }
+
+.nx-result__mark {
+  display: grid;
+  place-items: center;
+  width: 4rem;
+  height: 4rem;
+  margin-inline: auto;
+  border: 2px solid currentColor;
+  border-radius: 50%;
+  font-size: 1.75rem;
+}
+
+.nx-result--ok .nx-result__mark { color: var(--nx-blue); }
+.nx-result--fail .nx-result__mark { color: var(--nx-coral); }
+.nx-result--wait .nx-result__mark { color: var(--nx-ink-3); }
+
+.nx-result__ref {
+  padding: 0.75rem 1rem;
+  background: var(--nx-paper-2);
+  font-family: var(--nx-font-mono);
+  font-size: var(--nx-step--1);
+}
+
 /* --- Responsive ----------------------------------------------------------------------------------------- */
 
 @media (max-width: 1080px) {
+  .nx-summary { position: static; }
   .nx-detail-body { grid-template-columns: 1fr; }
   .nx-detail-aside { position: static; }
   .nx-cells { grid-template-columns: repeat(2, minmax(0, 1fr)); }

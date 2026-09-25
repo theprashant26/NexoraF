@@ -1,0 +1,317 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#F6F4EF">
+  <title>Admission form | Nexora Institute of Professional Studies</title>
+  <meta name="description" content="Apply for a Nexora Institute professional training programme over 3 months, 6 months or 1 year. Online, Intermediate or above.">
+  <link rel="canonical" href="apply.html">
+  <meta property="og:title" content="Admission form | Nexora Institute of Professional Studies">
+  <meta property="og:description" content="Apply for a Nexora Institute professional training programme over 3 months, 6 months or 1 year. Online, Intermediate or above.">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="assets/img/nexora/hero-01.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <link rel="icon" href="favicon.ico" sizes="any">
+  <link rel="apple-touch-icon" href="assets/brand/apple-touch-icon.png">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400..800&family=IBM+Plex+Mono:wght@400;500&family=Karla:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/main.css">
+  <script>document.documentElement.classList.add("nx-js");</script>
+</head>
+
+<body>
+  <a class="nx-skip-link" href="#main">Skip to content</a>
+  <div data-nx-site-header></div>
+
+  <main id="main" class="nx-page">
+    <section class="nx-phead nx-surface-slab" data-mast aria-labelledby="page-title">
+      <div class="nx-container">
+        <div class="nx-phead__kicker">
+          <span class="nx-label nx-label--blue" data-mast-kicker>Admission form</span>
+          <span class="nx-rule" data-mast-rule></span>
+          <span class="nx-label">Step 05 of 08</span>
+        </div>
+        <h1 class="nx-phead__title" id="page-title" data-mast-title>Apply for a <span class="nx-hl">programme</span>.</h1>
+        <div class="nx-phead__sub">
+          <p class="nx-lede" data-reveal>
+            Six short sections. Nothing here is final — the Admissions Department verifies your
+            eligibility and confirms the next steps before any fee is due.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="nx-section nx-divide">
+      <div class="nx-container nx-container--narrow">
+        <p class="nx-notice" data-reveal>
+          <i class="bi bi-info-circle" aria-hidden="true"></i>
+          <span>Not sure which programme fits? <a href="programmes.html">Browse the index</a> first,
+          or <a href="admissions.html#enquiry">send an enquiry</a> and the team will guide you.</span>
+        </p>
+
+        <form class="nx-form nx-apply" data-contact-form novalidate>
+        <fieldset class="nx-fieldset" data-reveal>
+          <legend>
+            <span class="nx-fieldset__num">01</span>
+            <span class="nx-fieldset__title">Programme</span>
+          </legend>
+          <div class="nx-fieldset__body">
+            <div class="nx-form__field">
+              <label class="nx-form__label" for="apply-programme">Programme applied for</label>
+              <select class="nx-form__control" id="apply-programme" name="programme" required data-programme-select>
+                <option value="">Choose a programme</option>
+              </select>
+              <span class="nx-form__hint">Every programme is delivered online.</span>
+              <span class="nx-form__message nx-form__message--error" data-error-for="programme" hidden>Select a programme.</span>
+            </div>
+
+            <div class="nx-form__field">
+              <label class="nx-form__label" for="apply-level">Level</label>
+              <select class="nx-form__control" id="apply-level" name="level" required data-level-select>
+                <option value="">Choose a programme first</option>
+              </select>
+              <span class="nx-form__hint">3-month basic certificate, 6-month advanced certificate, or one-year professional diploma.</span>
+              <span class="nx-form__message nx-form__message--error" data-error-for="level" hidden>Select a level.</span>
+            </div>
+
+            <div class="nx-form__field">
+              <label class="nx-form__label" for="apply-start">Preferred start</label>
+              <select class="nx-form__control" id="apply-start" name="start">
+                <option value="">No preference</option>
+                <option>As soon as possible</option>
+                <option>Next available batch</option>
+                <option>In 1–3 months</option>
+              </select>
+            </div>
+          </div>
+        </fieldset>
+
+        <fieldset class="nx-fieldset" data-reveal>
+          <legend>
+            <span class="nx-fieldset__num">02</span>
+            <span class="nx-fieldset__title">Personal details</span>
+          </legend>
+          <div class="nx-fieldset__body">
+            <div class="nx-form__field">
+              <label class="nx-form__label" for="apply-name">Full name</label>
+              <input class="nx-form__control" id="apply-name" name="name" type="text" required autocomplete="name">
+              <span class="nx-form__message nx-form__message--error" data-error-for="name" hidden>Enter your full name as it appears on your documents.</span>
+            </div>
+
+            <div class="nx-grid nx-grid--2">
+            <div class="nx-form__field">
+              <label class="nx-form__label" for="apply-dob">Date of birth</label>
+              <input class="nx-form__control" id="apply-dob" name="dob" type="date" required autocomplete="bday">
+              <span class="nx-form__message nx-form__message--error" data-error-for="dob" hidden>Enter your date of birth.</span>
+            </div>
+
+            <div class="nx-form__field">
+              <label class="nx-form__label" for="apply-gender">Gender</label>
+              <select class="nx-form__control" id="apply-gender" name="gender">
+                <option value="">Prefer not to say</option>
+                <option>Female</option>
+                <option>Male</option>
+                <option>Other</option>
+              </select>
+            </div>
+            </div>
+
+            <div class="nx-form__field">
+              <label class="nx-form__label" for="apply-guardian">Father's or guardian's name</label>
+              <input class="nx-form__control" id="apply-guardian" name="guardian" type="text" required>
+              <span class="nx-form__message nx-form__message--error" data-error-for="guardian" hidden>Enter your father's or guardian's name.</span>
+            </div>
+          </div>
+        </fieldset>
+
+        <fieldset class="nx-fieldset" data-reveal>
+          <legend>
+            <span class="nx-fieldset__num">03</span>
+            <span class="nx-fieldset__title">Contact details</span>
+          </legend>
+          <div class="nx-fieldset__body">
+            <div class="nx-grid nx-grid--2">
+            <div class="nx-form__field">
+              <label class="nx-form__label" for="apply-phone">Phone</label>
+              <input class="nx-form__control" id="apply-phone" name="phone" type="tel" required autocomplete="tel">
+              <span class="nx-form__message nx-form__message--error" data-error-for="phone" hidden>Enter a valid phone number.</span>
+            </div>
+
+            <div class="nx-form__field">
+              <label class="nx-form__label" for="apply-whatsapp">WhatsApp number</label>
+              <input class="nx-form__control" id="apply-whatsapp" name="whatsapp" type="tel">
+              <span class="nx-form__hint">If different from your phone.</span>
+            </div>
+            </div>
+
+            <div class="nx-form__field">
+              <label class="nx-form__label" for="apply-email">Email</label>
+              <input class="nx-form__control" id="apply-email" name="email" type="email" required autocomplete="email">
+              <span class="nx-form__message nx-form__message--error" data-error-for="email" hidden>Enter a valid email address.</span>
+            </div>
+
+            <div class="nx-form__field">
+              <label class="nx-form__label" for="apply-address">Address</label>
+              <textarea class="nx-form__control" id="apply-address" name="address" rows="3" required autocomplete="street-address"></textarea>
+              <span class="nx-form__message nx-form__message--error" data-error-for="address" hidden>Enter your address.</span>
+            </div>
+
+            <div class="nx-grid nx-grid--3">
+            <div class="nx-form__field">
+              <label class="nx-form__label" for="apply-city">City</label>
+              <input class="nx-form__control" id="apply-city" name="city" type="text" required autocomplete="address-level2">
+              <span class="nx-form__message nx-form__message--error" data-error-for="city" hidden>Enter your city.</span>
+            </div>
+
+            <div class="nx-form__field">
+              <label class="nx-form__label" for="apply-state">State</label>
+              <input class="nx-form__control" id="apply-state" name="state" type="text" required autocomplete="address-level1">
+              <span class="nx-form__message nx-form__message--error" data-error-for="state" hidden>Enter your state.</span>
+            </div>
+
+            <div class="nx-form__field">
+              <label class="nx-form__label" for="apply-pincode">PIN code</label>
+              <input class="nx-form__control" id="apply-pincode" name="pincode" type="text" required autocomplete="postal-code" inputmode="numeric">
+              <span class="nx-form__message nx-form__message--error" data-error-for="pincode" hidden>Enter a valid PIN code.</span>
+            </div>
+            </div>
+          </div>
+        </fieldset>
+
+        <fieldset class="nx-fieldset" data-reveal>
+          <legend>
+            <span class="nx-fieldset__num">04</span>
+            <span class="nx-fieldset__title">Education</span>
+          </legend>
+          <div class="nx-fieldset__body">
+            <div class="nx-form__field">
+              <label class="nx-form__label" for="apply-qualification">Highest qualification</label>
+              <select class="nx-form__control" id="apply-qualification" name="qualification" required>
+                <option value="">Choose one</option>
+                <option>Intermediate (Class 12)</option>
+                <option>Diploma</option>
+                <option>Graduation</option>
+                <option>Post-graduation</option>
+                <option>Other</option>
+              </select>
+              <span class="nx-form__hint">Eligibility is Intermediate (Class 12) or above.</span>
+              <span class="nx-form__message nx-form__message--error" data-error-for="qualification" hidden>Select your highest qualification.</span>
+            </div>
+
+            <div class="nx-form__field">
+              <label class="nx-form__label" for="apply-board">Board or university</label>
+              <input class="nx-form__control" id="apply-board" name="board" type="text" required>
+              <span class="nx-form__message nx-form__message--error" data-error-for="board" hidden>Enter your board or university.</span>
+            </div>
+
+            <div class="nx-grid nx-grid--2">
+            <div class="nx-form__field">
+              <label class="nx-form__label" for="apply-year">Year of passing</label>
+              <input class="nx-form__control" id="apply-year" name="year" type="text" required inputmode="numeric">
+              <span class="nx-form__message nx-form__message--error" data-error-for="year" hidden>Enter your year of passing.</span>
+            </div>
+
+            <div class="nx-form__field">
+              <label class="nx-form__label" for="apply-marks">Percentage or CGPA</label>
+              <input class="nx-form__control" id="apply-marks" name="marks" type="text">
+            </div>
+            </div>
+          </div>
+        </fieldset>
+
+        <fieldset class="nx-fieldset" data-reveal>
+          <legend>
+            <span class="nx-fieldset__num">05</span>
+            <span class="nx-fieldset__title">Documents</span>
+          </legend>
+          <div class="nx-fieldset__body">
+            <p class="nx-muted">
+              Please keep the following ready. The admissions team will tell you how to submit them
+              once your application is received — nothing is uploaded here.
+            </p>
+
+            <ul class="nx-checklist">
+              <li><span>01</span><span>Recent passport-size photographs</span></li>
+              <li><span>02</span><span>Aadhaar Card or valid identity proof</span></li>
+              <li><span>03</span><span>PAN Card, where applicable</span></li>
+              <li><span>04</span><span>Class 10 and Class 12 marksheets or certificates</span></li>
+              <li><span>05</span><span>Graduation marksheet or degree certificate, where applicable</span></li>
+              <li><span>06</span><span>Address proof, where required</span></li>
+            </ul>
+
+            <label class="nx-form__check">
+              <input type="checkbox" name="documents" required>
+              <span>I have these documents and can provide them when asked.</span>
+            </label>
+            <span class="nx-form__message nx-form__message--error" data-error-for="documents" hidden>Please confirm you can provide the required documents.</span>
+          </div>
+        </fieldset>
+
+        <fieldset class="nx-fieldset" data-reveal>
+          <legend>
+            <span class="nx-fieldset__num">06</span>
+            <span class="nx-fieldset__title">Declaration</span>
+          </legend>
+          <div class="nx-fieldset__body">
+            <p class="nx-muted">
+              All documents submitted must be genuine and valid. Submission of forged, false or
+              misleading documents may result in cancellation of admission.
+            </p>
+
+            <label class="nx-form__check">
+              <input type="checkbox" name="declaration" required>
+              <span>I confirm the information above is accurate and the documents I provide will be genuine.</span>
+            </label>
+            <span class="nx-form__message nx-form__message--error" data-error-for="declaration" hidden>Please confirm your declaration.</span>
+
+            <label class="nx-form__check">
+              <input type="checkbox" name="consent" required>
+              <span>I agree to the above terms and consent to be contacted regarding my application.</span>
+            </label>
+            <span class="nx-form__message nx-form__message--error" data-error-for="consent" hidden>Please confirm you agree to be contacted.</span>
+
+            <!-- Honeypot: hidden from people, tempting to bots. -->
+            <div class="nx-visually-hidden" aria-hidden="true">
+              <label for="apply-company">Company</label>
+              <input id="apply-company" name="company" type="text" tabindex="-1" autocomplete="off">
+            </div>
+
+            <div class="nx-form__message nx-form__message--success" data-form-success hidden tabindex="-1">
+              <strong>Thank you for applying to Nexora Institute of Professional Studies.</strong>
+              Your application has been recorded for the Admissions Department. The team will verify
+              your eligibility and contact you with the next steps.
+            </div>
+            <div class="nx-form__message nx-form__message--error" data-form-error hidden>
+              That did not send. Please try again, or contact the institute directly.
+            </div>
+
+            <button class="nx-btn nx-btn--lg" type="submit">Submit application <i class="bi bi-arrow-right" aria-hidden="true"></i></button>
+
+            <p class="nx-form__note">
+              Submitting this form does not confirm admission. Admission is subject to verification
+              and acceptance by the Institute. Your information is handled in accordance with the
+              <a href="disclaimer.html#privacy">Privacy Policy</a>.
+            </p>
+          </div>
+        </fieldset>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <div data-nx-site-footer></div>
+
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/gsap.min.js" defer></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/ScrollTrigger.min.js" defer></script>
+  <script src="assets/js/nav.js" defer></script>
+  <script src="assets/js/data.js" defer></script>
+  <script src="assets/js/forms.js" defer></script>
+  <script src="assets/js/motion.js" defer></script>
+  <script src="assets/js/seo.js" defer></script>
+</body>
+</html>

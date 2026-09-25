@@ -64,13 +64,21 @@ a dark variant. Contrast on both surfaces is verified to WCAG AA.
 |---|---|
 | `index.html` | Home — masthead, learning groups, statement, sample index, commitments, route, tiles, CTA |
 | `about.html` | Institute and programme approach |
-| `programmes.html` | The full searchable, filterable index of all 21 programmes |
+| `programmes.html` | The full searchable, filterable index of all 24 programmes |
 | `programme.html?code=MIRTC` | Shared programme detail template |
-| `admissions.html` | Four-step route, enquiry form, FAQ |
+| `admissions.html` | Eight-step route, enquiry form, FAQ |
+| `apply.html` | Admission form — six numbered sections |
+| `payment.html` | Fee summary, instalment picker, handoff to the payment provider |
+| `payment-status.html` | Where the provider returns the student — success, failed, pending |
+| `login.html` / `register.html` | Student portal sign-in and sign-up (no backend yet) |
 | `gallery.html` | Filterable tiles with lightbox |
 | `contact.html` | Contact details and contact form |
 | `disclaimer.html` | Recognition, career, privacy, and terms statements |
 | `404.html` | Not-found page |
+
+`apply.html` and `payment.html` are in `sitemap.xml`. The portal pages and the gateway return page
+are `noindex` and disallowed in `robots.txt` — they are not destinations anyone should arrive at
+from a search result.
 
 ## Structure
 
@@ -78,7 +86,7 @@ a dark variant. Contrast on both surfaces is verified to WCAG AA.
 assets/
   css/     tokens → base → components → layout, imported by main.css
   js/      nav, data, programmes, forms, gallery, motion, seo
-  data/    programmes.json — source of truth for all 21 programmes
+  data/    programmes.json — source of truth for all 24 programmes and their fee tiers
   img/     SVG placeholders, swapped for client photography
   brand/   logo
 ```
@@ -99,9 +107,13 @@ Each file is a plain IIFE attaching to a shared `window.NX` namespace. Load orde
 
 - `nav.js` — renders the header, mega menu, mobile drawer, and footer into `[data-nx-site-header]`
   and `[data-nx-site-footer]` mount points on every page.
-- `data.js` — one memoised `fetch` of `programmes.json`, plus HTML escaping.
+- `data.js` — one memoised `fetch` of `programmes.json`, the fee-tier helpers
+  (`getTier`, `rupees`, `scheduleText`), and HTML escaping.
 - `programmes.js` — index filter/search and the programme detail template.
-- `forms.js` — validation, honeypot, and submission for both forms.
+- `forms.js` — validation, honeypot, submission, and the password reveal toggles. Any `<select>`
+  marked `data-programme-select` is filled from `programmes.json`, and a `?programme=CODE` in the
+  URL preselects it.
+- `payment.js` — the fee summary, instalment picker, and gateway handoff (see below).
 - `gallery.js` — category filters and the shared lightbox.
 - `slider.js` — the masthead slider.
 - `motion.js` — the GSAP system (see below).
@@ -175,24 +187,123 @@ Two rules hold the system together:
    the class and everything paints normally.
 2. **`prefers-reduced-motion` is respected.** Animation is skipped, but behaviour users depend on
    — accordions, the lightbox, the sticky header — is bound regardless.
+3. **Every entrance has a wall-clock backstop.** The tweens run on `requestAnimationFrame`, which
+   stops in a background tab and crawls on a loaded device. A `setTimeout` finishes any entrance
+   that has not completed and hands the styles back to CSS, so no copy is ever left parked at
+   opacity 0. Above-the-fold `[data-reveal]` elements whose trigger never fired at all are released
+   the same way, and `document.fonts.ready` re-measures ScrollTrigger once the display face lands.
 
 Content rendered after page load should call `NX.motion.reveal(container)` or
 `NX.motion.deal(container)`.
 
+## Fee tiers
+
+Every programme is offered at three levels. This is the shape of a `tiers` entry in
+`programmes.json`, and nothing outside that file hard-codes a fee:
+
+| `id` | `level` | `duration` | `learningHours` |
+|---|---|---|---|
+| `basic` | Basic Certificate | 3 months | 120 hours |
+| `advanced` | Advanced Certificate | 6 months | 240 hours |
+| `diploma` | Professional Diploma | 1 year | 480 hours |
+
+| Programmes | 3 months | 6 months | 1 year |
+|---|---|---|---|
+| MIRTC, RIATC, AATC, HITC, TTMC | ₹45,000 | ₹85,000 | ₹1,89,000 |
+| MITC | ₹35,500 | ₹65,500 | ₹1,35,500 |
+| PITC | ₹25,000 | ₹65,500 | ₹1,35,500 |
+| All others | ₹35,000 | ₹65,500 | ₹1,35,500 |
+
+The index column and the "Levels" fact collapse a run of like units — "3 months / 6 months / 1 year"
+prints as **3 / 6 months / 1 year**. `durations()` in `programmes.js` does it, and the same rule is
+mirrored in the static sample rows on the home page; change one and change the other.
+
+Two flags track sign-off, and nothing carries either one today. `contentConfirmed: false` marks a
+programme whose code, certificate title or key areas the institute has not approved.
+`bannerPlaceholder: true` marks one still using a neutral crop of the general institute photography
+rather than a picture of its own field:
+
+```bash
+python -c "import json;d=json.load(open('assets/data/programmes.json'));print([p['code'] for p in d if not p.get('contentConfirmed',True)],[p['code'] for p in d if p.get('bannerPlaceholder')])"
+```
+
+**Only the 3-month tier has a fixed instalment schedule** — a first instalment at registration and
+the balance over two monthly payments:
+
+| 3-month programmes | Total | At registration | Then |
+|---|---:|---:|---|
+| Metro & Rail, Railway, Aviation, Hospitality, Travel & Tourism | ₹45,000 | ₹15,000 | 2 × ₹15,000 |
+| Medical | ₹35,500 | ₹15,500 | 2 × ₹10,000 |
+| Pharmaceutical | ₹25,000 | ₹10,500 | 2 × ₹7,250 |
+| All others | ₹35,000 | ₹11,666 | 2 × ₹11,667 |
+
+The 6-month and 1-year tiers are EMI on request, arranged case by case with the Admissions
+Department, so `instalments` is `null` and `emiOnRequest` is `true` there.
+
+`scheduleText()` returns `""` for those tiers. Treat an empty string as "no fixed schedule", never as
+"pay in full" — the payment page will not take an instalment it cannot name.
+
+A tier is addressed in a URL by its `id`: `apply.html?programme=AATC&level=diploma`,
+`payment.html?code=AATC&level=basic`.
+
+## Payments
+
+`payment.html` shows the programme, the chosen level, its instalment schedule and the amount due,
+collects who is paying, and then sends the student to the payment provider's own checkout. A level
+must be chosen before instalments mean anything; for a level with no published schedule the page
+says so and points at the Admissions Department instead of offering a button.
+
+**It collects no card, UPI or netbanking details, and it must stay that way.** This is a static
+site with no server: there is nothing to encrypt a card number with, nowhere safe to put it, and no
+PCI-compliant environment around it. Any field here that asked for one would be a real risk to both
+the institute and the student. Money is taken on the provider's checkout, not on this site.
+
+To connect it, set `GATEWAY_ENDPOINT` at the top of `assets/js/payment.js`. Until that placeholder
+is replaced the page says plainly that online payment is not connected and points the student at the
+Admissions Department — it never pretends to have taken a payment.
+
+The provider returns the student to `payment-status.html`, which reads:
+
+- `?status=success|failed|pending` — which panel to show
+- `?ref=…` — the provider's reference, displayed so the student can quote it
+
+`pending` is the default and the only panel that is visible without JavaScript, because "we cannot
+confirm this yet" is the only honest thing to say when nothing has told us otherwise.
+
+## The student portal
+
+`login.html` and `register.html` are built and validated, and both state on the page that the portal
+is not live. Sign-in needs a server that can store accounts and check passwords, which this site does
+not have. They are complete as front ends and deliberately inert — see `CLIENT-REQUIREMENTS.md`.
+
 ## Add a programme
 
 Add one complete object to `assets/data/programmes.json` using the existing schema: `id`, `number`,
-`division`, `code`, `certificate`, `programme`, `group`, `keyAreas`, `slug`, `fee`,
-`duration`, `instalments`, `eligibility`, `learningMode`, `certificateTitle`, `feeConfirmed`.
-`group` must be one of the four existing values, or the filters
-will not match it. Fees are plain integers in rupees; the programme page formats them with Indian
-digit grouping.
+`division`, `code`, `certificate`, `programme`, `group`, `keyAreas`, `slug`, `tiers`,
+`feeConfirmed`, `eligibility`, `learningMode`, `banner`, `bannerAlt`.
+
+`group` must be one of the four existing values, or the filters will not match it. `tiers` must
+carry all three levels — `basic`, `advanced`, `diploma` — each with `level`, `course`, `duration`,
+`learningHours`, `fee`, `instalments`, `instalmentsConfirmed` and `emiOnRequest`. Fees are plain
+integers in rupees; the pages format them with Indian digit grouping. Set `instalments` to `null` and
+`emiOnRequest` to `true` where there is no fixed schedule.
 
 Then update, together:
 
 - `sitemap.xml` — add the `programme.html?code=…` entry,
 - the `<noscript>` list in `programmes.html`,
+- the eight sample rows on `index.html`,
 - the mega-menu division list in `assets/js/nav.js`, if the division is new.
+
+All four mirror `programmes.json`; changing one and not the others is how they drift apart. To
+check them in one go:
+
+```bash
+python -c "import json,re,io;d=json.load(io.open('assets/data/programmes.json',encoding='utf-8'));codes=[p['code'] for p in d];[print(f,sorted(set(re.findall(r'code=([A-Z]+)',io.open(f,encoding='utf-8').read())))==sorted(set(codes))) for f in ['sitemap.xml','programmes.html']]"
+```
+
+Removing a programme does not leave a dead page: `programmes.js` sends an unknown `?code=` to the
+programme index.
 
 ## Images
 
@@ -255,23 +366,22 @@ not by a marker in the shipped file.
 
 ### Fees
 
-`assets/data/programmes.json` carries `fee`, `firstInstalment` and `feeConfirmed` for all 21
-programmes. All are confirmed by the institute, in three tiers:
+Fees live only in the `tiers` array of `assets/data/programmes.json`; see **Fee tiers** above for
+the full table. Every entry is confirmed by the institute.
 
-| Fee | At registration | Then | Programmes |
-|---:|---:|---|---|
-| ₹44,999 | ₹14,999 | 2 × ₹15,000 | Aviation, Metro Rail, Railway, Hotel, Travel & Tourism |
-| ₹35,000 | ₹11,666 | 2 × ₹11,667 | The other fifteen |
-| ₹19,999 | ₹9,999 | 2 × ₹5,000 | Pharmaceutical |
-
-Each programme carries `fee`, `durationMonths` and an `instalments` array whose entries must sum to
-`fee`. The programme page renders the array, collapsing to "2 × ₹15,000" when the later payments are
-equal. The first instalment is part of the total fee, not an additional registration charge. Keep
-`feeConfirmed` on any programme you add — it is the guard against an unsigned-off price reaching
-a live page:
+Where a tier has an `instalments` array, its entries must sum to that tier's `fee` — the first
+instalment is part of the total, not an additional registration charge. Where the institute has not
+published a schedule, `instalments` is `null` and `instalmentsConfirmed` is `false`; no page invents
+one. `feeConfirmed` guards against an unsigned-off price reaching a live page:
 
 ```bash
-python -c "import json;print([p['code'] for p in json.load(open('assets/data/programmes.json')) if not p['feeConfirmed']])"
+python -c "import json;d=json.load(open('assets/data/programmes.json'));print([p['code'] for p in d if not p['feeConfirmed']])"
+```
+
+Check that every published schedule still adds up:
+
+```bash
+python -c "import json;d=json.load(open('assets/data/programmes.json'));print([(p['code'],t['id']) for p in d for t in p['tiers'] if t['instalments'] and sum(t['instalments'])!=t['fee']])"
 ```
 
 ## Compliance

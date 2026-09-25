@@ -39,7 +39,10 @@
         <h1 class="nx-phead__title" id="page-title" data-mast-title>Start with the information you <span class="nx-hl">need</span>.</h1>
         <div class="nx-phead__sub">
           <p class="nx-lede" data-reveal>Ask questions, compare programme directions, and complete the applicable enrolment steps.</p>
-          
+          <div class="nx-btn-row" data-reveal>
+            <a class="nx-btn" href="apply.html">Apply now <i class="bi bi-arrow-right" aria-hidden="true"></i></a>
+            <a class="nx-btn nx-btn--ghost" href="#enquiry">Send an enquiry</a>
+          </div>
         </div>
       </div>
     </section>
@@ -70,10 +73,12 @@
           <article class="nx-step">
             <span class="nx-step__num">05</span><h3>Application &amp; registration</h3>
             <p class="nx-muted">Complete the applicable enrolment form and submit the required documents.</p>
+            <a class="nx-arrow-link" href="apply.html">Admission form</a>
           </article>
           <article class="nx-step">
             <span class="nx-step__num">06</span><h3>Fee payment</h3>
             <p class="nx-muted">Pay the applicable programme or admission fee using an authorised payment method.</p>
+            <a class="nx-arrow-link" href="payment.html">Pay an instalment</a>
           </article>
           <article class="nx-step">
             <span class="nx-step__num">07</span><h3>Confirmation</h3>
@@ -158,7 +163,7 @@
 
             <div class="nx-form__field">
               <label class="nx-form__label" for="enquiry-programme">Programme</label>
-              <select class="nx-form__control" id="enquiry-programme" name="programme" required>
+              <select class="nx-form__control" id="enquiry-programme" name="programme" required data-programme-select>
                 <option value="">Choose a programme</option>
               </select>
               <span class="nx-form__message nx-form__message--error" data-error-for="programme" hidden>Select a programme.</span>
@@ -256,12 +261,14 @@
                     <li>Third-party examination or certification charges</li>
                     <li>Any service specifically excluded from the programme</li>
                   </ul>
-                  <p>Programmes run for three months, and the fee for each one is shown on its own
-                  programme page.</p>
-                  <p>The fee is payable in three instalments: the first at the time of registration, and
-                  the balance in two further monthly payments. The first instalment forms
-                  <strong>part of</strong> the total programme fee — it is not an additional charge. The
-                  full schedule for your programme is confirmed before enrolment.</p>
+                  <p>Every programme is offered at three levels — a 3-month basic certificate, a
+                  6-month advanced certificate, and a one-year professional diploma. Each level has its
+                  own fee, shown on the programme's own page.</p>
+                  <p>The 3-month programmes are payable in three instalments: the first at the time of
+                  registration, and the balance in two further monthly payments. The first instalment
+                  forms <strong>part of</strong> the total programme fee — it is not an additional
+                  charge. The 6-month and one-year programmes are paid by EMI on request — contact the
+                  Admissions Department and they will set up a schedule.</p>
                 </div>
               </div>
             </div>

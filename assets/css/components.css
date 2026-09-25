@@ -64,6 +64,7 @@
 .nx-btn--sm { padding: 0.55rem 0.95rem; font-size: var(--nx-step--2); }
 
 .nx-btn-row { display: flex; flex-wrap: wrap; gap: 0.8rem; }
+.nx-btn-row--center { justify-content: center; }
 
 /* --- Arrow link ------------------------------------------------------------- */
 
@@ -400,7 +401,13 @@ a:hover > .nx-media img,
 .nx-nav__trigger[aria-expanded="true"]::after,
 .nx-nav__link[aria-current="page"]::after { transform: scaleX(1); }
 
-.nx-header__actions { display: flex; flex: 0 0 auto; align-items: center; gap: 0.6rem; }
+.nx-header__actions { display: flex; flex: 0 0 auto; align-items: center; gap: 0.9rem; }
+
+/* The login link is hidden with the rest of the nav on small screens; the
+   drawer carries it instead. */
+@media (max-width: 1080px) {
+  .nx-header__login { display: none; }
+}
 
 /* --- Mega menu: a full-width drawer under the header, not a floating card ------------------ */
 
@@ -535,6 +542,7 @@ a:hover > .nx-media img,
 
 .nx-drawer__nav a:hover { color: var(--nx-blue-lit); }
 .nx-drawer__cta { margin-top: 1.75rem; }
+.nx-drawer__cta + .nx-drawer__cta { margin-top: 0.6rem; }
 
 .nx-drawer__meta {
   margin-top: auto;
@@ -544,6 +552,13 @@ a:hover > .nx-media img,
   font-size: var(--nx-step--2);
   line-height: 1.8;
 }
+
+.nx-drawer__meta a {
+  color: var(--nx-on-slab-2);
+  text-decoration-color: var(--nx-rule-slab-strong);
+}
+
+.nx-drawer__meta a:hover { color: var(--nx-on-slab); }
 
 /* --- Footer ------------------------------------------------------------------------------------ */
 
@@ -556,7 +571,7 @@ a:hover > .nx-media img,
 
 .nx-footer__grid {
   display: grid;
-  grid-template-columns: 1.5fr repeat(3, minmax(0, 1fr));
+  grid-template-columns: 1.5fr repeat(4, minmax(0, 1fr));
   gap: 2rem;
   padding-bottom: 2.5rem;
 }
@@ -916,12 +931,14 @@ select.nx-form__control {
 
 .nx-surface-slab .nx-btn:hover { box-shadow: var(--nx-offset-slab); }
 
+.nx-drawer__panel .nx-btn--ghost,
 .nx-surface-slab .nx-btn--ghost {
   color: var(--nx-on-slab);
   background: transparent;
   border-color: var(--nx-rule-slab-strong);
 }
 
+.nx-drawer__panel .nx-btn--ghost:hover,
 .nx-surface-slab .nx-btn--ghost:hover {
   color: var(--nx-slab);
   background: var(--nx-on-slab);
@@ -1084,6 +1101,94 @@ select.nx-form__control {
   .nx-slider__count { display: none; }
 }
 
+/* --- Password field ------------------------------------------------------------ */
+
+.nx-password { position: relative; display: flex; }
+.nx-password .nx-form__control { padding-right: 4.5rem; }
+
+.nx-password__toggle {
+  position: absolute;
+  top: 50%;
+  right: 0.4rem;
+  padding: 0.4rem 0.6rem;
+  color: var(--nx-ink-2);
+  background: none;
+  border: 0;
+  font-family: var(--nx-font-mono);
+  font-size: var(--nx-step--2);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  cursor: pointer;
+  transform: translateY(-50%);
+  transition: color var(--nx-dur) var(--nx-ease);
+}
+
+.nx-password__toggle:hover { color: var(--nx-blue); }
+
+/* The toggle sits inside the field, so it cannot simply grow; on touch it gets
+   the full field height as its tap area instead. */
+@media (pointer: coarse) {
+  .nx-password__toggle {
+    top: 0;
+    bottom: 0;
+    display: flex;
+    align-items: center;
+    min-width: 44px;
+    justify-content: center;
+    transform: none;
+  }
+}
+
+/* --- Choice list (instalment picker) -------------------------------------------- */
+
+.nx-choices { display: grid; gap: 0.5rem; }
+
+.nx-choice {
+  display: flex;
+  gap: 0.8rem;
+  align-items: flex-start;
+  padding: 0.9rem 1rem;
+  background: var(--nx-white);
+  border: 1px solid var(--nx-rule-strong);
+  border-radius: var(--nx-r-xs);
+  cursor: pointer;
+  transition: border-color var(--nx-dur) var(--nx-ease), background-color var(--nx-dur) var(--nx-ease);
+}
+
+.nx-choice:hover { border-color: var(--nx-ink); }
+
+.nx-choice:has(input:checked) {
+  background: var(--nx-blue-wash);
+  border-color: var(--nx-blue);
+}
+
+.nx-choice input {
+  width: 1.1rem;
+  height: 1.1rem;
+  margin-top: 0.2rem;
+  flex: 0 0 auto;
+  accent-color: var(--nx-blue);
+}
+
+.nx-choice__body { display: grid; gap: 0.2rem; }
+.nx-choice__label { font-weight: 600; }
+
+.nx-choice__meta {
+  color: var(--nx-ink-2);
+  font-family: var(--nx-font-mono);
+  font-size: var(--nx-step--2);
+}
+
+.nx-choice input:disabled ~ .nx-choice__body { opacity: 0.5; }
+.nx-choice:has(input:disabled) { cursor: not-allowed; background: var(--nx-paper-2); }
+
+/* --- Form helpers ---------------------------------------------------------------- */
+
+.nx-form__hint {
+  color: var(--nx-ink-3);
+  font-size: var(--nx-step--2);
+}
+
 /* --- Touch targets -----------------------------------------------------------
    Pointer-driven rather than width-driven: a small laptop keeps the compact
    sizing, while anything tapped with a finger gets the 44px minimum. */
@@ -1107,6 +1212,10 @@ select.nx-form__control {
   .nx-header__actions .nx-btn { display: none; }
   .nx-burger { display: grid; }
   .nx-mega__grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1.5rem 0; }
+}
+
+@media (max-width: 1080px) {
+  .nx-footer__grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
 }
 
 @media (max-width: 820px) {

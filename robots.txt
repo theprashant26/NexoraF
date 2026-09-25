@@ -1,4 +1,7 @@
 User-agent: *
 Allow: /
+Disallow: /login.html
+Disallow: /register.html
+Disallow: /payment-status.html
 
 Sitemap: https://{{PLACEHOLDER: production domain}}/sitemap.xml

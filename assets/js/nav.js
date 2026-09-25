@@ -22,15 +22,28 @@
     "selection process and prevailing employment conditions.";
 
   var DIVISION_GROUPS = [
-    { title: "Transport & Aviation", items: ["Metro & Rail", "Railway", "Aviation", "Logistics", "Driver Services"] },
-    { title: "Service & Hospitality", items: ["Hospitality", "Travel & Tourism", "Retail", "Security"] },
+    {
+      title: "Transport & Aviation",
+      items: [
+        "Metro & Rail", "Railway", "Aviation", "Logistics", "Driver Services"
+      ]
+    },
+    {
+      title: "Service & Hospitality",
+      items: [
+        "Hospitality", "Travel & Tourism", "Security", "Retail"
+      ]
+    },
     { title: "Health & Sciences", items: ["Medical", "Pharmaceutical", "Healthcare"] },
     {
       title: "Business & Technical",
-      items: ["Banking", "Finance & Accounting", "IT & Technology", "Education", "Electrical",
-        "Electrical Engineering", "Civil Engineering", "Manufacturing", "Professional Skill Development"]
+      items: [
+        "Electrical", "Electrical Engineering", "Teaching & Education", "Banking",
+        "Manufacturing", "Information Technology", "Construction", "Infrastructure",
+        "Agriculture", "Finance", "Insurance", "Professional Skill Development"
+      ]
     }
-  ];
+  ];;;;
 
   var PRIMARY_LINKS = [
     { href: "index.html", label: "Home" },
@@ -89,6 +102,7 @@
           "</a>" +
           '<nav class="nx-nav" aria-label="Primary">' + navLinks + "</nav>" +
           '<div class="nx-header__actions">' +
+            '<a class="nx-nav__link nx-header__login" href="login.html">Login</a>' +
             '<a class="nx-btn nx-btn--sm" href="admissions.html#enquiry">Enquire</a>' +
             '<button class="nx-burger" type="button" aria-expanded="false" aria-controls="nx-drawer" data-drawer-open>' +
               '<span class="nx-visually-hidden">Open menu</span>' +
@@ -100,7 +114,7 @@
           '<div class="nx-container nx-mega__inner">' +
             '<div class="nx-mega__grid">' + megaColumns + "</div>" +
             '<div class="nx-mega__footer">' +
-              '<p class="nx-label">21 programmes / 4 learning groups</p>' +
+              '<p class="nx-label">24 programmes / 4 learning groups</p>' +
               '<a class="nx-arrow-link" href="programmes.html">View the full index <i class="bi bi-arrow-right" aria-hidden="true"></i></a>' +
             "</div>" +
           "</div>" +
@@ -111,8 +125,12 @@
         '<aside class="nx-drawer__panel" role="dialog" aria-modal="true" aria-label="Site menu">' +
           '<button class="nx-drawer__close" type="button" data-drawer-close aria-label="Close menu">&times;</button>' +
           '<nav class="nx-drawer__nav" aria-label="Mobile primary">' + drawerLinks + "</nav>" +
-          '<a class="nx-btn nx-drawer__cta" href="admissions.html#enquiry">Send an enquiry</a>' +
-          '<p class="nx-drawer__meta"><a href="tel:' + PHONE_HREF + '">' + PHONE_DISPLAY + '</a><br>{{PLACEHOLDER: email}}</p>' +
+          '<a class="nx-btn nx-drawer__cta" href="apply.html">Apply now</a>' +
+          '<a class="nx-btn nx-btn--ghost nx-drawer__cta" href="admissions.html#enquiry">Send an enquiry</a>' +
+          '<p class="nx-drawer__meta">' +
+            '<a href="login.html">Student login</a><br>' +
+            '<a href="tel:' + PHONE_HREF + '">' + PHONE_DISPLAY + "</a><br>" +
+            "{{PLACEHOLDER: email}}</p>" +
         "</aside>" +
       "</div>";
   }
@@ -138,6 +156,15 @@
                 '<li><a href="programmes.html">Programmes</a></li>' +
                 '<li><a href="admissions.html">Admissions</a></li>' +
                 '<li><a href="gallery.html">Gallery</a></li>' +
+              "</ul>" +
+            "</div>" +
+            "<div>" +
+              '<p class="nx-footer__heading">Students</p>' +
+              '<ul class="nx-footer__links">' +
+                '<li><a href="apply.html">Admission form</a></li>' +
+                '<li><a href="payment.html">Pay fees</a></li>' +
+                '<li><a href="login.html">Student login</a></li>' +
+                '<li><a href="register.html">Create account</a></li>' +
               "</ul>" +
             "</div>" +
             "<div>" +

@@ -1,0 +1,143 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#F6F4EF">
+  <title>Create an account | Nexora Institute of Professional Studies</title>
+  <meta name="description" content="Create a Nexora Institute student portal account.">
+  <link rel="canonical" href="register.html">
+  <meta name="robots" content="noindex">
+  <meta property="og:title" content="Create an account | Nexora Institute of Professional Studies">
+  <meta property="og:description" content="Create a Nexora Institute student portal account.">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="assets/img/nexora/hero-01.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <link rel="icon" href="favicon.ico" sizes="any">
+  <link rel="apple-touch-icon" href="assets/brand/apple-touch-icon.png">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400..800&family=IBM+Plex+Mono:wght@400;500&family=Karla:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/main.css">
+  <script>document.documentElement.classList.add("nx-js");</script>
+</head>
+
+<body>
+  <a class="nx-skip-link" href="#main">Skip to content</a>
+  <div data-nx-site-header></div>
+
+  <main id="main" class="nx-page">
+    <section class="nx-phead nx-surface-slab" data-mast aria-labelledby="page-title">
+      <div class="nx-container">
+        <div class="nx-phead__kicker">
+          <span class="nx-label nx-label--blue" data-mast-kicker>Student portal</span>
+          <span class="nx-rule" data-mast-rule></span>
+          <span class="nx-label">Register</span>
+        </div>
+        <h1 class="nx-phead__title" id="page-title" data-mast-title>Create your <span class="nx-hl">account</span>.</h1>
+        <div class="nx-phead__sub">
+          <p class="nx-lede" data-reveal>One account to track your application, instalments and certificate.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="nx-section nx-divide">
+      <div class="nx-container nx-auth">
+          <p class="nx-notice" data-reveal>
+            <i class="bi bi-info-circle" aria-hidden="true"></i>
+            <span>The student portal is not live yet. This page is ready for the sign-in
+            service to be connected — until then, please contact admissions directly.</span>
+          </p>
+
+        <div class="nx-auth__panel" data-reveal>
+          <span class="nx-label nx-label--blue">Register</span>
+          <h2>Set up your details.</h2>
+
+          <form class="nx-form" data-contact-form novalidate>
+            <div class="nx-form__field">
+              <label class="nx-form__label" for="reg-name">Full name</label>
+              <input class="nx-form__control" id="reg-name" name="name" type="text" required autocomplete="name">
+              <span class="nx-form__message nx-form__message--error" data-error-for="name" hidden>Enter your full name.</span>
+            </div>
+
+            <div class="nx-grid nx-grid--2">
+              <div class="nx-form__field">
+                <label class="nx-form__label" for="reg-phone">Phone</label>
+                <input class="nx-form__control" id="reg-phone" name="phone" type="tel" required autocomplete="tel">
+                <span class="nx-form__message nx-form__message--error" data-error-for="phone" hidden>Enter a valid phone number.</span>
+              </div>
+              <div class="nx-form__field">
+                <label class="nx-form__label" for="reg-email">Email</label>
+                <input class="nx-form__control" id="reg-email" name="email" type="email" required autocomplete="email">
+                <span class="nx-form__message nx-form__message--error" data-error-for="email" hidden>Enter a valid email address.</span>
+              </div>
+            </div>
+
+            <div class="nx-form__field">
+              <label class="nx-form__label" for="reg-password">Password</label>
+              <span class="nx-password">
+                <input class="nx-form__control" id="reg-password" name="password" type="password"
+                       required autocomplete="new-password" data-min-length="8">
+                <button class="nx-password__toggle" type="button" data-password-toggle
+                        aria-controls="reg-password" aria-pressed="false">Show</button>
+              </span>
+              <span class="nx-form__hint">At least 8 characters.</span>
+              <span class="nx-form__message nx-form__message--error" data-error-for="password" hidden>Use at least 8 characters.</span>
+            </div>
+
+            <div class="nx-form__field">
+              <label class="nx-form__label" for="reg-confirm">Confirm password</label>
+              <input class="nx-form__control" id="reg-confirm" name="confirm" type="password"
+                     required autocomplete="new-password" data-match="password">
+              <span class="nx-form__message nx-form__message--error" data-error-for="confirm" hidden>Both passwords must match.</span>
+            </div>
+
+            <!-- Honeypot: hidden from people, tempting to bots. -->
+            <div class="nx-visually-hidden" aria-hidden="true">
+              <label for="reg-company">Company</label>
+              <input id="reg-company" name="company" type="text" tabindex="-1" autocomplete="off">
+            </div>
+
+            <label class="nx-form__check">
+              <input type="checkbox" name="consent" required>
+              <span>I agree to the above terms and consent to be contacted regarding my enquiry.</span>
+            </label>
+            <span class="nx-form__message nx-form__message--error" data-error-for="consent" hidden>Please confirm you agree to be contacted.</span>
+
+            <div class="nx-form__message nx-form__message--success" data-form-success hidden tabindex="-1">
+              Your details look correct. Accounts will be created once the student portal is connected.
+            </div>
+            <div class="nx-form__message nx-form__message--error" data-form-error hidden>
+              That did not work. Please try again, or contact the institute directly.
+            </div>
+
+            <button class="nx-btn" type="submit">Create account <i class="bi bi-arrow-right" aria-hidden="true"></i></button>
+
+            <p class="nx-form__note">
+              Your information is handled in accordance with the Institute's
+              <a href="disclaimer.html#privacy">Privacy Policy</a>.
+            </p>
+          </form>
+
+          <p class="nx-auth__foot">
+            Already registered? <a href="login.html">Sign in</a>.
+          </p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <div data-nx-site-footer></div>
+
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/gsap.min.js" defer></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/ScrollTrigger.min.js" defer></script>
+  <script src="assets/js/nav.js" defer></script>
+  <script src="assets/js/data.js" defer></script>
+  <script src="assets/js/forms.js" defer></script>
+  <script src="assets/js/motion.js" defer></script>
+  <script src="assets/js/seo.js" defer></script>
+</body>
+</html>

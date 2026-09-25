@@ -36,6 +36,21 @@
     return String(number).padStart(2, "0");
   }
 
+  // "3 months / 6 months / 1 year" -> "3 / 6 months / 1 year": collapse only the
+  // run of like units at the front, so the index column stays short and honest.
+  function durations(programme) {
+    var tiers = programme.tiers || [];
+    if (!tiers.length) return "";
+
+    var parts = tiers.map(function (tier) { return tier.duration; });
+    return parts.map(function (part, i) {
+      var unit = part.replace(/^[\d.]+\s*/, "");
+      var next = parts[i + 1];
+      var sameAsNext = next && next.replace(/^[\d.]+\s*/, "") === unit;
+      return sameAsNext ? part.replace(/\s*\S+$/, "") : part;
+    }).join(" / ");
+  }
+
   // `position` arrives from Array#map, so it is zero-based; the index is
   // numbered from 01.
   function rowMarkup(programme, position) {
@@ -47,7 +62,7 @@
           esc(programme.programme) +
         "</a>" +
       "</h3>" +
-      '<span class="nx-index__division">' + esc(programme.division) + "</span>" +
+      '<span class="nx-index__division">' + esc(durations(programme)) + "</span>" +
       '<span class="nx-index__go" aria-hidden="true"><i class="bi bi-arrow-right"></i></span>' +
       "</article>";
   }
@@ -273,19 +288,22 @@
       fill("[data-detail-intro]", description);
       fill("[data-detail-practice]", "You will practise " + programme.keyAreas.join(", ") + ".");
 
-      // Indian digit grouping: 45000 reads as 45,000.
-      function rupees(amount) {
-        return "\u20B9" + Number(amount).toLocaleString("en-IN");
+      var rupees = NX.rupees;
+      var tiers = programme.tiers || [];
+
+      fill("[data-detail-levels]", tiers.map(function (tier) {
+        return tier.duration;
+      }).join(" · "));
+
+      if (tiers.length) {
+        var cheapest = tiers.reduce(function (low, tier) {
+          return tier.fee < low.fee ? tier : low;
+        });
+        fill("[data-detail-fee-from]", rupees(cheapest.fee));
       }
 
-      if (typeof programme.fee === "number") {
-        fill("[data-detail-fee]", rupees(programme.fee));
-      }
-
-      if (programme.duration) fill("[data-detail-duration]", programme.duration);
       if (programme.eligibility) fill("[data-detail-eligibility]", programme.eligibility);
       if (programme.learningMode) fill("[data-detail-mode]", programme.learningMode);
-      if (programme.learningHours) fill("[data-detail-hours]", programme.learningHours);
       fill("[data-detail-fact-certificate]", programme.certificate);
 
       // The banner differs per programme, so it is set here rather than in markup.
@@ -300,20 +318,31 @@
         ogImage.setAttribute("content", new URL(programme.banner, window.location.href).href);
       }
 
-      // "₹14,999 at registration, then 2 × ₹15,000". Collapses to a count only
-      // when the later instalments are equal, which they are in every tier today.
-      if (Array.isArray(programme.instalments) && programme.instalments.length) {
-        var schedule = rupees(programme.instalments[0]) + " at registration";
-        var rest = programme.instalments.slice(1);
+      var levels = detail.querySelector("[data-detail-tiers]");
+      if (levels) {
+        levels.innerHTML = tiers.map(function (tier) {
+          var schedule = NX.scheduleText(tier);
 
-        if (rest.length) {
-          var uniform = rest.every(function (amount) { return amount === rest[0]; });
-          schedule += uniform
-            ? ", then " + rest.length + " × " + rupees(rest[0])
-            : ", then " + rest.map(rupees).join(" and ");
-        }
-
-        fill("[data-detail-payment]", schedule);
+          return '<article class="nx-level" data-reveal>' +
+            '<span class="nx-level__duration">' + esc(tier.duration) + "</span>" +
+            "<h3>" + esc(tier.level) + "</h3>" +
+            '<p class="nx-level__course">' + esc(tier.course) + "</p>" +
+            '<p class="nx-level__fee">' + rupees(tier.fee) + "</p>" +
+            '<p class="nx-level__terms">' +
+              // Never invent a schedule; where none is published, EMI is
+              // arranged case by case with the Admissions Department.
+              (schedule
+                ? esc(schedule)
+                : "EMI available on request.") +
+            "</p>" +
+            (tier.learningHours
+              ? '<p class="nx-level__hours">' + esc(tier.learningHours) + " of learning</p>"
+              : "") +
+            '<a class="nx-arrow-link" href="apply.html?programme=' +
+              encodeURIComponent(programme.code) + "&level=" + encodeURIComponent(tier.id) + '">' +
+              'Apply at this level <i class="bi bi-arrow-right" aria-hidden="true"></i></a>' +
+            "</article>";
+        }).join("");
       }
 
       var areas = detail.querySelector("[data-detail-areas]");
@@ -331,10 +360,18 @@
         related.innerHTML = siblings.map(relatedMarkup).join("");
       }
 
+      // Not `code` — that name is already the query parameter this callback
+      // reads above, and a var here would hoist over it.
+      var slug = encodeURIComponent(programme.code);
+
       var enquiryLink = detail.querySelector("[data-detail-enquiry-link]");
-      if (enquiryLink) {
-        enquiryLink.href = "admissions.html?programme=" + encodeURIComponent(programme.code) + "#enquiry";
-      }
+      if (enquiryLink) enquiryLink.href = "admissions.html?programme=" + slug + "#enquiry";
+
+      var applyLink = detail.querySelector("[data-detail-apply-link]");
+      if (applyLink) applyLink.href = "apply.html?programme=" + slug;
+
+      var payLink = detail.querySelector("[data-detail-pay-link]");
+      if (payLink) payLink.href = "payment.html?code=" + slug;
 
       if (loading) loading.hidden = true;
       if (content) content.hidden = false;
